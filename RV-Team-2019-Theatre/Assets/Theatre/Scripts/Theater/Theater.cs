@@ -62,22 +62,22 @@ namespace Theater
         /// Open a Curtain
         /// </summary>
         /// <param name="cn">The type of curtain to open ; Front or Back</param>
-        public void OpenCurtain(CurtainName cn)
+        public void OpenCurtain(CurtainType cn)
         {
-            if (cn == CurtainName.Back)
+            if (cn == CurtainType.Back)
                 curtainBack.Open();
-            else if (cn == CurtainName.Front)
+            else if (cn == CurtainType.Front)
                 curtainFront.Open();
         }
         /// <summary>
         /// Close a Curtain
         /// </summary>
         /// <param name="cn">The type of curtain to close ; Front or Back</param>
-        public void CloseCurtain(CurtainName cn)
+        public void CloseCurtain(CurtainType cn)
         {
-            if (cn == CurtainName.Back)
+            if (cn == CurtainType.Back)
                 curtainBack.Close();
-            else if (cn == CurtainName.Front)
+            else if (cn == CurtainType.Front)
                 curtainFront.Close();
         }
 

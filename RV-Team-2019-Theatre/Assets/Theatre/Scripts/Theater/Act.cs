@@ -14,6 +14,9 @@ namespace Theater
             OnStart();
         }
 
+
+        #region Public Methods
+
         public void OnStart()
         {
             if (scenes == null)
@@ -44,5 +47,8 @@ namespace Theater
                 OnEnd();
             }
         }
+        
+        #endregion
+
     }
 }
