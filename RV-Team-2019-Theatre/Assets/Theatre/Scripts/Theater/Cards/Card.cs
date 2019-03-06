@@ -2,41 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+namespace Theater
 {
-    public ParticleSystem smokeEffect;
-    public bool IsSelected = false;
-    
-    void Start()
+    public class Card : MonoBehaviour
     {
-        smokeEffect.Play();
-    }
+        public ParticleSystem smokeEffect;
+        public ParticleSystem Aura;
+        public bool IsSelected = false;
 
-    private void OnTriggerStay(Collider coll)
-    {
-        if(coll.gameObject.tag == "Player")
+        void Start()
         {
-            //Debug.Log(gameObject.name + " is on collision with " + coll.gameObject.name);
-            if (Input.GetKeyDown(KeyCode.E))
+            smokeEffect.Play();
+        }
+
+        private void OnTriggerStay(Collider coll)
+        {
+            if (coll.gameObject.tag == "Player")
             {
-                select();
+                //Debug.Log(gameObject.name + " is on collision with " + coll.gameObject.name);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Select();
+                }
             }
         }
-    }
 
-    private void select()
-    {
-        IsSelected = true;
-    }
+        private void Select()
+        {
+            IsSelected = true;
+        }
 
-    public void Spawn()
-    {
-        Debug.Log("Cards are spawned");
-        Invoke("SetActiveCard", 0.3f);
+        public void Spawn()
+        {
+            Debug.Log("Cards are spawned");
+            Invoke("SetActiveCard", 0.3f);
 
-    }
-    public void SetActiveCard()
-    {
-        gameObject.SetActive(true);
+        }
+        public void Hide()
+        {
+            Debug.Log("Hide cards");
+            gameObject.SetActive(false);
+        }
+        public void SetActiveCard()
+        {
+            gameObject.SetActive(true);
+        }
     }
 }
