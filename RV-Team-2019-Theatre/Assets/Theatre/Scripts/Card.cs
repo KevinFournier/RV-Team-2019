@@ -4,64 +4,39 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    private static bool needCardSelection = false;
-
-    [SerializeField] private CardManager cardManager;
-
+    public ParticleSystem smokeEffect;
     public bool IsSelected = false;
-
-    #region Unity Methods
-    // Start is called before the first frame update
+    
     void Start()
     {
-        
+        smokeEffect.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Time to select a card");
-            needCardSelection = true;
-        }
-
-        if (needCardSelection)
-            fall();
-    }
-    
     private void OnTriggerStay(Collider coll)
     {
         if(coll.gameObject.tag == "Player")
         {
-            Debug.Log(gameObject.name + " is on collision with " + coll.gameObject.name);
-
-            //Remplace by trigger HTC controllers
-            if (Input.GetKeyDown(KeyCode.Return))
+            //Debug.Log(gameObject.name + " is on collision with " + coll.gameObject.name);
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 select();
             }
         }
     }
-    #endregion
-
-    private void fall()
-    {
-        Debug.Log("Cards are coming");
-        gameObject.GetComponent<Rigidbody>().useGravity = true;
-        needCardSelection = false;
-    }
 
     private void select()
     {
-        Debug.Log("Player is clicking");
         IsSelected = true;
-        cardManager.PullCards();
     }
 
-    public void Pull()
+    public void Spawn()
     {
-        Debug.Log("Cards are pulled");
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
+        Debug.Log("Cards are spawned");
+        Invoke("SetActiveCard", 0.3f);
+
+    }
+    public void SetActiveCard()
+    {
+        gameObject.SetActive(true);
     }
 }
