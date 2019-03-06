@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace Theater
 {
-    public class Scene : MonoBehaviour
+    public abstract class Scene : MonoBehaviour
     {
-        
+        public abstract void OnStart();
+        public abstract void OnEnd();
     }
 }
