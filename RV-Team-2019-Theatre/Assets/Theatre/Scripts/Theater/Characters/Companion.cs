@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+
+namespace Theater
 {
-    
+    public class Companion : Agent
+    {
+        
+    }
 }
