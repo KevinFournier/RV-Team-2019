@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     // Theater related methods
     public void SetTheater(Theater.Theater theater) => currentTheater = theater;
     public void NextAct() => currentTheater.NextAct();
-    public void OpenCurtain(CurtainName cn) => currentTheater.OpenCurtain(cn);
-    public void CloseCurtain(CurtainName cn) => currentTheater.CloseCurtain(cn);
+    public void OpenCurtain(CurtainType cn) => currentTheater.OpenCurtain(cn);
+    public void CloseCurtain(CurtainType cn) => currentTheater.CloseCurtain(cn);
 
     // Act related methods
     public void SetAct(Act act) => currentAct = act;

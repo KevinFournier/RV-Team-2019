@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Theater
 {
 
-    public enum CurtainName { Front, Back }
+    public enum CurtainType { Front, Back }
 
     public class Curtain : MonoBehaviour
     {
