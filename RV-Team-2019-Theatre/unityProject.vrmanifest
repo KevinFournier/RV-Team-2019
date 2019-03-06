@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.rvteam2019theatre.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Fournier\\Documents\\Projets M2\\RV-Team-2019\\RV-Team-2019-Theatre\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "RV-Team-2019-Theatre [Testing]"
+        }
+      }
+    }
+  ]
+}
