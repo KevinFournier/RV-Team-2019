@@ -70,6 +70,15 @@ namespace Theater
                 curtainFront.Open();
         }
         /// <summary>
+        /// Open all curtain.
+        /// </summary>
+        public void OpenCurtains()
+        {
+            curtainBack.Open();
+            curtainBack.Open();
+        }
+
+        /// <summary>
         /// Close a Curtain
         /// </summary>
         /// <param name="cn">The type of curtain to close ; Front or Back</param>
@@ -79,6 +88,14 @@ namespace Theater
                 curtainBack.Close();
             else if (cn == CurtainType.Front)
                 curtainFront.Close();
+        }
+        /// <summary>
+        /// Close all curtain.
+        /// </summary>
+        public void CloseCurtains()
+        {
+            curtainBack.Close();
+            curtainBack.Close();
         }
 
         #endregion
