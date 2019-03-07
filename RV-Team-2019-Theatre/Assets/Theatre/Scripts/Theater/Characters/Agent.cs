@@ -6,6 +6,9 @@ namespace Theater
 {
     public class Agent : MonoBehaviour
     {
-        
+        public void Spawn()
+        {
+            // TODO: Implement
+        }
     }
 }
