@@ -21,7 +21,9 @@ namespace Theater
         protected virtual IEnumerator WaitAndInvoke(float time, System.Action func)
         {
             yield return new WaitForSeconds(time);
-            func.Invoke();
+
+            if (func != null)
+                func.Invoke();
         }
 
         /// <summary>
