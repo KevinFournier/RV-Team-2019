@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private Theater.Theater currentTheater;
-    private Act currentAct;
+    [SerializeField] private Theater.Theater currentTheater;
+    [SerializeField] private Act currentAct;
 
     // Theater related methods
     public void SetTheater(Theater.Theater theater) => currentTheater = theater;

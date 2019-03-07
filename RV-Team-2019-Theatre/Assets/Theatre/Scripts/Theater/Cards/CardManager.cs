@@ -6,6 +6,8 @@ namespace Theater
 {
     public class CardManager : MonoBehaviour
     {
+        public static CardManager Instance;
+
         [SerializeField] private Card[] cards;
 
         private static bool needCardSelection = false;
@@ -17,10 +19,7 @@ namespace Theater
         bool starWars = false;
 
         // Start is called before the first frame update
-        void Start()
-        {
-
-        }
+        void Awake() => Instance = this;
 
         // Update is called once per frame
         void Update()
