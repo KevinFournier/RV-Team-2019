@@ -10,7 +10,7 @@ namespace Theater
 
         [SerializeField] private Card[] cards;
 
-        private static bool needCardSelection = false;
+        public static bool needCardSelection = false;
 
         //This variable must be in GameManager class and be called in EventManager
         public int activeScene = 0;
@@ -24,14 +24,6 @@ namespace Theater
         // Update is called once per frame
         void Update()
         {
-            //Trigger spawn cards at the start of a scene
-            if (Input.GetKeyDown(KeyCode.Space) && needCardSelection == false)
-            {
-                Debug.Log("Time to select a card");
-                SpawnCards();
-                needCardSelection = true;
-            }
-
             if (needCardSelection)
             {
                 for (int i = 0; i < cards.Length; i++)
@@ -99,15 +91,15 @@ namespace Theater
                     break;
                     #endregion
             }
-
         }
 
-        public void SpawnCards()
+        public void SpawnCards(int indexStart, int indexEnd)
         {
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = indexStart; i < indexEnd; i++)
             {
                 cards[i].Spawn();
             }
+            needCardSelection = true;
         }
         public void HideCards()
         {

@@ -8,7 +8,6 @@ namespace Theater
     {
         public int sceneNum;
 
-
         public abstract void OnStart();
         public abstract void OnEnd();
 
