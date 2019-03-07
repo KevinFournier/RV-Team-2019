@@ -17,6 +17,16 @@ public class GameManager : MonoBehaviour
     public void OpenCurtains() => currentTheater.OpenCurtains();
     public void CloseCurtain(CurtainType cn) => currentTheater.CloseCurtain(cn);
     public void CloseCurtains() => currentTheater.CloseCurtains();
+    /// <summary>
+    /// Get the Theater's narrator AudioSource.
+    /// </summary>
+    /// <returns>The AudioSource of the narrator.</returns>
+    public AudioSource Narrator() => currentTheater.Narrator;
+    /// <summary>
+    /// Define the next AudioClip to play by the narrator. (Not a list !)
+    /// </summary>
+    /// <param name="clip">The AudioClip to play.</param>
+    public void NarratorClip(AudioClip clip) => currentTheater.Narrator.clip = clip;
 
     // Act related methods
     public void SetAct(Act act) => currentAct = act;

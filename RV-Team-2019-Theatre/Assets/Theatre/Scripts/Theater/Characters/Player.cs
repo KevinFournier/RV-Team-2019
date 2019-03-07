@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace Theater
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Player : MonoBehaviour
     {
-        
+        public AudioSource AudioSource;
     }
 }
