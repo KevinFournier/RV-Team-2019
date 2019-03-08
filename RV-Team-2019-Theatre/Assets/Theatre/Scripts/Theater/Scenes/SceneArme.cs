@@ -9,123 +9,225 @@ namespace Theater
     {
         public int CardsStartIndex = 0;
         public int CardsEndIndex = 0;
+        
+        
+        public bool IsIntroFinish = false;
+        public bool IsIntroRunning = false;
 
-        public bool PlayerHasSelectedCard = false;
-        public bool PlayerHasTakenSword = false;
-        public bool SceneFinished = false;
+        public bool AreBaronsAndMerlinFinished = false;
+        public bool AreBaronsAndMerlinRunning = false;
 
-        public float CurtainsOpeningDelay = 2.0f;
-        public float NarratorSpeechDelay = 2.0f;
-        public float MerlinAndCardDelay = 2.0f;
-        public float MerlinSpeechDelay = 2.0f;
-        public float CardsSpawnDelay = 2.0f;
+        public bool AreCardsSpwaned = false;
+        public bool AreCardsSpawning = false;
 
-        public float EndSpeechDelay = 2.0f;
+        public bool IsCardSelected = false;
+        public bool IsSwordTaken = false;
 
-        public AudioClip NarratorFirstSpeech;
-        public AudioClip MerlinCardsSpeech;
-        public AudioClip ArthurEndSpeech;
 
+        [Space(30f)]
+        public Player Arthur;
+        
         public Agent Merlin;
+        public List<Agent> Barons;
 
-        public Player Player;
+
+        [Space(30f)]
+        // Intro
+        public AudioClip NarratorFirstSpeech;
+        // Barons et merlin
+        public AudioClip BaronSpeech;
+        public AudioClip MerlinToBaronsSpeech;
+        // Sélection des card
+        public AudioClip MerlinCardsSpeech;
+        public AudioClip ArthurCardsSpeech;
+        //
+        public AudioClip MerlinEndSpeech;
+
+        [Space(30f)]
+        public float NarratorSpeechDelay = 2.0f;
+        public float CurtainsOpeningDelay = 2.0f;
+
+        public float BaronsSpeechDelay = 2.0f;
+        public float MerlinToBaronsDelay = 2.0f;
+        // Mouvement de merlin
+        public float MerlinAndCardDelay = 2.0f;
+        public float MerlinCardsSpeechDelay = 2.0f;
+        public float CardsSpawnDelay = 2.0f;
+        // Arthur choisi une carte
+        public float ArthurCardSpeechDelay = 2.0f;
+        // Retirage de l'épée.
+        public float MerlinEndSpeechDelay = 2.0f;
 
 
         private GameManager gm;
+        private CardManager cm;
 
+        private bool isStarted = false;
+        private bool isFinished = false;
 
+        private float time = 0.0f;
+
+        #region Unity Methods
         private void Start()
         {
             gm = GameManager.Instance;
+            cm = CardManager.Instance;
         }
 
         private void Update()
         {
-            if (SceneFinished)
+            if (!isStarted)
+                return;
+
+            if (isFinished)
                 OnEnd();
+
+            // choix carte
+            // Arthur à la selection
+            // retirage épée
+            // Dernier speech merlin
+
+            time += Time.deltaTime;
+
+            if (!IsIntroFinish && itIsTime(NarratorSpeechDelay))
+                intro();
+
+            else if (!AreBaronsAndMerlinFinished && itIsTime(BaronsSpeechDelay))
+                baronsAndMerlin();
+
+            else if (!AreCardsSpwaned && itIsTime(MerlinAndCardDelay))
+                merlinAndCards();
+
+            else if (IsCardSelected && !IsSwordTaken)
+                whenCardSelected();
+
+            else if (IsSwordTaken)
+                whenSwordTaken();
         }
+        #endregion
 
+        #region Private Methods
+        // Time management methods
+        private void resetTime() => time = 0.0f;
+        private bool itIsTime(float delay) => time >= delay;
 
+        // Sequences methods
         private void intro()
         {
+            if (IsIntroRunning)
+                return;
+
+            IsIntroRunning = true;
             // Le narrateur parle, attend 2s après la fin puis ouvre les ridaux.
             gm.NarratorClip(NarratorFirstSpeech);
             PlaySoundThen(
                 gm.Narrator(),
-                () => gm.OpenCurtains(),
+                () =>
+                {
+                    gm.OpenCurtains();
+                    resetTime();
+                    IsIntroFinish = true;
+                    IsIntroRunning = false;
+                },
                 CurtainsOpeningDelay);
         }
 
-        private void whenMerlinAndCardSpawn()
+        private void baronsAndMerlin()
         {
-            CardsSpawnDelay = MerlinSpeechDelay + 2.0f;
+            if (AreBaronsAndMerlinRunning)
+                return;
 
-            // Spawn de Merlin
-            Merlin.Spawn();
+            AreBaronsAndMerlinRunning = true;
+
+            Merlin.AudioSource.clip = MerlinToBaronsSpeech;
+
+            // Play barons's replique,
+            // Wait 2s (MerlinToBaronsDelay),
+            // Play Merlin's replique,
+            // Reset time and booleans.
+            PlaySoundThen(
+                Barons[0].AudioSource,
+                () => PlaySoundThen(
+                    Merlin.AudioSource,
+                    () =>
+                    {
+                        resetTime();
+                        AreBaronsAndMerlinFinished = true;
+                        AreBaronsAndMerlinRunning = false;
+                    }),
+                MerlinToBaronsDelay);
+        }
+
+        private void merlinAndCards()
+        {
+            if (AreCardsSpawning)
+                return;
+
+            AreCardsSpawning = true;
 
             // Merlin commence à parler x secondes après sont apparition.
             Merlin.AudioSource.clip = MerlinCardsSpeech;
-            WaitThen(MerlinSpeechDelay, () => PlaySoundThen(Merlin.AudioSource));
+            WaitThen(MerlinCardsSpeechDelay, () => PlaySoundThen(Merlin.AudioSource));
 
             // Attend 2s qu'il ait commencé puis fait spawn les cartes.
+            CardsSpawnDelay += MerlinCardsSpeechDelay;
             WaitThen(
                 CardsSpawnDelay,
-                () => CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex));
+                () =>
+                {
+                    cm.SpawnCards(CardsStartIndex, CardsEndIndex);
+
+                    resetTime();
+                    AreCardsSpwaned = true;
+                    AreCardsSpawning = false;
+                });
+        }
+
+        private void whenCardSelected()
+        {
+            dropSword();
+            WaitThen(
+                ArthurCardSpeechDelay,
+                () => PlaySoundThen(Arthur.AudioSource));
+        }
+
+        private void dropSword()
+        {
+            // TODO: Déclancher l'apparition de l'épée
         }
 
         private void whenSwordTaken()
         {
-            waitForThen(
-                () => PlayerHasTakenSword,
-                () => WaitThen(EndSpeechDelay, () => endSpeech())
-            );
+            WaitThen(MerlinEndSpeechDelay, () => endSpeech());
         }
 
         private void endSpeech()
         {
-            Player.AudioSource.clip = ArthurEndSpeech;
+            Merlin.AudioSource.clip = MerlinEndSpeech;
             PlaySoundThen(
-                Player.AudioSource,
+                Merlin.AudioSource,
                 () => OnEnd(),
                 2.0f);
         }
-
+        #endregion
 
 
         public override void OnEnd()
         {
-            gm.NextScene();
+            gm.CloseCurtains();
+            WaitThen(2.0f, () => gm.NextScene());
         }
 
         public override void OnStart()
         {
-            WaitThen(NarratorSpeechDelay, () => intro());
+            Merlin.Spawn();
+            Barons.ForEach(b => b.Spawn());
 
-            MerlinAndCardDelay
-                += NarratorSpeechDelay
-                + gm.Narrator().clip.length
-                + CurtainsOpeningDelay;
-            WaitThen(MerlinAndCardDelay, () => whenMerlinAndCardSpawn());
-
-            // Ne rien faire tant qu'une carte n'a pas été séléctionée.
-            waitForThen(
-                () => PlayerHasSelectedCard,
-                () =>
-                {
-                    //TODO: Spawn du rocher
-
-                    // Rien tant que l'arme n'est pas retirée.
-                    whenSwordTaken();
-                }
-            );
+            gm.NarratorClip(NarratorFirstSpeech);
+            Barons[0].AudioSource.clip = BaronSpeech;
+            Merlin.AudioSource.clip = MerlinToBaronsSpeech;
+            Arthur.AudioSource.clip = ArthurCardsSpeech;
         }
 
-        private IEnumerator waitForThen(Func<bool> func, Action action)
-        {
-            yield return new WaitUntil(func);
-
-            if (action != null)
-                action.Invoke();
-        }
     }
 }
