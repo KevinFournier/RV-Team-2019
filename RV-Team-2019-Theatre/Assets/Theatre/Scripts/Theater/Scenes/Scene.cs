@@ -68,16 +68,6 @@ namespace Theater
             if (func != null)
                 func.Invoke();
         }
-        /// <summary>
-        /// Wait for the given sound to be finished, for additional time, then run the procedure argument.
-        /// </summary>
-        /// <param name="audioSource">AudioSource to check.</param>
-        /// <param name="func">Procedure to invoke.</param>
-        /// <param name="additionalTime">Time in secondes to wait after the sound ends.</param>
-        protected void OnSoundEnd(
-            AudioSource audioSource,
-            System.Action func,
-            float additionalTime = 0.0f)
-            => StartCoroutine(onSoundEnd(audioSource, func, additionalTime));
+
     }
 }
