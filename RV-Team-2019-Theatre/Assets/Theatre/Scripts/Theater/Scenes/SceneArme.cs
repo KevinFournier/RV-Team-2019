@@ -40,7 +40,7 @@ namespace Theater
             PlaySoundThen(MerlinCardsSpeech, null);
 
             // Attend 2s qu'il ait commencé puis fait spawn les cartes.
-            WaitAndInvoke(2.0f, () => CardManager.Instance.SpawnCards());
+           // WaitAndInvoke(2.0f, () => CardManager.Instance.SpawnCards());
             // Ne rien faire tant qu'une carte n'a pas été séléctionée.
 
 

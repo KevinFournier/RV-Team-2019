@@ -68,7 +68,7 @@ namespace Theater
         }
 
 
-        void CheckCondition()
+        void ConditionCheck()
         {
             conditionChecked = true;
         }
