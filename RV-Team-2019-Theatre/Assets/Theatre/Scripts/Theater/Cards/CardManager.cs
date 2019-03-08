@@ -28,7 +28,7 @@ namespace Theater
             {
                 for (int i = 0; i < cards.Length; i++)
                 {
-                    if (cards[i].IsSelected == true)
+                    if (cards[i].IsSelected && cards[i].enabled)
                     {
                         EventManager(i);
                         HideCards();
