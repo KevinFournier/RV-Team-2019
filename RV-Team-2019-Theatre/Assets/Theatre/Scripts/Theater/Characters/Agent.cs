@@ -9,8 +9,12 @@ namespace Theater
     {
         public AudioSource AudioSource;
 
+        [SerializeField]
+        private Vector3 spawnPosition;
+
         public void Spawn()
         {
+            transform.position = spawnPosition;
             // TODO: Implement
         }
     }

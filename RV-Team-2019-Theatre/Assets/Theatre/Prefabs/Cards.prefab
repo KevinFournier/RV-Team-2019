@@ -23504,6 +23504,7 @@ GameObject:
   - component: {fileID: 2352915351179234909}
   - component: {fileID: 2352915351179234886}
   - component: {fileID: 2352915351179234887}
+  - component: {fileID: 2211691303125267136}
   m_Layer: 0
   m_Name: Card_2
   m_TagString: Cards
@@ -23616,6 +23617,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 7298909833271491315}
   Aura: {fileID: 6755989957164611821}
   IsSelected: 0
+--- !u!114 &2211691303125267136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352915351179234908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &2352915351305891145
 GameObject:
   m_ObjectHideFlags: 0
@@ -23630,6 +23682,7 @@ GameObject:
   - component: {fileID: 2352915351305891148}
   - component: {fileID: 2352915351305891151}
   - component: {fileID: 2352915351305891150}
+  - component: {fileID: 432084612744293607}
   m_Layer: 0
   m_Name: Card_4
   m_TagString: Cards
@@ -23742,6 +23795,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 3038237432703008443}
   Aura: {fileID: 7292753155282588148}
   IsSelected: 0
+--- !u!114 &432084612744293607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352915351305891145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &2352915351542489198
 GameObject:
   m_ObjectHideFlags: 0
@@ -23756,6 +23860,7 @@ GameObject:
   - component: {fileID: 2352915351542489199}
   - component: {fileID: 2352915351542489168}
   - component: {fileID: 2352915351542489169}
+  - component: {fileID: 6346202378711078012}
   m_Layer: 0
   m_Name: Card_3
   m_TagString: Cards
@@ -23868,6 +23973,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 8579924246913804338}
   Aura: {fileID: 323245089129365153}
   IsSelected: 0
+--- !u!114 &6346202378711078012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352915351542489198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &2352915351665190672
 GameObject:
   m_ObjectHideFlags: 0
@@ -23882,6 +24038,7 @@ GameObject:
   - component: {fileID: 2352915351665190679}
   - component: {fileID: 2352915351665190678}
   - component: {fileID: 2352915351665190683}
+  - component: {fileID: 7238112682928256945}
   m_Layer: 0
   m_Name: Card_1
   m_TagString: Cards
@@ -23994,6 +24151,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 2352915352498110504}
   Aura: {fileID: 499149431}
   IsSelected: 0
+--- !u!114 &7238112682928256945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352915351665190672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &2352915351867997593
 GameObject:
   m_ObjectHideFlags: 0
@@ -33465,6 +33673,7 @@ GameObject:
   - component: {fileID: 2410804214143467008}
   - component: {fileID: 5935831307625249042}
   - component: {fileID: 9221923066583253738}
+  - component: {fileID: 1722783107730350900}
   m_Layer: 0
   m_Name: Card_7
   m_TagString: Cards
@@ -33577,6 +33786,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 527677801077670871}
   Aura: {fileID: 7902549138820978612}
   IsSelected: 0
+--- !u!114 &1722783107730350900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532022996537235144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &7123025393226833773
 GameObject:
   m_ObjectHideFlags: 0
@@ -33591,6 +33851,7 @@ GameObject:
   - component: {fileID: 5889524044987119618}
   - component: {fileID: 2454962096074637907}
   - component: {fileID: 8570538184183699941}
+  - component: {fileID: 6686379075722947389}
   m_Layer: 0
   m_Name: Card_6
   m_TagString: Cards
@@ -33703,6 +33964,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 7353191461995553077}
   Aura: {fileID: 6348440824798385270}
   IsSelected: 0
+--- !u!114 &6686379075722947389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123025393226833773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &7360320433440502400
 GameObject:
   m_ObjectHideFlags: 0
@@ -38415,6 +38727,7 @@ GameObject:
   - component: {fileID: 8171271103890849821}
   - component: {fileID: 4079545239907889157}
   - component: {fileID: 5008134071837147938}
+  - component: {fileID: 6007047879132041389}
   m_Layer: 0
   m_Name: Card_8
   m_TagString: Cards
@@ -38527,6 +38840,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 6399524491577195213}
   Aura: {fileID: 3719629312429212813}
   IsSelected: 0
+--- !u!114 &6007047879132041389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002818980966404308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1 &8758794525284572595
 GameObject:
   m_ObjectHideFlags: 0
@@ -38541,6 +38905,7 @@ GameObject:
   - component: {fileID: 654655856974408162}
   - component: {fileID: 469840357434495108}
   - component: {fileID: 8161755913928417201}
+  - component: {fileID: 3907268342575916692}
   m_Layer: 0
   m_Name: Card_5
   m_TagString: Cards
@@ -38653,6 +39018,57 @@ MonoBehaviour:
   smokeEffect: {fileID: 5613554092275534049}
   Aura: {fileID: 9072642559684410457}
   IsSelected: 0
+--- !u!114 &3907268342575916692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758794525284572595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1001 &934804784288300998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38722,15 +39138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570eb44824237c74e874ecc005ff48a8, type: 3}
---- !u!198 &7298909833271491315 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7616704270965294389, guid: 570eb44824237c74e874ecc005ff48a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 934804784288300998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7298909833271491314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7616704270965294388, guid: 570eb44824237c74e874ecc005ff48a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 934804784288300998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7298909833271491315 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7616704270965294389, guid: 570eb44824237c74e874ecc005ff48a8,
     type: 3}
   m_PrefabInstance: {fileID: 934804784288300998}
   m_PrefabAsset: {fileID: 0}
@@ -38803,15 +39219,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570eb44824237c74e874ecc005ff48a8, type: 3}
---- !u!198 &7353191461995553077 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7616704270965294389, guid: 570eb44824237c74e874ecc005ff48a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1132708636619465728}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7353191461995553076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7616704270965294388, guid: 570eb44824237c74e874ecc005ff48a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1132708636619465728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7353191461995553077 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7616704270965294389, guid: 570eb44824237c74e874ecc005ff48a8,
     type: 3}
   m_PrefabInstance: {fileID: 1132708636619465728}
   m_PrefabAsset: {fileID: 0}
@@ -39208,15 +39624,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570eb44824237c74e874ecc005ff48a8, type: 3}
---- !u!4 &2352915352498110505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7616704270965294388, guid: 570eb44824237c74e874ecc005ff48a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5266049532094891293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2352915352498110504 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7616704270965294389, guid: 570eb44824237c74e874ecc005ff48a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5266049532094891293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2352915352498110505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7616704270965294388, guid: 570eb44824237c74e874ecc005ff48a8,
     type: 3}
   m_PrefabInstance: {fileID: 5266049532094891293}
   m_PrefabAsset: {fileID: 0}
