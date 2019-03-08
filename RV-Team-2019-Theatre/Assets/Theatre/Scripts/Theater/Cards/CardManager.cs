@@ -10,7 +10,7 @@ namespace Theater
 
         [SerializeField] private Card[] cards;
 
-        public static bool needCardSelection = false;
+        public static bool needCardSelection = true;
 
         //This variable must be in GameManager class and be called in EventManager
         public int activeScene = 0;
