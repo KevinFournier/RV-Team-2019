@@ -6,9 +6,12 @@ namespace Theater
 {
     public class SceneArme : Scene
     {
-        public AudioSource NarratorFirstSpeech;
-        public AudioSource MerlinCardsSpeech;
-        public AudioSource ArthurEndSpeech;
+        public int CardsStartIndex = 0;
+        public int CardsEndIndex = 0;
+
+        public AudioClip NarratorFirstSpeech;
+        public AudioClip MerlinCardsSpeech;
+        public AudioClip ArthurEndSpeech;
 
         public Agent Merlin;
 
@@ -20,15 +23,15 @@ namespace Theater
         private void Start()
         {
             gm = GameManager.Instance;
-            // CardManager.Instance.SetCards();
         }
 
         private void Update()
         {
 
             // Le narrateur parle, attend 2s après la fin puis ouvre les ridaux.
+            gm.NarratorClip(NarratorFirstSpeech);
             PlaySoundThen(
-                NarratorFirstSpeech,
+                gm.Narrator(),
                 () => gm.OpenCurtains(),
                 2.0f);
 
@@ -37,10 +40,13 @@ namespace Theater
             Merlin.Spawn();
 
             // Merlin parle
-            PlaySoundThen(MerlinCardsSpeech, null);
+            Merlin.AudioSource.clip = MerlinCardsSpeech;
+            PlaySoundThen(Merlin.AudioSource, null);
 
             // Attend 2s qu'il ait commencé puis fait spawn les cartes.
-           // WaitAndInvoke(2.0f, () => CardManager.Instance.SpawnCards());
+
+            WaitAndInvoke(2.0f, () => CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex));
+
             // Ne rien faire tant qu'une carte n'a pas été séléctionée.
 
 
@@ -48,8 +54,9 @@ namespace Theater
             // Rien tant que l'arme n'est pas retirée.
             // Récupération de l'arme.
 
+            Player.AudioSource.clip = ArthurEndSpeech;
             PlaySoundThen(
-                ArthurEndSpeech,
+                Player.AudioSource,
                 () => OnEnd(),
                 2.0f);
 
