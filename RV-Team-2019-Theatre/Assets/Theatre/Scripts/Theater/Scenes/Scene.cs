@@ -17,14 +17,20 @@ namespace Theater
         /// </summary>
         /// <param name="time">Time in secondes.</param>
         /// <param name="func">Procedure to invoke.</param>
-        /// <returns></returns>
-        protected virtual IEnumerator WaitAndInvoke(float time, System.Action func)
+        private IEnumerator waitThen(float time, System.Action func)
         {
             yield return new WaitForSeconds(time);
 
             if (func != null)
                 func.Invoke();
         }
+        /// <summary>
+        /// Wait a certain time then invoke the given procedure.
+        /// </summary>
+        /// <param name="time">Time in secondes.</param>
+        /// <param name="func">Procedure to invoke.</param>
+        protected void WaitThen(float time, System.Action func)
+            => StartCoroutine(waitThen(time, func));
 
         /// <summary>
         /// Play a sound once then invoke the given procedure. 
@@ -32,16 +38,16 @@ namespace Theater
         /// <param name="audioSource">AudioSource to play.</param>
         /// <param name="func">Procedure to invoke.</param>
         /// <param name="additionalTime">Time in secondes to wait after the sound ends.</param>
-        protected virtual void PlaySoundThen(
+        protected void PlaySoundThen(
             AudioSource audioSource,
-            System.Action func,
+            System.Action func = null,
             float additionalTime = 0.0f
         )
         {
             audioSource.loop = false;
             audioSource.Play();
 
-            OnSoundEnd(audioSource, func, additionalTime);
+            StartCoroutine(onSoundEnd(audioSource, func, additionalTime));
         }
 
         /// <summary>
@@ -50,8 +56,7 @@ namespace Theater
         /// <param name="audioSource">AudioSource to check.</param>
         /// <param name="func">Procedure to invoke.</param>
         /// <param name="additionalTime">Time in secondes to wait after the sound ends.</param>
-        /// <returns></returns>
-        protected virtual IEnumerator OnSoundEnd(
+        private IEnumerator onSoundEnd(
             AudioSource audioSource,
             System.Action func,
             float additionalTime = 0.0f
@@ -63,5 +68,16 @@ namespace Theater
             if (func != null)
                 func.Invoke();
         }
+        /// <summary>
+        /// Wait for the given sound to be finished, for additional time, then run the procedure argument.
+        /// </summary>
+        /// <param name="audioSource">AudioSource to check.</param>
+        /// <param name="func">Procedure to invoke.</param>
+        /// <param name="additionalTime">Time in secondes to wait after the sound ends.</param>
+        protected void OnSoundEnd(
+            AudioSource audioSource,
+            System.Action func,
+            float additionalTime = 0.0f)
+            => StartCoroutine(onSoundEnd(audioSource, func, additionalTime));
     }
 }
