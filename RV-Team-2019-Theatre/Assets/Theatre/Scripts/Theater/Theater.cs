@@ -6,9 +6,10 @@ namespace Theater
 {
     public class Theater : MonoBehaviour
     {
+        public AudioSource Narrator;
+
         [SerializeField] private Curtain curtainFront;
         [SerializeField] private Curtain curtainBack;
-
 
         private Queue<Act> acts;
         private Act currentAct;
