@@ -10,6 +10,8 @@ namespace Theater
 
         [SerializeField] private Card[] cards;
 
+        public GameObject epee;
+
         public static bool needCardSelection = true;
 
         private IEnumerator spawnCardsCoroutine;
@@ -65,25 +67,7 @@ namespace Theater
                 //SCENE 1 -- CHOIX DE L'ARME
                 #region SCENE1
                 case 0:
-                    switch (numCardSelected)
-                    {
-                        case 0:
-                            //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected + " : Excalibur");
-                            break;
-                        case 1:
-                            //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected + " : Sabre Laser");
-                            break;
-                        case 2:
-                            //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected + " : Baguette Magique");
-                            break;
-                        case 3:
-                            //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected + " : Brosse à Chiotte");
-                            break;
-                    }
+                    epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
                     break;
                 #endregion
                 //SCENE 2 -- CHOIX DU COMPAGNON
