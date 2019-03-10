@@ -12,13 +12,8 @@ namespace Theater
         public Hand RightHand;
 
         public ParticleSystem smokeEffect;
-        public ParticleSystem Aura;
+        public ParticleSystem aura;
         public bool IsSelected = false;
-
-        void Start()
-        {
-            smokeEffect.Play();
-        }
 
         private void OnTriggerStay(Collider coll)
         {
@@ -41,7 +36,7 @@ namespace Theater
         public void Spawn()
         {
             Debug.Log("Cards are spawned");
-            Invoke("SetActiveCard", 0.3f);
+            SetActiveCard();
 
         }
         public void Hide()
@@ -53,5 +48,6 @@ namespace Theater
         {
             gameObject.SetActive(true);
         }
+
     }
 }
