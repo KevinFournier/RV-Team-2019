@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public void OpenCurtains() => Theater.OpenCurtains();
     public void CloseCurtain(CurtainType cn) => Theater.CloseCurtain(cn);
     public void CloseCurtains() => Theater.CloseCurtains();
+    public Act GetCurrentAct() => currentAct;
     /// <summary>
     /// Get the Theater's narrator AudioSource.
     /// </summary>
@@ -37,4 +38,5 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+    
 }

@@ -138,7 +138,7 @@ namespace Valve.VR.InteractionSystem
 
             attached = true;
 
-			onPickUp.Invoke();
+			//onPickUp.Invoke();
 
 			hand.HoverLock( null );
             
@@ -158,7 +158,7 @@ namespace Valve.VR.InteractionSystem
         {
             attached = false;
 
-            onDetachFromHand.Invoke();
+            //onDetachFromHand.Invoke();
 
             hand.HoverUnlock(null);
             

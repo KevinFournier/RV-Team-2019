@@ -20,6 +20,8 @@ namespace Theater
                 transform.parent.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
 
+                (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneArme).SwordTrigger = true;
+
                 GetComponent<Rigidbody>().useGravity = true;
                 GetComponent<BoxCollider>().isTrigger = false;
                 gameObject.AddComponent<Throwable>();

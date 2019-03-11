@@ -8,9 +8,9 @@ namespace Theater
     public class SceneArme : Scene
     {
         public int CardsStartIndex = 0;
-        public int CardsEndIndex = 0;
-        
-        
+        public int CardsEndIndex = 4;
+
+
         public bool IsIntroFinish = false;
         public bool IsIntroRunning = false;
 
@@ -29,7 +29,7 @@ namespace Theater
 
         [Space(30f)]
         public Player Arthur;
-        
+
         public Agent Merlin;
         public List<Agent> Barons;
 
@@ -176,19 +176,23 @@ namespace Theater
 
             // Merlin commence à parler x secondes après sont apparition.
             Merlin.AudioSource.clip = MerlinCardsSpeech;
-            WaitThen(MerlinCardsSpeechDelay, () => PlaySoundThen(Merlin.AudioSource));
-
-            // Attend 2s qu'il ait commencé puis fait spawn les cartes.
-            CardsSpawnDelay += MerlinCardsSpeechDelay;
             WaitThen(
-                CardsSpawnDelay,
+                MerlinCardsSpeechDelay,
                 () =>
                 {
-                    CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
+                    PlaySoundThen(
+                        Merlin.AudioSource,
+                        () =>
+                        {
+                            Debug.LogWarning("Spawn cards gogo");
+                            CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
-                    resetTime();
-                    AreCardsSpwaned = true;
-                    AreCardsSpawning = false;
+                            resetTime();
+                            AreCardsSpwaned = true;
+                            AreCardsSpawning = false;
+                        },
+                        CardsSpawnDelay);
+                
                 });
         }
 
