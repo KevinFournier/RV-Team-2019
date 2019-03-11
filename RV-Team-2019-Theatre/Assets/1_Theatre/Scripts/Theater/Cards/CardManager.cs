@@ -11,6 +11,7 @@ namespace Theater
         [SerializeField] private Card[] cards;
 
         public GameObject epee;
+        public GameObject rocher;
 
         public static bool needCardSelection = true;
 
@@ -68,6 +69,11 @@ namespace Theater
                 #region SCENE1
                 case 0:
                     epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
+                    if (numCardSelected == 1)
+                    {
+                        starWars = true;
+                    }
+                    rocher.SetActive(true);
                     break;
                 #endregion
                 //SCENE 2 -- CHOIX DU COMPAGNON
