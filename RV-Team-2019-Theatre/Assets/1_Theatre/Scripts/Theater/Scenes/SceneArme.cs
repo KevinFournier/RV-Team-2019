@@ -20,7 +20,10 @@ namespace Theater
         public bool AreCardsSpwaned = false;
         public bool AreCardsSpawning = false;
 
+        public bool CardTrigger = false;
         public bool IsCardSelected = false;
+
+        public bool SwordTrigger = false;
         public bool IsSwordTaken = false;
 
 
@@ -62,9 +65,6 @@ namespace Theater
         private GameManager gm;
         private CardManager cm;
 
-        private bool isStarted = false;
-        private bool isFinished = false;
-
         private float time = 0.0f;
 
         #region Unity Methods
@@ -76,11 +76,8 @@ namespace Theater
 
         private void Update()
         {
-            if (!isStarted)
+            if (!IsRunning)
                 return;
-
-            if (isFinished)
-                OnEnd();
 
             // choix carte
             // Arthur à la selection
@@ -98,10 +95,10 @@ namespace Theater
             else if (!AreCardsSpwaned && itIsTime(MerlinAndCardDelay))
                 merlinAndCards();
 
-            else if (IsCardSelected && !IsSwordTaken)
+            else if (CardTrigger && !IsCardSelected)
                 whenCardSelected();
 
-            else if (IsSwordTaken)
+            else if (SwordTrigger && !IsSwordTaken)
                 whenSwordTaken();
         }
         #endregion
@@ -185,6 +182,8 @@ namespace Theater
 
         private void whenCardSelected()
         {
+            CardTrigger = false;
+            IsCardSelected = true;
             dropSword();
             WaitThen(
                 ArthurCardSpeechDelay,
@@ -198,6 +197,8 @@ namespace Theater
 
         private void whenSwordTaken()
         {
+            IsSwordTaken = true;
+            SwordTrigger = false;
             WaitThen(MerlinEndSpeechDelay, () => endSpeech());
         }
 
@@ -215,6 +216,8 @@ namespace Theater
         public override void OnEnd()
         {
             gm.CloseCurtains();
+            IsFinish = true;
+            IsRunning = false;
             WaitThen(2.0f, () => gm.NextScene());
         }
 
@@ -227,6 +230,8 @@ namespace Theater
             Barons[0].AudioSource.clip = BaronSpeech;
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
             Arthur.AudioSource.clip = ArthurCardsSpeech;
+
+            IsRunning = true;
         }
 
     }

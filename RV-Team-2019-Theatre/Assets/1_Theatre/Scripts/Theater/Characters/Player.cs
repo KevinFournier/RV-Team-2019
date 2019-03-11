@@ -8,5 +8,12 @@ namespace Theater
     public class Player : MonoBehaviour
     {
         public AudioSource AudioSource;
+        public AudioListener AudioListener;
+
+        private void Awake()
+        {
+            AudioSource = GetComponent<AudioSource>();
+            AudioListener = GetComponent<AudioListener>();
+        }
     }
 }
