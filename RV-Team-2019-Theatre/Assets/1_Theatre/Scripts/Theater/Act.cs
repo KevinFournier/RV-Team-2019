@@ -6,25 +6,27 @@ namespace Theater
 {
     public class Act : MonoBehaviour
     {
-        private Queue<Scene> scenes;
+
+        [SerializeField] private List<Scene> scenes;
+        private Queue<Scene> _scenes;
         private Scene currentScene;
 
-        private void Start()
+        private void Awake()
         {
-            OnStart();
+            if (scenes == null)
+                _scenes = new Queue<Scene>();
+            else
+                _scenes = new Queue<Scene>(scenes);
         }
-
 
         #region Public Methods
 
         public void OnStart()
         {
-            if (scenes == null)
-                scenes = new Queue<Scene>();
 
-            if (scenes.Count > 0)
+            if (_scenes.Count > 0)
             {
-                currentScene = scenes.Dequeue();
+                currentScene = _scenes.Dequeue();
                 currentScene.OnStart();
             }
         }
@@ -37,9 +39,9 @@ namespace Theater
         {
             currentScene.OnEnd();
 
-            if (scenes.Count > 0)
+            if (_scenes.Count > 0)
             {
-                currentScene = scenes.Dequeue();
+                currentScene = _scenes.Dequeue();
                 currentScene.OnStart();
             }
             else

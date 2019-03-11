@@ -12,6 +12,11 @@ namespace Theater
         [SerializeField]
         private Vector3 spawnPosition;
 
+        private void Awake()
+        {
+            AudioSource = GetComponent<AudioSource>();
+        }
+
         public void Spawn()
         {
             transform.position = spawnPosition;

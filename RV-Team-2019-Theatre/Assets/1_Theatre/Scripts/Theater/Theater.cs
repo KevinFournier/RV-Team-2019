@@ -11,9 +11,19 @@ namespace Theater
         [SerializeField] private Curtain curtainFront;
         [SerializeField] private Curtain curtainBack;
 
-        private Queue<Act> acts;
+        [SerializeField] private List<Act> acts;
+        private Queue<Act> _acts;
         private Act currentAct;
 
+
+        private void Awake()
+        {
+            if (acts == null)
+                _acts = new Queue<Act>();
+            else
+                _acts = new Queue<Act>(acts);
+            print(_acts);
+        }
 
         private void Start()
         {
@@ -25,12 +35,10 @@ namespace Theater
 
         private void OnStart()
         {
-            if (acts == null)
-                acts = new Queue<Act>();
-
-            if (acts.Count > 0)
+            if (_acts.Count > 0)
             {
-                currentAct = acts.Dequeue();
+                currentAct = _acts.Dequeue();
+                GameManager.Instance.SetAct(currentAct);
                 currentAct.OnStart();
             }
         }
@@ -47,9 +55,9 @@ namespace Theater
         {
             currentAct.OnEnd();
             
-            if (acts.Count > 0)
+            if (_acts.Count > 0)
             {
-                currentAct = acts.Dequeue();
+                currentAct = _acts.Dequeue();
                 currentAct.OnStart();
             }
             else
