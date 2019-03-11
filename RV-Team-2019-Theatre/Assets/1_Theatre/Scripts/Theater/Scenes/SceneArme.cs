@@ -78,16 +78,35 @@ namespace Theater
 
             time += Time.deltaTime;
 
-            if (!IsIntroFinish && itIsTime(NarratorSpeechDelay))
+            var introCondition =
+                !IsIntroFinish
+                && itIsTime(NarratorSpeechDelay);
+
+            var baronAndMerlinCondition =
+                IsIntroFinish
+                && !AreBaronsAndMerlinFinished
+                && itIsTime(BaronsSpeechDelay);
+
+            var cardsCondition =
+                AreBaronsAndMerlinFinished
+                && !AreCardsSpwaned
+                && itIsTime(MerlinAndCardDelay);
+
+            var swordCondition =
+                AreCardsSpwaned
+                && CardTrigger
+                && !IsCardSelected;
+
+            if (introCondition)
                 intro();
 
-            else if (!AreBaronsAndMerlinFinished && itIsTime(BaronsSpeechDelay))
+            else if (baronAndMerlinCondition)
                 baronsAndMerlin();
 
-            else if (!AreCardsSpwaned && itIsTime(MerlinAndCardDelay))
+            else if (cardsCondition)
                 merlinAndCards();
 
-            else if (CardTrigger && !IsCardSelected)
+            else if (swordCondition)
                 whenCardSelected();
 
             else if (SwordTrigger && !IsSwordTaken)
@@ -117,6 +136,7 @@ namespace Theater
                     resetTime();
                     IsIntroFinish = true;
                     IsIntroRunning = false;
+                    Debug.Log("Curtains open", gameObject);
                 },
                 CurtainsOpeningDelay);
         }
