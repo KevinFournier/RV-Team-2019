@@ -62,17 +62,9 @@ namespace Theater
         public float MerlinEndSpeechDelay = 2.0f;
 
 
-        private GameManager gm;
-        private CardManager cm;
-
         private float time = 0.0f;
 
         #region Unity Methods
-        private void Start()
-        {
-            gm = GameManager.Instance;
-            cm = CardManager.Instance;
-        }
 
         private void Update()
         {
@@ -86,16 +78,35 @@ namespace Theater
 
             time += Time.deltaTime;
 
-            if (!IsIntroFinish && itIsTime(NarratorSpeechDelay))
+            var introCondition =
+                !IsIntroFinish
+                && itIsTime(NarratorSpeechDelay);
+
+            var baronAndMerlinCondition =
+                IsIntroFinish
+                && !AreBaronsAndMerlinFinished
+                && itIsTime(BaronsSpeechDelay);
+
+            var cardsCondition =
+                AreBaronsAndMerlinFinished
+                && !AreCardsSpwaned
+                && itIsTime(MerlinAndCardDelay);
+
+            var swordCondition =
+                AreCardsSpwaned
+                && CardTrigger
+                && !IsCardSelected;
+
+            if (introCondition)
                 intro();
 
-            else if (!AreBaronsAndMerlinFinished && itIsTime(BaronsSpeechDelay))
+            else if (baronAndMerlinCondition)
                 baronsAndMerlin();
 
-            else if (!AreCardsSpwaned && itIsTime(MerlinAndCardDelay))
+            else if (cardsCondition)
                 merlinAndCards();
 
-            else if (CardTrigger && !IsCardSelected)
+            else if (swordCondition)
                 whenCardSelected();
 
             else if (SwordTrigger && !IsSwordTaken)
@@ -116,15 +127,16 @@ namespace Theater
 
             IsIntroRunning = true;
             // Le narrateur parle, attend 2s après la fin puis ouvre les ridaux.
-            gm.NarratorClip(NarratorFirstSpeech);
+            GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             PlaySoundThen(
-                gm.Narrator(),
+                GameManager.Instance.Narrator(),
                 () =>
                 {
-                    gm.OpenCurtains();
+                    GameManager.Instance.OpenCurtains();
                     resetTime();
                     IsIntroFinish = true;
                     IsIntroRunning = false;
+                    Debug.Log("Curtains open", gameObject);
                 },
                 CurtainsOpeningDelay);
         }
@@ -172,7 +184,7 @@ namespace Theater
                 CardsSpawnDelay,
                 () =>
                 {
-                    cm.SpawnCards(CardsStartIndex, CardsEndIndex);
+                    CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
                     resetTime();
                     AreCardsSpwaned = true;
@@ -215,10 +227,10 @@ namespace Theater
 
         public override void OnEnd()
         {
-            gm.CloseCurtains();
+            GameManager.Instance.CloseCurtains();
             IsFinish = true;
             IsRunning = false;
-            WaitThen(2.0f, () => gm.NextScene());
+            WaitThen(2.0f, () => GameManager.Instance.NextScene());
         }
 
         public override void OnStart()
@@ -226,7 +238,7 @@ namespace Theater
             Merlin.Spawn();
             Barons.ForEach(b => b.Spawn());
 
-            gm.NarratorClip(NarratorFirstSpeech);
+            GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             Barons[0].AudioSource.clip = BaronSpeech;
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
             Arthur.AudioSource.clip = ArthurCardsSpeech;
