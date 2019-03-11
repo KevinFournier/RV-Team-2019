@@ -6,71 +6,42 @@ namespace Theater
 {
     public class SceneChoixCompagnon : Scene
     {
-        public int sceneState=0;
-        bool conditionChecked = false;
+        public int CardsStartIndex = 0;
+        public int CardsEndIndex = 0;
 
+        public Player Arthur;
+        public List<Companion> Companions;
+
+        private GameManager gm;
+        private CardManager cm;
+
+        private float time = 0.0f;
+
+        private void Awake()
+        {
+            gm = GameManager.Instance;
+            cm = CardManager.Instance;
+        }
 
         void Update()
         {
-            if (conditionChecked == true)
-            {
-                sceneState++;
-                TimelineManager();
-                conditionChecked = false;
-            }
+            if (!IsRunning)
+                return;
+
+            time += Time.deltaTime;
+
+
         }
 
         override public void OnStart()
         {
-            TimelineManager();
         }
 
-        public void TimelineManager()
-        {
-            switch (sceneState)
-            {
-                //MERLIN
-                case 0:
-                    Debug.Log("Mon bon sir, il vous faut un gouvernement stable");
-                    Invoke("ConditionCheck", 5.0f);
-                    break;
-                //ARTHUR
-                case 1:
-                    Debug.Log("Et les meilleurs guerriers doivent siéger à ma table");
-                    Invoke("ConditionCheck", 5.0f);
-                    break;
-                //MERLIN
-                case 2:
-                    Debug.Log("Vous devriez choisir un homme de confiance");
-                    Invoke("ConditionCheck", 5.0f);
-                    break;
-                //ARTHUR
-                case 3:
-                    Debug.Log("Un partenaire en somme! Qui connaîtrait la science de conduire mes armées!");
-                    Invoke("ConditionCheck", 5.0f);
-                    break;
-                //Spawn the cards for the choice of the happy fellow
-                case 4:
-                    //Play sound effects?
-                    CardManager.Instance.SpawnCards(4, 7);
-                    break;
-                //Play ...
-                case 5:
-                    Debug.Log("Choisissez sagement ...");
-
-                    break;
-            }
-        }
 
         override public void OnEnd()
         {
 
         }
 
-
-        void ConditionCheck()
-        {
-            conditionChecked = true;
-        }
     }
 }

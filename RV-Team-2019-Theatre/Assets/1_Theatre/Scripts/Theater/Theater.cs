@@ -22,7 +22,6 @@ namespace Theater
                 _acts = new Queue<Act>();
             else
                 _acts = new Queue<Act>(acts);
-            print(_acts);
         }
 
         private void Start()
