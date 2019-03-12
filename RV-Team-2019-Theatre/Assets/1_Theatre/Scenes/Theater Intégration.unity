@@ -451,8 +451,10 @@ GameObject:
   - component: {fileID: 32973087}
   - component: {fileID: 32973086}
   - component: {fileID: 32973090}
+  - component: {fileID: 32973092}
+  - component: {fileID: 32973091}
   m_Layer: 0
-  m_Name: Baron 1
+  m_Name: Baron 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,11 +468,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32973084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0880003, y: 1, z: 3.805}
+  m_LocalPosition: {x: 3, y: 1, z: 12.849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381208393}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &32973086
 AudioSource:
@@ -528,7 +530,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -641,6 +643,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
   spawnPosition: {x: -0.7, y: 1, z: 3.8}
+--- !u!111 &32973091
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32973084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a9cdead009fd52447a2cf219341a1efa, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &32973092
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32973084}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 336735f6ab817b64e84d2870f1b94e97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &33118553
 GameObject:
   m_ObjectHideFlags: 0
@@ -9643,7 +9679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668530403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.376, z: 0}
+  m_LocalPosition: {x: 0, y: 4.532, z: 2.101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 924231952}
@@ -9705,7 +9741,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10485,31 +10521,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.083
+      value: -0.188
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.059
+      value: 1.0590007
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.025
+      value: -0.919
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.28942385
+      value: 0.5026663
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.64516205
+      value: -0.49731958
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6451619
+      value: -0.49731964
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.28942358
+      value: -0.5026659
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_RootOrder
@@ -10525,7 +10561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833512814, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -228.323
+      value: -270.613
       objectReference: {fileID: 0}
     - target: {fileID: 1995301987, guid: b22177b3ae062b34bb72a0989a6eba39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12203,7 +12239,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -17666,9 +17702,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 873786485}
-  - {fileID: 32973085}
-  - {fileID: 1602733058}
   - {fileID: 1687272853}
+  - {fileID: 1602733058}
+  - {fileID: 32973085}
   m_Father: {fileID: 924231952}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19987,6 +20023,8 @@ GameObject:
   - component: {fileID: 1602733060}
   - component: {fileID: 1602733059}
   - component: {fileID: 1602733063}
+  - component: {fileID: 1602733065}
+  - component: {fileID: 1602733064}
   m_Layer: 0
   m_Name: Baron 2
   m_TagString: Untagged
@@ -20002,7 +20040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602733057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7250004, y: 1, z: 4.89}
+  m_LocalPosition: {x: 3, y: 1, z: 14.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381208393}
@@ -20064,7 +20102,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -20177,6 +20215,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
   spawnPosition: {x: -0.07, y: 1.04, z: 4.9}
+--- !u!111 &1602733064
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602733057}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: dfd353ffe0b854948ac801cb98d70fd6, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1602733065
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602733057}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 798c22a6712281a4184ad517b14ec33b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1604175142
 GameObject:
   m_ObjectHideFlags: 0
@@ -21180,8 +21252,10 @@ GameObject:
   - component: {fileID: 1687272850}
   - component: {fileID: 1687272849}
   - component: {fileID: 1687272848}
+  - component: {fileID: 1687272855}
+  - component: {fileID: 1687272854}
   m_Layer: 0
-  m_Name: Baron 3
+  m_Name: Baron 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21257,7 +21331,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -21364,12 +21438,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687272847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6390004, y: 1, z: 3.91}
+  m_LocalPosition: {x: 3, y: 1, z: 11.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381208393}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1687272854
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687272847}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8b37a01f39755b84da1b25627f7361e0, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1687272855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687272847}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48367af2f55ccfd42a54ef29795ee92b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1690627586
 PrefabInstance:
   m_ObjectHideFlags: 0
