@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace Theater
 {
     public class SceneCombatBarons : Scene
     {
+        public PlayableDirector scene3director;
         
         // Start is called before the first frame update
         void Start()
@@ -46,7 +48,19 @@ namespace Theater
         }
 
 
-        public override void OnEnd() => throw new System.NotImplementedException();
-        public override void OnStart() => throw new System.NotImplementedException();
+        public override void OnEnd()
+        {
+            GameManager.Instance.CloseCurtains();
+            IsFinish = true;
+            IsRunning = false;
+            WaitThen(2.0f, () => GameManager.Instance.NextScene());
+        }
+
+        public override void OnStart()
+        {
+            IsRunning = true;
+            scene3director.Play();
+
+        }
     }
 }

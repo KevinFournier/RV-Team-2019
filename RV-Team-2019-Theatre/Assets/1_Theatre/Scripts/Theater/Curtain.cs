@@ -23,13 +23,18 @@ namespace Theater
         public void Start()
         {
             curtainPos = transform.position;
-            manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
+            if (manivelle != null)
+            {
+                manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
+
+            }
         }
 
         public void Update()
         {
             //Manivelle interaction
-            if (!locked)
+            
+            if (!locked && manivelle != null)
             {
                 if (manivelleAngle != manivelle.GetComponent<CircularDrive>().outAngle)
                 {
