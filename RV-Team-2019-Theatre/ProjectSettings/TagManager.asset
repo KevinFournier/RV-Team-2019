@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - SwordRock
   - SwordBlade
+  - ground
   layers:
   - Default
   - TransparentFX

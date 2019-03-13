@@ -19,8 +19,14 @@ namespace Theater
 
         public void Spawn()
         {
-            transform.position = spawnPosition;
+            //Play anim;
+            GetComponent<Animation>().Play();
             // TODO: Implement
         }
+        public void AnimMove()
+        {
+
+        }
+        
     }
 }
