@@ -17,6 +17,32 @@ namespace Theater
         void Update()
         {
 
+            // Début Scene
+            // Rideau s'ouvre
+
+            // Discour Baron
+            // Phrase A
+            // P B
+            // P A
+
+            // selon personage choisi :
+                // G : G A G
+                // M : M A M
+                // J : J A
+                // C : A
+                // R : R A
+            
+            // Combat
+                // Deux Phrases des B
+            
+            // Fin:
+                // Fin 1 : A B
+                // Fin 2 : A B
+
+            // Fermeture Rideau
+            // Applaudissements
+            // Fin Scene
+
         }
 
 

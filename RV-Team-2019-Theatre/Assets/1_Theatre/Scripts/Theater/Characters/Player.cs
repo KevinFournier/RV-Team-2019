@@ -9,6 +9,8 @@ namespace Theater
     {
         public AudioSource AudioSource;
 
+        public Companion Companion;
+
         private void Awake()
         {
             AudioSource = GetComponent<AudioSource>();

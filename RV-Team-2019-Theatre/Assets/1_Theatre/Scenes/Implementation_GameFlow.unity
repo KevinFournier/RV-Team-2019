@@ -445,8 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   epee: {fileID: 0}
-  cardsSelectTime: 0
-  hideCards: 0
+  rocher: {fileID: 0}
   activeScene: 0
 --- !u!1 &401199085
 GameObject:
@@ -1971,7 +1970,37 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
-  sceneState: 0
+  CardsStartIndex: 0
+  CardsEndIndex: 0
+  Arthur: {fileID: 0}
+  Companions: []
+  chosenCompanion: 0
+  areCardSpwaned: 0
+  areCardSpwaning: 0
+  CardTrigger: 0
+  isCardSelected: 0
+  areMerlinAndArthurSpeaking: 0
+  areMerlinAndArthurDoneSpeking: 0
+  merlinAndArthurDialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  compagnionSpeech: []
+  ArthurEndSpeech: {fileID: 0}
+  curtainsOpeningDelay: 2
+  curtainsClosingDelay: 2
+  merlinAndArthurDialogueDelay:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  merlinMovementDelay: 2
+  companionSpeechDelay: 2
+  arthurEndDelay: 2
+  cardsSpawnDelay: 2
 --- !u!1 &2067017328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,4 +2204,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
-  AudioListener: {fileID: 0}
+  Companion: {fileID: 0}
