@@ -23,7 +23,11 @@ namespace Theater
         {
             yield return new WaitForSeconds(time);
 
-            currentScene = _scenes.Dequeue();
+            
+            currentScene.UnloadDecors();      // Supprime les décors de la scene actuelle.
+            currentScene = _scenes.Dequeue(); // Change la scene actuelle
+            currentScene.LoadDecors();        // Génère les décors de la scene actuelle.
+
             currentScene.OnStart();
         }
 
@@ -35,6 +39,7 @@ namespace Theater
             if (_scenes.Count > 0)
             {
                 currentScene = _scenes.Dequeue();
+                currentScene.LoadDecors(); // Génère les décors de la scene actuelle.
                 currentScene.OnStart();
             }
         }
