@@ -20,8 +20,8 @@ namespace Theater
 
         int numSelected=-1;
 
-       /* public bool cardsSelectTime = false;
-        public bool hideCards = false;*/
+        public bool cardsSelectTime = false;
+        public bool hideCards = false;
 
         //This variable must be in GameManager class and be called in EventManager
         public int activeScene = 0;
@@ -36,7 +36,7 @@ namespace Theater
         void Update()
         {
             //FOR DEBUG ONLY///////
-            /*if (cardsSelectTime)
+            if (cardsSelectTime)
             {
                 SpawnCards(0,4);
                 cardsSelectTime = false;
@@ -45,7 +45,7 @@ namespace Theater
             {
                 HideCards();
                 hideCards = false;
-            }*/
+            }
             ////////////////////////
 
             if (needCardSelection)

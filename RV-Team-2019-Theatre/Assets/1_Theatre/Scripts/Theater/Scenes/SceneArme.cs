@@ -147,23 +147,41 @@ namespace Theater
 
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
 
+           var animDuration = Merlin.GetComponent<Animation>().clip.length;
+            // Joue l'anim
+            foreach (Agent agents in Barons)
+                agents.Spawn(true);
+
+            Merlin.Spawn(true);
+            Merlin.Walk(true);
+            //
+
+            WaitThen(animDuration, beginDialogue);
+
             // Play barons's replique,
             // Wait 2s (MerlinToBaronsDelay),
             // Play Merlin's replique,
             // Reset time and booleans.
-            PlaySoundThen(
-                Barons[0].AudioSource,
-                () =>
-                {
-                    PlaySoundThen(
-                        Merlin.AudioSource,
-                        endDialogue,
-                        MerlinToBaronsDelay);
-                });
+            void beginDialogue()
+            {
+                Merlin.Walk(false);
+                
+                PlaySoundThen(
+                    Barons[0].AudioSource,
+                    () =>
+                    {
+                        Merlin.Talk1(true);
+                        PlaySoundThen(
+                            Merlin.AudioSource,
+                            endDialogue,
+                            MerlinToBaronsDelay);
+                    });
+            }
 
             // Local method passed as Action
             void endDialogue()
             {
+                Merlin.Talk1(false);
                 resetTime();
                 AreBaronsAndMerlinFinished = true;
                 AreBaronsAndMerlinRunning = false;
@@ -174,8 +192,9 @@ namespace Theater
         private void merlinAndCards()
         {
             AreCardsSpawning = true;
-      
+
             // Merlin commence à parler x secondes après sont apparition.
+            Merlin.Talk2(true);
             Merlin.AudioSource.clip = MerlinCardsSpeech;
             WaitThen(MerlinCardsSpeechDelay, merlinSpeech);
 
@@ -190,6 +209,7 @@ namespace Theater
             }
             void spawnCards()
             {
+                Merlin.Talk2(false);
                 CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
                 resetTime();
@@ -200,6 +220,9 @@ namespace Theater
 
         private void whenCardSelected()
         {
+            foreach (Agent agents in Barons)
+                agents.Spawn(false);
+
             CardTrigger = false;
             IsCardSelected = true;
             WaitThen(
@@ -209,6 +232,7 @@ namespace Theater
 
         private void whenSwordTaken()
         {
+            Merlin.Applause(true);
             IsSwordTaken = true;
             SwordTrigger = false;
             WaitThen(MerlinEndSpeechDelay, () => endSpeech());
@@ -227,6 +251,8 @@ namespace Theater
 
         public override void OnEnd()
         {
+            Merlin.Applause(false);
+            Merlin.Spawn(false);
             GameManager.Instance.CloseCurtains();
             IsFinish = true;
             IsRunning = false;
@@ -235,9 +261,6 @@ namespace Theater
 
         public override void OnStart()
         {
-            Merlin.Spawn();
-            Barons.ForEach(b => b.Spawn());
-
             GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             Barons[0].AudioSource.clip = BaronSpeech;
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;

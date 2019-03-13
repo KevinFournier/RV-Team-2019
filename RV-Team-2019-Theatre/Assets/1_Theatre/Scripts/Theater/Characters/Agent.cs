@@ -8,29 +8,43 @@ namespace Theater
     public class Agent : MonoBehaviour
     {
         public AudioSource AudioSource;
+        public Animator animationMobile;
+        public Animator animationStatique;
 
         private void Awake()
         {
             AudioSource = GetComponent<AudioSource>();
         }
 
-        public void Spawn()
+        public void Spawn(bool b)
         {
-            //Play anim;
-            //GetComponent<Animation>().Play();
-            // TODO: Implement
-            // GetComponentInChildren<Animator>().SetBool("FightMode", true);
-            GetComponentInChildren<Animator>().SetBool("FightMode", true);
-            GetComponentInChildren<Animator>().SetBool("isEnnemyAttacking", true);
+            animationMobile.SetBool("Spawn", b);
         }
-        public void Update()
-        {
 
-        }
-        public void AnimMove()
+        public void Fight(bool b)
         {
-
+            animationStatique.SetBool("FightMode", b);
         }
-        
+        public void Walk(bool b)
+        {
+            animationStatique.SetBool("isWalking", b);
+        }
+        public void Attack(bool b)
+        {
+            animationStatique.SetBool("isEnnemyAttacking", b);
+        }
+        public void Talk1(bool b)
+        {
+            animationStatique.SetBool("isTalking_1", b);
+        }
+        public void Talk2(bool b)
+        {
+            animationStatique.SetBool("isTalking_2", b);
+        }
+        public void Applause(bool b)
+        {
+            animationStatique.SetBool("isApplause", b);
+        }
+
     }
 }
