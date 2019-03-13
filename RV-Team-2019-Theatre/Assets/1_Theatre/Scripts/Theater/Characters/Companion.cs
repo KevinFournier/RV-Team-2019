@@ -7,8 +7,9 @@ namespace Theater
 
     public enum CompanionType
     {
+        None = -1,
         Merlin = 0,
-        Genievre = 1,
+        Guenievre = 1,
         R2D2 = 2,
         Jesus = 3,
         Brush = 4
@@ -18,7 +19,7 @@ namespace Theater
     {
         [SerializeField] private CompanionType type;
 
-        public CompanionType GetCompanionIndex() => type;
-        public int GetIndex() => (int)type;
+        public CompanionType Type => type;
+        public int Index() => (int)type;
     }
 }

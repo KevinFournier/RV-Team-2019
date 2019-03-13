@@ -13,7 +13,8 @@ namespace Theater
 
         [Header("Player and possible companion")]
         public Player Arthur;
-        public List<Companion> Companions;
+        public Companion[] Companions = { null, null, null, null, null };
+            
         [SerializeField] private CompanionType chosenCompanion;
 
         [Header("Triggers and bools")]
@@ -28,13 +29,15 @@ namespace Theater
 
 
         [Header("Dialogue Merlin/Arthur")]
-        [SerializeField] private AudioClip[] merlinAndArthurDialogue;
+        [SerializeField] private AudioClip[] merlinAndArthurDialogue 
+            = { null, null, null, null, null };
 
         [Header("Companion replica")]
         [Tooltip("AudioClip for the chosen companion.\n" +
             "In this order : Merlin, Genièvre, R2D2, Jesus.\n" +
             "The toilet brush doesn't have a replica.")]
-        [SerializeField] private List<AudioClip> compagnionSpeech;
+        [SerializeField] private AudioClip[] compagnionSpeech
+            = { null, null, null, null, null };
 
         [Header("End replica, by Arthur")]
         [SerializeField] private AudioClip ArthurEndSpeech;
@@ -45,7 +48,8 @@ namespace Theater
         [SerializeField] private float curtainsClosingDelay = 2.0f;
         [Tooltip("Delays before each replica.\n" +
             "The first delay is the time before the start of the dialogue.")]
-        [SerializeField] private float[] merlinAndArthurDialogueDelay;
+        [SerializeField] private float[] merlinAndArthurDialogueDelay
+            = { 2.0f, 2.0f, 2.0f, 2.0f, 2.0f };
         [Tooltip("Time between the end of the last Arthur replica in dialogue" +
             "and Merlin's movement.")]
         [SerializeField] private float merlinMovementDelay = 2.0f;
@@ -60,10 +64,14 @@ namespace Theater
 
         public void SetCompanion(CompanionType companion)
         {
+            if (companion == CompanionType.None)
+                return;
+
             chosenCompanion = companion;
-            Arthur.Companion = Companions[(int)companion];
-            Arthur.Companion.AudioSource.clip
-                = compagnionSpeech[(int)companion];
+
+            var index = (int)companion;
+            Arthur.Companion = Companions[index];
+            Arthur.Companion.AudioSource.clip = compagnionSpeech[index];
         }
 
         /// <summary>
@@ -91,6 +99,8 @@ namespace Theater
                         Companions[(int)CompanionType.Merlin].AudioSource;
                 else
                     audioSource = Arthur.AudioSource;
+
+                audioSource.clip = merlinAndArthurDialogue[replicaIndex];
 
                 if (replicaIndex == 4)
                     merlinMove(); // Merlin à une animation avant sa dernière réplique
@@ -125,9 +135,9 @@ namespace Theater
                 cardsSpawnDelay,
                 () =>
                 {
-                    CardManager.Instance.SpawnCards(
+                    /* TODO: CardManager.Instance.SpawnCards(
                         CardsStartIndex,
-                        CardsEndIndex);
+                        CardsEndIndex);*/
 
                     resetTime();
                     areCardSpwaned = true;
@@ -136,7 +146,13 @@ namespace Theater
         }
         private void endDialogue()
         {
+            CardTrigger = false;
+
             Arthur.AudioSource.clip = ArthurEndSpeech;
+
+            // Seulement pour du test sans intéraction VR
+            // SetCompanion(chosenCompanion);
+
 
             WaitThen(companionSpeechDelay, companionReplica);
 
@@ -180,9 +196,9 @@ namespace Theater
 
             var companionCondition =
                 areCardSpwaned
+                && !areCardSpwaning
                 && CardTrigger
-                && !isCardSelected;
-
+                && isCardSelected;
 
 
             if (dialogueCondition)
