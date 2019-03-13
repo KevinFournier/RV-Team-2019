@@ -43272,6 +43272,7 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
+  scene3director: {fileID: 0}
 --- !u!4 &1772008809
 Transform:
   m_ObjectHideFlags: 0
