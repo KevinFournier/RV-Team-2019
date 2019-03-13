@@ -9,9 +9,6 @@ namespace Theater
     {
         public AudioSource AudioSource;
 
-        [SerializeField]
-        private Vector3 spawnPosition;
-
         private void Awake()
         {
             AudioSource = GetComponent<AudioSource>();

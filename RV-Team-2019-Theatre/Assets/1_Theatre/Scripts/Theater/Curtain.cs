@@ -79,11 +79,13 @@ namespace Theater
         public void Open()
         {
             opening = true;
+            closing = false;
         }
 
         public void Close()
         {
             closing = true;
+            opening = false;
         }
     }
 }
