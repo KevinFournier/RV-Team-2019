@@ -23,13 +23,18 @@ namespace Theater
         public void Start()
         {
             curtainPos = transform.position;
-            manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
+            if (manivelle != null)
+            {
+                manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
+
+            }
         }
 
         public void Update()
         {
             //Manivelle interaction
-            if (!locked)
+            
+            if (!locked && manivelle != null)
             {
                 if (manivelleAngle != manivelle.GetComponent<CircularDrive>().outAngle)
                 {
@@ -41,6 +46,7 @@ namespace Theater
                 manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
                 if (transform.position.y >= hauteurOuverture)
                 {
+                    GameManager.Instance.NextScene();
                     locked = true;
                     closed = false;
                     manivelle.GetComponent<Interactable>().enabled = false;

@@ -10,8 +10,29 @@ namespace Theater
         public bool IsRunning;
         public bool IsFinish;
 
+
+        public List<GameObject> Decors;
+
+        public void LoadDecors()
+        {
+            if (Decors != null && Decors.Count > 0)
+                return;
+            foreach (var decor in Decors)
+                decor.SetActive(true);
+        }
+
+        public void UnloadDecors()
+        {
+            if (Decors != null && Decors.Count > 0)
+                return;
+            foreach (var decor in Decors)
+                decor.SetActive(true);
+        }
+
         public abstract void OnStart();
         public abstract void OnEnd();
+
+
 
         protected float time = 0.0f;
 
