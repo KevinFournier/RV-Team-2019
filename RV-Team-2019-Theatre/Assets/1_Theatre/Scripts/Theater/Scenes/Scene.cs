@@ -13,6 +13,13 @@ namespace Theater
         public abstract void OnStart();
         public abstract void OnEnd();
 
+        protected float time = 0.0f;
+
+        // Time management methods
+        protected void resetTime() => time = 0.0f;
+        protected bool itIsTime(float delay) => time >= delay;
+
+
 
         /// <summary>
         /// Wait a certain time then invoke the given procedure.

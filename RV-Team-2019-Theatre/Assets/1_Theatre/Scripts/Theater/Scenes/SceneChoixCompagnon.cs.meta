@@ -3,7 +3,9 @@ guid: 4b39d8f96fe6cef408a8fbafc544d3a5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Arthur: {instanceID: 0}
+  - ArthurEndSpeech: {fileID: 8300000, guid: 29013750f4dd6c5468305182004db9a9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

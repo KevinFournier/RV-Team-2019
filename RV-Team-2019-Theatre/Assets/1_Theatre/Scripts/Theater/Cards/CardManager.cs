@@ -18,6 +18,8 @@ namespace Theater
         private IEnumerator spawnCardsCoroutine;
         private IEnumerator hideCardsCoroutine;
 
+        int numSelected=-1;
+
         public bool cardsSelectTime = false;
         public bool hideCards = false;
 
@@ -63,17 +65,21 @@ namespace Theater
 
         public void EventManager(int numCardSelected)
         {
+            numSelected = numCardSelected;
             switch (activeScene)
             {
                 //SCENE 1 -- CHOIX DE L'ARME
                 #region SCENE1
                 case 0:
                     epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
+                    (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneArme).CardTrigger = true;
                     if (numCardSelected == 1)
                     {
                         starWars = true;
                     }
                     rocher.SetActive(true);
+                    Invoke("setActiveColliders", rocher.GetComponent<Animation>().clip.length + 0.5f);
+                    
                     break;
                 #endregion
                 //SCENE 2 -- CHOIX DU COMPAGNON
@@ -103,10 +109,16 @@ namespace Theater
             }
         }
 
+        private void setActiveColliders()
+        {
+            epee.GetComponent<BoxCollider>().enabled = true;
+            epee.GetComponent<Epee>().lame[numSelected].GetComponent<BoxCollider>().enabled = true;
+            numSelected = -1;
+        }
+
         public void SpawnCards(int indexStart, int indexEnd)
         {
-            spawnCardsCoroutine = SpawnCardsCoroutine(indexStart, indexEnd);
-            StartCoroutine(spawnCardsCoroutine);
+            StartCoroutine(SpawnCardsCoroutine(indexStart,indexEnd));
         }
         public void HideCards()
         {
@@ -127,6 +139,7 @@ namespace Theater
 
         public IEnumerator SpawnCardsCoroutine(int indexStart, int indexEnd)
         {
+            Debug.Log("In Couroutine");
             for (int i = indexStart; i < indexEnd; i++)
             {
                 cards[i].Spawn();
@@ -137,6 +150,14 @@ namespace Theater
 
             }
             needCardSelection = true;
+        }
+
+        private IEnumerator waitThen(float time, System.Action func)
+        {
+            yield return new WaitForSeconds(time);
+
+            if (func != null)
+                func.Invoke();
         }
 
         public IEnumerator HideCardsCoroutine(int nbCardSelected)

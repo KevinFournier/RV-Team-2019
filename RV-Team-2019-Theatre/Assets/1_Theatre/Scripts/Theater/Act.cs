@@ -49,6 +49,11 @@ namespace Theater
                 OnEnd();
             }
         }
+
+        public Scene GetCurrentScene()
+        {
+            return currentScene;
+        }
         
         #endregion
 

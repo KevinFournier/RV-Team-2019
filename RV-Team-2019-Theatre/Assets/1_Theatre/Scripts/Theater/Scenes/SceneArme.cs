@@ -8,28 +8,28 @@ namespace Theater
     public class SceneArme : Scene
     {
         public int CardsStartIndex = 0;
-        public int CardsEndIndex = 0;
-        
-        
-        public bool IsIntroFinish = false;
-        public bool IsIntroRunning = false;
+        public int CardsEndIndex = 4;
 
-        public bool AreBaronsAndMerlinFinished = false;
-        public bool AreBaronsAndMerlinRunning = false;
 
-        public bool AreCardsSpwaned = false;
-        public bool AreCardsSpawning = false;
+        [SerializeField] private bool IsIntroFinish = false;
+        [SerializeField] private bool IsIntroRunning = false;
+
+        [SerializeField] private bool AreBaronsAndMerlinFinished = false;
+        [SerializeField] private bool AreBaronsAndMerlinRunning = false;
+
+        [SerializeField] private bool AreCardsSpwaned = false;
+        [SerializeField] private bool AreCardsSpawning = false;
 
         public bool CardTrigger = false;
-        public bool IsCardSelected = false;
+        [SerializeField] private bool IsCardSelected = false;
 
         public bool SwordTrigger = false;
-        public bool IsSwordTaken = false;
+        [SerializeField] private bool IsSwordTaken = false;
 
 
         [Space(30f)]
         public Player Arthur;
-        
+
         public Agent Merlin;
         public List<Agent> Barons;
 
@@ -61,9 +61,6 @@ namespace Theater
         // Retirage de l'épée.
         public float MerlinEndSpeechDelay = 2.0f;
 
-
-        private float time = 0.0f;
-
         #region Unity Methods
 
         private void Update()
@@ -90,6 +87,7 @@ namespace Theater
             var cardsCondition =
                 AreBaronsAndMerlinFinished
                 && !AreCardsSpwaned
+                && !AreCardsSpawning
                 && itIsTime(MerlinAndCardDelay);
 
             var swordCondition =
@@ -114,11 +112,7 @@ namespace Theater
         }
         #endregion
 
-        #region Private Methods
-        // Time management methods
-        private void resetTime() => time = 0.0f;
-        private bool itIsTime(float delay) => time >= delay;
-
+        #region Private Methods 
         // Sequences methods
         private void intro()
         {
@@ -130,15 +124,18 @@ namespace Theater
             GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             PlaySoundThen(
                 GameManager.Instance.Narrator(),
-                () =>
-                {
-                    GameManager.Instance.OpenCurtains();
-                    resetTime();
-                    IsIntroFinish = true;
-                    IsIntroRunning = false;
-                    Debug.Log("Curtains open", gameObject);
-                },
+                endIntro,
                 CurtainsOpeningDelay);
+
+            // Local method passed as Action
+            void endIntro()
+            {
+                GameManager.Instance.OpenCurtains();
+                resetTime();
+                IsIntroFinish = true;
+                IsIntroRunning = false;
+                Debug.Log("Curtains open", gameObject);
+            }
         }
 
         private void baronsAndMerlin()
@@ -150,65 +147,92 @@ namespace Theater
 
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
 
+           var animDuration = Merlin.GetComponent<Animation>().clip.length;
+            // Joue l'anim
+            foreach (Agent agents in Barons)
+                agents.Spawn(true);
+
+            Merlin.Spawn(true);
+            Merlin.Walk(true);
+            //
+
+            WaitThen(animDuration, beginDialogue);
+
             // Play barons's replique,
             // Wait 2s (MerlinToBaronsDelay),
             // Play Merlin's replique,
             // Reset time and booleans.
-            PlaySoundThen(
-                Barons[0].AudioSource,
-                () => PlaySoundThen(
-                    Merlin.AudioSource,
+            void beginDialogue()
+            {
+                Merlin.Walk(false);
+                
+                PlaySoundThen(
+                    Barons[0].AudioSource,
                     () =>
                     {
-                        resetTime();
-                        AreBaronsAndMerlinFinished = true;
-                        AreBaronsAndMerlinRunning = false;
-                    }),
-                MerlinToBaronsDelay);
+                        Merlin.Talk1(true);
+                        PlaySoundThen(
+                            Merlin.AudioSource,
+                            endDialogue,
+                            MerlinToBaronsDelay);
+                    });
+            }
+
+            // Local method passed as Action
+            void endDialogue()
+            {
+                Merlin.Talk1(false);
+                resetTime();
+                AreBaronsAndMerlinFinished = true;
+                AreBaronsAndMerlinRunning = false;
+            }
         }
+
 
         private void merlinAndCards()
         {
-            if (AreCardsSpawning)
-                return;
-
             AreCardsSpawning = true;
 
             // Merlin commence à parler x secondes après sont apparition.
+            Merlin.Talk2(true);
             Merlin.AudioSource.clip = MerlinCardsSpeech;
-            WaitThen(MerlinCardsSpeechDelay, () => PlaySoundThen(Merlin.AudioSource));
+            WaitThen(MerlinCardsSpeechDelay, merlinSpeech);
 
-            // Attend 2s qu'il ait commencé puis fait spawn les cartes.
-            CardsSpawnDelay += MerlinCardsSpeechDelay;
-            WaitThen(
-                CardsSpawnDelay,
-                () =>
-                {
-                    CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
-                    resetTime();
-                    AreCardsSpwaned = true;
-                    AreCardsSpawning = false;
-                });
+            // Local methods passed as Action
+            void merlinSpeech()
+            {
+                PlaySoundThen(
+                        Merlin.AudioSource,
+                        spawnCards,
+                        CardsSpawnDelay);
+            }
+            void spawnCards()
+            {
+                Merlin.Talk2(false);
+                CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
+
+                resetTime();
+                AreCardsSpwaned = true;
+                AreCardsSpawning = false;
+            }
         }
 
         private void whenCardSelected()
         {
+            foreach (Agent agents in Barons)
+                agents.Spawn(false);
+
             CardTrigger = false;
             IsCardSelected = true;
-            dropSword();
             WaitThen(
                 ArthurCardSpeechDelay,
                 () => PlaySoundThen(Arthur.AudioSource));
         }
 
-        private void dropSword()
-        {
-            // TODO: Déclancher l'apparition de l'épée
-        }
-
         private void whenSwordTaken()
         {
+            Merlin.Applause(true);
             IsSwordTaken = true;
             SwordTrigger = false;
             WaitThen(MerlinEndSpeechDelay, () => endSpeech());
@@ -227,6 +251,8 @@ namespace Theater
 
         public override void OnEnd()
         {
+            Merlin.Applause(false);
+            Merlin.Spawn(false);
             GameManager.Instance.CloseCurtains();
             IsFinish = true;
             IsRunning = false;
@@ -235,9 +261,6 @@ namespace Theater
 
         public override void OnStart()
         {
-            Merlin.Spawn();
-            Barons.ForEach(b => b.Spawn());
-
             GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             Barons[0].AudioSource.clip = BaronSpeech;
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
