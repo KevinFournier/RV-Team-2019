@@ -485,7 +485,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -12162,6 +12162,8 @@ GameObject:
   - component: {fileID: 873786487}
   - component: {fileID: 873786486}
   - component: {fileID: 873786490}
+  - component: {fileID: 873786492}
+  - component: {fileID: 873786491}
   m_Layer: 0
   m_Name: Merlin
   m_TagString: Untagged
@@ -12177,7 +12179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873786484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.875, y: 1, z: 0.06}
+  m_LocalPosition: {x: 9, y: 1, z: -0.129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381208393}
@@ -12352,6 +12354,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
   spawnPosition: {x: 2, y: 1, z: 0}
+--- !u!95 &873786491
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873786484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a867064fa7d3069498fbc3ad8f74c9f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &873786492
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873786484}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &876487491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20057,7 +20093,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -21286,7 +21322,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -24700,6 +24736,23 @@ MonoBehaviour:
   CardsEndIndex: 0
   Arthur: {fileID: 0}
   Companions: []
+  chosenCompanion: 0
+  areCardSpwaned: 0
+  areCardSpwaning: 0
+  CardTrigger: 0
+  isCardSelected: 0
+  areMerlinAndArthurSpeaking: 0
+  areMerlinAndArthurDoneSpeking: 0
+  merlinAndArthurDialogue: []
+  compagnionSpeech: []
+  ArthurEndSpeech: {fileID: 0}
+  curtainsOpeningDelay: 2
+  curtainsClosingDelay: 2
+  merlinAndArthurDialogueDelay: []
+  merlinMovementDelay: 2
+  companionSpeechDelay: 2
+  arthurEndDelay: 2
+  cardsSpawnDelay: 2
 --- !u!1 &1971693530
 GameObject:
   m_ObjectHideFlags: 0

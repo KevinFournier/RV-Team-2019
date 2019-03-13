@@ -20,8 +20,15 @@ namespace Theater
         public void Spawn()
         {
             //Play anim;
-            GetComponent<Animation>().Play();
+            //GetComponent<Animation>().Play();
             // TODO: Implement
+            // GetComponentInChildren<Animator>().SetBool("FightMode", true);
+            GetComponentInChildren<Animator>().SetBool("FightMode", true);
+            GetComponentInChildren<Animator>().SetBool("isEnnemyAttacking", true);
+        }
+        public void Update()
+        {
+
         }
         public void AnimMove()
         {
