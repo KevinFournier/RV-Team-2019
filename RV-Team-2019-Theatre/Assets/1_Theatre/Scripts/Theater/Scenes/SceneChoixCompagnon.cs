@@ -138,21 +138,21 @@ namespace Theater
         {
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            WaitThen(
-                companionSpeechDelay,
-                () =>
-                {
-                    PlaySoundThen(
+            WaitThen(companionSpeechDelay, companionReplica);
+
+            void companionReplica()
+            {
+                PlaySoundThen(
                         Arthur.Companion.AudioSource,
-                        () =>
-                        {
-                            PlaySoundThen(Arthur.AudioSource);
-                            // TODO: revoir ça.
-                        },
+                        arthurReplica,
                         arthurEndDelay
                     );
-                }
-            );
+            }
+            void arthurReplica()
+            {
+                PlaySoundThen(Arthur.AudioSource);
+                OnEnd();
+            }
         }
 
         private void Awake()
@@ -186,38 +186,24 @@ namespace Theater
 
 
             if (dialogueCondition)
-                merlinAndArthur(0);
+                merlinAndArthur(0); // Dialogue Merlin/Arthur
             else if (cardCondition)
-                spawnCards();
+                spawnCards(); // Choix des cartes
             else if (companionCondition)
-                endDialogue();
-            
-            
-            
-            // Choix cartes
-
-            // Le personage sélectioné parle
-                // G M R J pause si B
-
-            // Discourt d'Arthur
-            
-            // Fermeture rideau
-            // Fin scene
-
-
-
+                endDialogue(); // Dialogue de fin. Appelle la methode End().
         }
 
         override public void OnStart()
         {
-            GameManager.Instance.OpenCurtains();
+            GameManager.Instance.OpenCurtain(CurtainType.Back);
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
         }
 
 
         override public void OnEnd()
         {
-
+            GameManager.Instance.CloseCurtain(CurtainType.Back);
+            IsRunning = false;
         }
 
     }
