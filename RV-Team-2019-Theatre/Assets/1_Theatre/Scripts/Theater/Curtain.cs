@@ -46,6 +46,7 @@ namespace Theater
                 manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
                 if (transform.position.y >= hauteurOuverture)
                 {
+                    GameManager.Instance.NextScene();
                     locked = true;
                     closed = false;
                     manivelle.GetComponent<Interactable>().enabled = false;

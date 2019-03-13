@@ -6,7 +6,7 @@ using Theater;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public static bool StarWars = false;
     [SerializeField] private Theater.Theater Theater;
     [SerializeField] private Act currentAct;
 
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void CloseCurtain(CurtainType cn) => Theater.CloseCurtain(cn);
     public void CloseCurtains() => Theater.CloseCurtains();
     public Act GetCurrentAct() => currentAct;
+    
     /// <summary>
     /// Get the Theater's narrator AudioSource.
     /// </summary>

@@ -21,5 +21,11 @@ namespace Theater
 
         public CompanionType Type => type;
         public int Index() => (int)type;
+        
+        void Awake()
+        {
+            AudioSource = GetComponent<AudioSource>();
+        }
     }
+    
 }
