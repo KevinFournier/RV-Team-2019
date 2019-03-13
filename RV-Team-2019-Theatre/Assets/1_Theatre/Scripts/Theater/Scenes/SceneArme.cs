@@ -147,7 +147,7 @@ namespace Theater
 
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
 
-           var animDuration = Merlin.GetComponent<Animation>().clip.length;
+           var animDuration = 6.0f;
             // Joue l'anim
             foreach (Agent agents in Barons)
                 agents.Spawn(true);
@@ -243,7 +243,7 @@ namespace Theater
             Merlin.AudioSource.clip = MerlinEndSpeech;
             PlaySoundThen(
                 Merlin.AudioSource,
-                () => OnEnd(),
+                () => WaitThen(2.0f, () => GameManager.Instance.NextScene()),
                 2.0f);
         }
         #endregion
@@ -252,11 +252,10 @@ namespace Theater
         public override void OnEnd()
         {
             Merlin.Applause(false);
-            Merlin.Spawn(false);
+            //Merlin.Spawn(false);
             GameManager.Instance.CloseCurtains();
             IsFinish = true;
             IsRunning = false;
-            WaitThen(2.0f, () => GameManager.Instance.NextScene());
         }
 
         public override void OnStart()

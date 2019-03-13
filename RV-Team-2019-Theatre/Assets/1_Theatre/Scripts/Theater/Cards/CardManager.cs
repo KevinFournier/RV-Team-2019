@@ -23,18 +23,13 @@ namespace Theater
         public bool cardsSelectTime = false;
         public bool hideCards = false;
 
-        //This variable must be in GameManager class and be called in EventManager
-        public int activeScene = 0;
-
-        //This variable must be in GameManager class and be called in EventManager
-        bool starWars = false;
-
         // Start is called before the first frame update
         void Awake() => Instance = this;
 
         // Update is called once per frame
         void Update()
         {
+
             //FOR DEBUG ONLY///////
             if (cardsSelectTime)
             {
@@ -66,40 +61,50 @@ namespace Theater
         public void EventManager(int numCardSelected)
         {
             numSelected = numCardSelected;
-            switch (activeScene)
+            switch (GameManager.Instance.GetCurrentAct().GetCurrentScene().sceneNum)
             {
                 //SCENE 1 -- CHOIX DE L'ARME
                 #region SCENE1
-                case 0:
+                case 1:
                     epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
                     (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneArme).CardTrigger = true;
                     if (numCardSelected == 1)
                     {
-                        starWars = true;
+                        GameManager.StarWars = true;
                     }
                     rocher.SetActive(true);
+
+
+                    //Reset activated cards
+                    for (int i = 0; i < cards.Length; i++)
+                        cards[i].IsSelected = false;
+
                     Invoke("setActiveColliders", rocher.GetComponent<Animation>().clip.length + 0.5f);
                     
                     break;
                 #endregion
                 //SCENE 2 -- CHOIX DU COMPAGNON
                 #region SCENE2
-                case 1:
+                case 2:
                     switch (numCardSelected)
                     {
-                        case 0:
+                        case 4:
+                            //Call function in game manager that match the card selected
+                            //(GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanio
+                            break;
+                        case 5:
                             //Call function in game manager that match the card selected
                             Debug.Log("Choix " + numCardSelected);
                             break;
-                        case 1:
+                        case 6:
                             //Call function in game manager that match the card selected
                             Debug.Log("Choix " + numCardSelected);
                             break;
-                        case 2:
+                        case 7:
                             //Call function in game manager that match the card selected
                             Debug.Log("Choix " + numCardSelected);
                             break;
-                        case 3:
+                        case 8:
                             //Call function in game manager that match the card selected
                             Debug.Log("Choix " + numCardSelected);
                             break;
@@ -112,7 +117,7 @@ namespace Theater
         private void setActiveColliders()
         {
             epee.GetComponent<BoxCollider>().enabled = true;
-            epee.GetComponent<Epee>().lame[numSelected].GetComponent<BoxCollider>().enabled = true;
+            epee.GetComponent<Epee>().lame[numSelected].GetComponent<MeshCollider>().enabled = true;
             numSelected = -1;
         }
 
@@ -164,7 +169,7 @@ namespace Theater
         {
             needCardSelection = false;
 
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = 0; i < cards.Length-1; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -174,7 +179,7 @@ namespace Theater
                 }
             }
             yield return new WaitForSeconds(1.5f);
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = 0; i < cards.Length-1; i++)
             {
                 if (i != nbCardSelected)
                 {

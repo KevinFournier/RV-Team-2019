@@ -135,9 +135,12 @@ namespace Theater
                 cardsSpawnDelay,
                 () =>
                 {
-                    /* TODO: CardManager.Instance.SpawnCards(
+                    CardManager.Instance.SpawnCards(
                         CardsStartIndex,
-                        CardsEndIndex);*/
+                        CardsEndIndex);
+                    /*TODO
+                     Activate merlin card script + interactable + pensez a desactiver 
+                     */
 
                     resetTime();
                     areCardSpwaned = true;
@@ -167,7 +170,7 @@ namespace Theater
             void arthurReplica()
             {
                 PlaySoundThen(Arthur.AudioSource);
-                OnEnd();
+                GameManager.Instance.NextScene();
             }
         }
 
