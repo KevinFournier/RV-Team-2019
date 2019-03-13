@@ -6,7 +6,7 @@ namespace Theater
 {
     public class Act : MonoBehaviour
     {
-
+        [SerializeField] private float timeBetweenScene = 15.0f;
         [SerializeField] private List<Scene> scenes;
         private Queue<Scene> _scenes;
         private Scene currentScene;
@@ -17,6 +17,14 @@ namespace Theater
                 _scenes = new Queue<Scene>();
             else
                 _scenes = new Queue<Scene>(scenes);
+        }
+
+        private IEnumerator sceneTransition(float time)
+        {
+            yield return new WaitForSeconds(time);
+
+            currentScene = _scenes.Dequeue();
+            currentScene.OnStart();
         }
 
         #region Public Methods
@@ -41,8 +49,7 @@ namespace Theater
 
             if (_scenes.Count > 0)
             {
-                currentScene = _scenes.Dequeue();
-                currentScene.OnStart();
+                StartCoroutine(sceneTransition(timeBetweenScene));
             }
             else
             {
@@ -50,11 +57,8 @@ namespace Theater
             }
         }
 
-        public Scene GetCurrentScene()
-        {
-            return currentScene;
-        }
-        
+        public Scene GetCurrentScene() => currentScene;
+
         #endregion
 
     }
