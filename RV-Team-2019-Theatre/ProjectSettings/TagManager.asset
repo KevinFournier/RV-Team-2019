@@ -10,6 +10,7 @@ TagManager:
   - SwordRock
   - SwordBlade
   - ground
+  - PlayZone
   layers:
   - Default
   - TransparentFX

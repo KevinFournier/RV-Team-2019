@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Theater {
     public class Soldats : MonoBehaviour
     {
-        private Vector2 velocity = Vector2.zero;
         public ParticleSystem explosionCartons;
         public bool dead = false;
         
@@ -26,10 +25,11 @@ namespace Theater {
 
         IEnumerator AnimDestruction()
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
 
+            GetComponent<Collider>().enabled = false;
             //Play particle
+            yield return new WaitForSeconds(0.2f);
+            GetComponent<MeshRenderer>().enabled = false;
             explosionCartons.Play();
             yield return new WaitForSeconds(4.0f);
             gameObject.SetActive(false);
