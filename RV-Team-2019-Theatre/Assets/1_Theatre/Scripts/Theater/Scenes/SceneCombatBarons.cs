@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using Theater;
 
 namespace Theater
 {
     public class SceneCombatBarons : Scene
     {
+        public Player Arthur;
+
         public PlayableDirector scene3director;
+        public ChooseCharacter[] chooseTonPerso;
+        
         
         // Start is called before the first frame update
         void Start()
@@ -59,6 +64,11 @@ namespace Theater
         public override void OnStart()
         {
             IsRunning = true;
+            foreach (ChooseCharacter item in chooseTonPerso)
+            {
+                item.ChooseBetweenCharacters(Arthur.Companion);
+
+            }
             scene3director.Play();
 
         }

@@ -12,21 +12,39 @@ namespace Theater
 
 
         public List<GameObject> Decors;
+        public List<GameObject> DecorsStarwars;
 
         public void LoadDecors()
         {
-            if (Decors != null && Decors.Count > 0)
-                return;
-            foreach (var decor in Decors)
-                decor.SetActive(true);
+
+            bool decorsReady = Decors != null && Decors.Count > 0;
+            bool starwarsReady
+                = DecorsStarwars != null && DecorsStarwars.Count > 0;
+
+            if (!GameManager.StarWars && decorsReady
+                || GameManager.StarWars && !starwarsReady
+            )
+            {
+                foreach (var decor in Decors)
+                    decor.SetActive(true);
+            }
+            else if (GameManager.StarWars && starwarsReady)
+            {
+                foreach (var decor in DecorsStarwars)
+                    decor.SetActive(true);
+            }
+
         }
 
         public void UnloadDecors()
         {
             if (Decors != null && Decors.Count > 0)
-                return;
-            foreach (var decor in Decors)
-                decor.SetActive(true);
+                foreach (var decor in Decors)
+                    decor.SetActive(true);
+            else if (DecorsStarwars != null && DecorsStarwars.Count > 0)
+                foreach (var decor in DecorsStarwars)
+                    decor.SetActive(false);
+                
         }
 
         public abstract void OnStart();

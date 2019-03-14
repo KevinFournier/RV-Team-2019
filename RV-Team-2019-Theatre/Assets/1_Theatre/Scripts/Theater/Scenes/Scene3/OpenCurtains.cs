@@ -8,5 +8,6 @@ public class OpenCurtains : MonoBehaviour
     private void OnEnable()
     {
         GameManager.Instance.OpenCurtains();
+
     }
 }
