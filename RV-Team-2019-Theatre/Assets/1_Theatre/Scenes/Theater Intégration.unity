@@ -24546,7 +24546,7 @@ MonoBehaviour:
   MerlinCardsSpeech: {fileID: 8300000, guid: 3babb814cda390c408bd9e6de56e4901, type: 3}
   ArthurCardsSpeech: {fileID: 8300000, guid: 3970a929b56814b4bb15efa4e907b176, type: 3}
   MerlinEndSpeech: {fileID: 8300000, guid: b473344059d19f6488ca2742b11def14, type: 3}
-  NarratorSpeechDelay: 2
+  NarratorSpeechDelay: 0
   CurtainsOpeningDelay: 2
   BaronsSpeechDelay: 2
   MerlinToBaronsDelay: 2
@@ -43018,7 +43018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e820aea4976a747848b1529c878381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenScene: 15
+  timeBetweenScene: 9
   scenes:
   - {fileID: 1264737741}
   - {fileID: 913274829}
