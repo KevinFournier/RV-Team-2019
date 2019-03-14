@@ -20,7 +20,7 @@ namespace Theater
         private IEnumerator spawnCardsCoroutine;
         private IEnumerator hideCardsCoroutine;
 
-        int numSelected=-1;
+        int numSelected = -1;
 
         public bool cardsSelectTime = false;
         public bool hideCards = false;
@@ -35,7 +35,7 @@ namespace Theater
             //FOR DEBUG ONLY///////
             if (cardsSelectTime)
             {
-                SpawnCards(0,4);
+                SpawnCards(0, 4);
                 cardsSelectTime = false;
             }
             if (hideCards)
@@ -54,7 +54,7 @@ namespace Theater
                         EventManager(i);
                         HideCards();
                         needCardSelection = false;
-                        
+
                     }
                 }
             }
@@ -78,7 +78,7 @@ namespace Theater
 
 
                     Invoke("setActiveColliders", rocher.GetComponent<Animation>().clip.length + 0.5f);
-                    
+
                     break;
                 #endregion
                 //SCENE 2 -- CHOIX DU COMPAGNON
@@ -110,7 +110,7 @@ namespace Theater
                         case 8:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Merlin);
-                            
+
                             break;
                     }
                     break;
@@ -127,7 +127,7 @@ namespace Theater
 
         public void SpawnCards(int indexStart, int indexEnd)
         {
-            StartCoroutine(SpawnCardsCoroutine(indexStart,indexEnd));
+            StartCoroutine(SpawnCardsCoroutine(indexStart, indexEnd));
         }
         public void HideCards()
         {
@@ -152,14 +152,38 @@ namespace Theater
         public IEnumerator SpawnCardsCoroutine(int indexStart, int indexEnd)
         {
             Debug.Log("In Couroutine");
-            for (int i = indexStart; i < indexEnd; i++)
+            if (GameManager.Instance.GetCurrentAct().GetCurrentScene().sceneNum != 2)
             {
-                cards[i].Spawn();
-                cards[i].smokeEffect.Play();
-                yield return new WaitForSeconds(0.3f);
-                cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
-                yield return new WaitForSeconds(0.3f);
-
+                for (int i = indexStart; i < indexEnd; i++)
+                {
+                    cards[i].Spawn();
+                    cards[i].smokeEffect.Play();
+                    yield return new WaitForSeconds(0.3f);
+                    cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    yield return new WaitForSeconds(0.3f);
+                }
+            }
+            else
+            {
+                for (int i = indexStart; i < indexEnd; i++)
+                {
+                    if (GameManager.StarWars && i!=7)
+                    {
+                        cards[i].Spawn();
+                        cards[i].smokeEffect.Play();
+                        yield return new WaitForSeconds(0.3f);
+                        cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                        yield return new WaitForSeconds(0.3f);
+                    }
+                    if (!GameManager.StarWars && i != 6)
+                    {
+                        cards[i].Spawn();
+                        cards[i].smokeEffect.Play();
+                        yield return new WaitForSeconds(0.3f);
+                        cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                        yield return new WaitForSeconds(0.3f);
+                    }
+                }
             }
             needCardSelection = true;
         }
@@ -176,7 +200,7 @@ namespace Theater
         {
             needCardSelection = false;
 
-            for (int i = 0; i < cards.Length-1; i++)
+            for (int i = 0; i < cards.Length - 1; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -186,7 +210,7 @@ namespace Theater
                 }
             }
             yield return new WaitForSeconds(1.5f);
-            for (int i = 0; i < cards.Length-1; i++)
+            for (int i = 0; i < cards.Length - 1; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -199,7 +223,7 @@ namespace Theater
             cards[nbCardSelected].aura.Stop();
             yield return new WaitForSeconds(1.5f);
             cards[nbCardSelected].Hide();
-   
+
         }
     }
 }
