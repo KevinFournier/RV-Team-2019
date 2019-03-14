@@ -2023,14 +2023,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102695096}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.371, y: 0, z: 1.757}
+  m_LocalRotation: {x: -0, y: -0.6861004, z: -0, w: 0.72750694}
+  m_LocalPosition: {x: 3.454, y: 0, z: 9.236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 25923965}
   m_Father: {fileID: 1525559516}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -86.644005, z: 0}
 --- !u!95 &102695098
 Animator:
   serializedVersion: 3
@@ -50585,14 +50585,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094578471}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.68, y: 0, z: 1.187}
+  m_LocalRotation: {x: -0, y: 0.99926347, z: -0, w: -0.038373448}
+  m_LocalPosition: {x: 3.421, y: 0, z: 9.126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1251787880}
   m_Father: {fileID: 1525559516}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 184.398, z: 0}
 --- !u!82 &1094578473
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64743,14 +64743,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827881961}
-  m_LocalRotation: {x: -0, y: 0.9951296, z: -0, w: 0.09857532}
-  m_LocalPosition: {x: 3, y: 8.31, z: 0}
+  m_LocalRotation: {x: 0, y: 0.6209494, z: 0, w: 0.78385067}
+  m_LocalPosition: {x: 2.4, y: 8.97, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 338112030}
   m_Father: {fileID: 1525559516}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 168.686, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 76.771, z: 0}
 --- !u!114 &1827881963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64778,7 +64778,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
