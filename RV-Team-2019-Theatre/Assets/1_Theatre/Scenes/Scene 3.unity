@@ -2071,12 +2071,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e286f11cc8c5604d8e6abb724a959f9, type: 3}
---- !u!1 &83432919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7459040585315666041, guid: 7e286f11cc8c5604d8e6abb724a959f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 83432918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &83432920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7459040585315666044, guid: 7e286f11cc8c5604d8e6abb724a959f9,
@@ -10967,6 +10961,104 @@ Transform:
   m_Father: {fileID: 2084997169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &700404292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700404295}
+  - component: {fileID: 700404294}
+  - component: {fileID: 700404293}
+  m_Layer: 0
+  m_Name: CharacterCombat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &700404293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700404292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc1c6259c215da4d8dee951de81043f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 700404294}
+  TimelinesCharacter:
+  - {fileID: 11400000, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+  - {fileID: 11400000, guid: 121a58bd02d456f419e6a128c834cac8, type: 2}
+  - {fileID: 11400000, guid: b2e86f0ef7c74bf41b01eb4ed3f0ee28, type: 2}
+  - {fileID: 11400000, guid: a69e041738754bb4d9ae4f9050f0e4ad, type: 2}
+  - {fileID: 11400000, guid: 1b9bf23795374fb4994e3a7a3e845b6e, type: 2}
+--- !u!320 &700404294
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700404292}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114269352914926850, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114115847840877892, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114755393195013740, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114314715841879962, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114128402644381660, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114640294306413076, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114168318126360568, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114509709414815542, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114531932915272356, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114215941030145198, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114718474166434584, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114683332029710948, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114539522739428718, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114150689842824142, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114884302211737090, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &700404295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700404292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1772008809}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &719121490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12854,6 +12946,122 @@ Transform:
   m_Father: {fileID: 1235469049}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 130.061, y: -90, z: -90}
+--- !u!1 &868202932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6803811196384425639, guid: 0c07920c007a23a468d6ad5fcafa58c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3567122082121135850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &868202934
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868202932}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &868202937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868202932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a93c38e955c244387ecca938c809d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  Companion: {fileID: 0}
 --- !u!1001 &868947820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23853,7 +24061,9 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
+  Arthur: {fileID: 868202937}
   scene3director: {fileID: 1971693532}
+  chooseTonPerso: {fileID: 700404293}
 --- !u!4 &1772008809
 Transform:
   m_ObjectHideFlags: 0
@@ -23867,6 +24077,7 @@ Transform:
   m_Children:
   - {fileID: 2020084839}
   - {fileID: 1587984975}
+  - {fileID: 700404295}
   m_Father: {fileID: 1670465515}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26239,44 +26450,19 @@ PlayableDirector:
   m_GameObject: {fileID: 1971693530}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: ab73cb919e7bbf64a9257011a3fffb63, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 114269352914926850, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 2020084837}
-  - key: {fileID: 114115847840877892, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1587984973}
-  - key: {fileID: 114531932915272356, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1199726987}
-  - key: {fileID: 114640294306413076, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1687272855}
-  - key: {fileID: 114168318126360568, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1602733065}
-  - key: {fileID: 114509709414815542, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 32973092}
-  - key: {fileID: 114215941030145198, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 32973086}
-  - key: {fileID: 114718474166434584, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1280138868}
-  - key: {fileID: 114683332029710948, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 873786486}
-  - key: {fileID: 114539522739428718, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 873786484}
-  - key: {fileID: 114755393195013740, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1687272847}
-  - key: {fileID: 114314715841879962, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 1602733057}
-  - key: {fileID: 114128402644381660, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 32973084}
-  - key: {fileID: 114884302211737090, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 83432919}
-  - key: {fileID: 114150689842824142, guid: 5f3925f11538c264d91e83bd1faee9c5, type: 2}
-    value: {fileID: 873786491}
+  - key: {fileID: 114246642469577748, guid: ab73cb919e7bbf64a9257011a3fffb63, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - a7180217041cf0e46ae0e7775c159188: {fileID: 700404292}
+    - 82efef3769ca1e5409972592487d9bde: {fileID: 700404292}
+    - 24f0911e954efba4192bce99f8d95177: {fileID: 700404292}
 --- !u!114 &1971693533
 MonoBehaviour:
   m_ObjectHideFlags: 0

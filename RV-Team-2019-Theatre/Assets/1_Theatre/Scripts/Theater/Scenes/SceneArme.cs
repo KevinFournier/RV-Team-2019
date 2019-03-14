@@ -195,6 +195,7 @@ namespace Theater
 
             // Merlin commence à parler x secondes après sont apparition.
             Merlin.Talk1(true);
+            Merlin.transform.LookAt(Arthur.transform, Vector3.up);
             Merlin.AudioSource.clip = MerlinCardsSpeech;
             WaitThen(MerlinCardsSpeechDelay, merlinSpeech);
 
