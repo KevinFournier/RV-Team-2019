@@ -16,34 +16,21 @@ namespace Theater
 
         public void LoadDecors()
         {
-
-            bool decorsReady = Decors != null && Decors.Count > 0;
-            bool starwarsReady
-                = DecorsStarwars != null && DecorsStarwars.Count > 0;
-
-            if (!GameManager.StarWars && decorsReady
-                || GameManager.StarWars && !starwarsReady
-            )
-            {
-                foreach (var decor in Decors)
-                    decor.SetActive(true);
-            }
-            else if (GameManager.StarWars && starwarsReady)
-            {
+            if (GameManager.StarWars)
                 foreach (var decor in DecorsStarwars)
                     decor.SetActive(true);
-            }
-
+            else
+                foreach (var decor in Decors)
+                    decor.SetActive(true);
         }
 
         public void UnloadDecors()
         {
             foreach (var decor in Decors)
-                decor.SetActive(true);
+                decor.SetActive(false);
 
             foreach (var decor in DecorsStarwars)
                 decor.SetActive(false);
-                
         }
 
         public abstract void OnStart();
@@ -54,8 +41,8 @@ namespace Theater
         protected float time = 0.0f;
 
         // Time management methods
-        protected void resetTime() => time = 0.0f;
-        protected bool itIsTime(float delay) => time >= delay;
+        protected void ResetTime() => time = 0.0f;
+        protected bool ItIsTime(float delay) => time >= delay;
 
 
 

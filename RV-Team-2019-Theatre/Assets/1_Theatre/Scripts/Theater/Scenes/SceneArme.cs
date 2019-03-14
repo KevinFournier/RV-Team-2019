@@ -77,18 +77,18 @@ namespace Theater
 
             var introCondition =
                 !IsIntroFinish
-                && itIsTime(NarratorSpeechDelay);
+                && ItIsTime(NarratorSpeechDelay);
 
             var baronAndMerlinCondition =
                 IsIntroFinish
                 && !AreBaronsAndMerlinFinished
-                && itIsTime(BaronsSpeechDelay);
+                && ItIsTime(BaronsSpeechDelay);
 
             var cardsCondition =
                 AreBaronsAndMerlinFinished
                 && !AreCardsSpwaned
                 && !AreCardsSpawning
-                && itIsTime(MerlinAndCardDelay);
+                && ItIsTime(MerlinAndCardDelay);
 
             var swordCondition =
                 AreCardsSpwaned
@@ -131,7 +131,7 @@ namespace Theater
             void endIntro()
             {
                 GameManager.Instance.OpenCurtains();
-                resetTime();
+                ResetTime();
                 IsIntroFinish = true;
                 IsIntroRunning = false;
                 Debug.Log("Curtains open", gameObject);
@@ -182,7 +182,7 @@ namespace Theater
             void endDialogue()
             {
                 Merlin.Talk2(false);
-                resetTime();
+                ResetTime();
                 AreBaronsAndMerlinFinished = true;
                 AreBaronsAndMerlinRunning = false;
             }
@@ -226,7 +226,7 @@ namespace Theater
                 Merlin.Talk1(false);
                 CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
-                resetTime();
+                ResetTime();
                 AreCardsSpwaned = true;
                 AreCardsSpawning = false;
             }

@@ -87,10 +87,12 @@ namespace Theater
                     // TODO: Faire reculer merlin pour le ridau
                     break;
                 case CompanionType.Guenievre:
-                    WaitThen(6.5f, cardSelectionValidation);
+                    WaitThen(6.0f, cardSelectionValidation);
+                    Arthur.Companion.Walk(true);
+                    WaitThen(7.0f, () => Arthur.Companion.Walk(false));
                     break;
                 case CompanionType.R2D2:
-                    WaitThen(5.5f, cardSelectionValidation);
+                    WaitThen(4.5f, cardSelectionValidation);
                     break;
                 case CompanionType.Jesus:
                     cardSelectionValidation();
@@ -127,7 +129,7 @@ namespace Theater
                 areMerlinAndArthurSpeaking = false;
                 areMerlinAndArthurDoneSpeking = true;
                 c.Talk1(false);
-                resetTime();
+                ResetTime();
             }
             else
             {
@@ -184,7 +186,7 @@ namespace Theater
                     c.GetComponent<Interactable>().enabled = true;
                     c.GetComponent<Card>().enabled = true;
 
-                    resetTime();
+                    ResetTime();
                     areCardSpwaned = true;
                     areCardSpwaning = false;
                 });
@@ -194,6 +196,8 @@ namespace Theater
             CardTrigger = false;
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
+
+            
 
             WaitThen(companionSpeechDelay, companionReplica);
 
@@ -229,13 +233,13 @@ namespace Theater
             var dialogueCondition =
                 !areMerlinAndArthurSpeaking
                 && !areMerlinAndArthurDoneSpeking
-                && itIsTime(merlinAndArthurDialogueDelay[0]);
+                && ItIsTime(merlinAndArthurDialogueDelay[0]);
 
             var cardCondition =
                 areMerlinAndArthurDoneSpeking
                 && !areCardSpwaned
                 && !areCardSpwaning
-                && itIsTime(cardsSpawnDelay);
+                && ItIsTime(cardsSpawnDelay);
 
             var companionCondition =
                 areCardSpwaned
