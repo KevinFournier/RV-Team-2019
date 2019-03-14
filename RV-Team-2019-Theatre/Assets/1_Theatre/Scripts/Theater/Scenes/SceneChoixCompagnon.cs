@@ -12,8 +12,10 @@ namespace Theater
         public int CardsStartIndex = 0;
         public int CardsEndIndex = 0;
 
+
         [Header("Player and possible companion")]
         public Player Arthur;
+        public Agent Merlin;
         public Companion[] Companions = { null, null, null, null, null };
             
         [SerializeField] private CompanionType chosenCompanion;
@@ -160,6 +162,9 @@ namespace Theater
                 {
                     // TODO: Faire avancer un peu merlin.
 
+                    Merlin.animationMobile.SetBool("PetitPasDevant", true);
+                    Merlin.animationStatique.SetBool("isWalking", true);
+
                     WaitThen(
                         merlinAndArthurDialogueDelay[replicaIndex],
                         playSound);
@@ -173,6 +178,8 @@ namespace Theater
         private void spawnCards()
         {
             areCardSpwaning = true;
+
+            //Merlin.animationStatique.SetBool("isWalking", false);
 
             WaitThen(
                 cardsSpawnDelay,
@@ -197,7 +204,7 @@ namespace Theater
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            
+            //Merlin.animationMobile.SetBool("PetitPasDevant", false);    
 
             WaitThen(companionSpeechDelay, companionReplica);
 
@@ -258,9 +265,10 @@ namespace Theater
 
         override public void OnStart()
         {
+            Decors[0].gameObject.SetActive(true);
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
-
+            
         }
 
 
