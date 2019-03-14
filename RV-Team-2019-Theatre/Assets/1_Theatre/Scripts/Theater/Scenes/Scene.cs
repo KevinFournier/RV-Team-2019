@@ -38,12 +38,11 @@ namespace Theater
 
         public void UnloadDecors()
         {
-            if (Decors != null && Decors.Count > 0)
-                foreach (var decor in Decors)
-                    decor.SetActive(true);
-            else if (DecorsStarwars != null && DecorsStarwars.Count > 0)
-                foreach (var decor in DecorsStarwars)
-                    decor.SetActive(false);
+            foreach (var decor in Decors)
+                decor.SetActive(true);
+
+            foreach (var decor in DecorsStarwars)
+                decor.SetActive(false);
                 
         }
 
