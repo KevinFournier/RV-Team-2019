@@ -2015,7 +2015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &102695097
 Transform:
   m_ObjectHideFlags: 0
@@ -2023,14 +2023,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102695096}
-  m_LocalRotation: {x: -0, y: -0.6861004, z: -0, w: 0.72750694}
-  m_LocalPosition: {x: 3.454, y: 0, z: 9.236}
+  m_LocalRotation: {x: -0, y: -0.12605046, z: -0, w: 0.9920239}
+  m_LocalPosition: {x: 6.012, y: 0, z: 5.789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 25923965}
   m_Father: {fileID: 1525559516}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -86.644005, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -14.483001, z: 0}
 --- !u!95 &102695098
 Animator:
   serializedVersion: 3
@@ -2061,7 +2061,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -7558,7 +7558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &159054688
 Transform:
   m_ObjectHideFlags: 0
@@ -8237,6 +8237,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 341a062521f5a334ea9f362008172f61,
     type: 3}
   m_PrefabInstance: {fileID: 177082162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &178520503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 925341898120055011, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+    type: 3}
+  m_PrefabInstance: {fileID: 315198609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &178520504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+    type: 3}
+  m_PrefabInstance: {fileID: 315198609}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &182864244
 PrefabInstance:
@@ -9260,11 +9272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996680803, guid: c32d889ffcec2ae4c9f5ba2f792bad53, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0773035
+      value: 0.07730351
       objectReference: {fileID: 0}
     - target: {fileID: 996680803, guid: c32d889ffcec2ae4c9f5ba2f792bad53, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03158249
+      value: -0.031582493
       objectReference: {fileID: 0}
     - target: {fileID: 996680803, guid: c32d889ffcec2ae4c9f5ba2f792bad53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11124,6 +11136,100 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 310646828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &315198609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1231730478}
+    m_Modifications:
+    - target: {fileID: 925341898120055011, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_Name
+      value: Act 1 - Chateau
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055011, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962268875337325359, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2589998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962268875337325359, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1200001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235071601351497724, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235071601351497724, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.46
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be47faadb59e3aa4c9b54a2ae78afadc, type: 3}
 --- !u!1001 &321411485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42838,12 +42944,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 870759690}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &871235902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 727536084214366598, guid: bc80afbc15437ad4b94278a8936135ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 193403062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &873786484
 GameObject:
   m_ObjectHideFlags: 0
@@ -43622,7 +43722,7 @@ MonoBehaviour:
   IsRunning: 0
   IsFinish: 0
   Decors:
-  - {fileID: 871235902}
+  - {fileID: 159054687}
   DecorsStarwars: []
   CardsStartIndex: 0
   CardsEndIndex: 4
@@ -50577,7 +50677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1094578472
 Transform:
   m_ObjectHideFlags: 0
@@ -50585,14 +50685,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094578471}
-  m_LocalRotation: {x: -0, y: 0.99926347, z: -0, w: -0.038373448}
-  m_LocalPosition: {x: 3.421, y: 0, z: 9.126}
+  m_LocalRotation: {x: -0, y: 0.80240065, z: -0, w: -0.5967857}
+  m_LocalPosition: {x: 6.012, y: 0, z: 5.789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1251787880}
   m_Father: {fileID: 1525559516}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 184.398, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 253.28, z: 0}
 --- !u!82 &1094578473
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50604,7 +50704,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -52085,6 +52185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 159054688}
+  - {fileID: 178520504}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66385,7 +66486,8 @@ MonoBehaviour:
   sceneNum: 2
   IsRunning: 0
   IsFinish: 0
-  Decors: []
+  Decors:
+  - {fileID: 178520503}
   DecorsStarwars: []
   CardsStartIndex: 4
   CardsEndIndex: 9
@@ -66412,7 +66514,7 @@ MonoBehaviour:
   compagnionSpeech:
   - {fileID: 8300000, guid: 40355e2cdbf0ae342acf0ce33dced955, type: 3}
   - {fileID: 8300000, guid: ba91c13a00276ed42a07e641b014e801, type: 3}
-  - {fileID: 8300000, guid: dbf37170840828344ae352756e49a99a, type: 3}
+  - {fileID: 8300000, guid: 1625c0ca46711c14e90df6cc11d3f62f, type: 3}
   - {fileID: 8300000, guid: 7284e085c2bca114394c4a372780a417, type: 3}
   - {fileID: 8300000, guid: dbf37170840828344ae352756e49a99a, type: 3}
   ArthurEndSpeech: {fileID: 8300000, guid: 29013750f4dd6c5468305182004db9a9, type: 3}

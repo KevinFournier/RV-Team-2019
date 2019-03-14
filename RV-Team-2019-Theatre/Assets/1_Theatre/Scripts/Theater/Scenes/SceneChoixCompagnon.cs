@@ -80,16 +80,17 @@ namespace Theater
             Arthur.Companion.AudioSource.clip = compagnionSpeech[index];
 
             switch (chosenCompanion)
-            { // TODO: faire ça.
+            { 
                 case CompanionType.None:
                     break;
                 case CompanionType.Merlin:
+                    // TODO: Faire reculer merlin pour le ridau
                     break;
                 case CompanionType.Guenievre:
-                    // Wait for Guenievre Animation
+                    WaitThen(6.5f, cardSelectionValidation);
                     break;
                 case CompanionType.R2D2:
-                    // Wait for R2D2 animation
+                    WaitThen(5.5f, cardSelectionValidation);
                     break;
                 case CompanionType.Jesus:
                     cardSelectionValidation();
@@ -155,7 +156,7 @@ namespace Theater
             {
                 WaitThen(merlinMovementDelay, () =>
                 {
-                    // TODO: Start Animation
+                    // TODO: Faire avancer un peu merlin.
 
                     WaitThen(
                         merlinAndArthurDialogueDelay[replicaIndex],
