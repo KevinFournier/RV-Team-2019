@@ -78,6 +78,35 @@ namespace Theater
             Companions[index].gameObject.SetActive(true);
             Arthur.Companion = Companions[index];
             Arthur.Companion.AudioSource.clip = compagnionSpeech[index];
+
+            switch (chosenCompanion)
+            { // TODO: faire ça.
+                case CompanionType.None:
+                    break;
+                case CompanionType.Merlin:
+                    break;
+                case CompanionType.Guenievre:
+                    // Wait for Guenievre Animation
+                    break;
+                case CompanionType.R2D2:
+                    // Wait for R2D2 animation
+                    break;
+                case CompanionType.Jesus:
+                    cardSelectionValidation();
+                    break;
+                case CompanionType.Brush:
+                    cardSelectionValidation();
+                    break;
+                default:
+                    cardSelectionValidation();
+                    break;
+            }
+
+            void cardSelectionValidation()
+            {
+                isCardSelected = true;
+                CardTrigger = true;
+            }
         }
 
         /// <summary>
@@ -90,22 +119,27 @@ namespace Theater
             AudioSource audioSource;
 
             areMerlinAndArthurSpeaking = true;
+            var c = Companions[(int)CompanionType.Merlin];
 
             if (replicaIndex >= merlinAndArthurDialogue.Length)
             {
                 areMerlinAndArthurSpeaking = false;
                 areMerlinAndArthurDoneSpeking = true;
+                c.Talk1(false);
                 resetTime();
             }
             else
             {
-
                 if (replicaIndex % 2 == 0)
-                    audioSource =
-                        Companions[(int)CompanionType.Merlin].AudioSource;
+                {
+                    audioSource = c.AudioSource;
+                    c.Talk1(true);
+                }
                 else
+                {
                     audioSource = Arthur.AudioSource;
-
+                    c.Talk1(false);
+                }
                 audioSource.clip = merlinAndArthurDialogue[replicaIndex];
 
                 if (replicaIndex == 4)
@@ -160,10 +194,6 @@ namespace Theater
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            // Seulement pour du test sans intéraction VR
-            SetCompanion(chosenCompanion);
-
-
             WaitThen(companionSpeechDelay, companionReplica);
 
             void companionReplica()
@@ -176,8 +206,10 @@ namespace Theater
             }
             void arthurReplica()
             {
-                PlaySoundThen(Arthur.AudioSource);
-                GameManager.Instance.NextScene();
+                PlaySoundThen(
+                    Arthur.AudioSource,
+                    GameManager.Instance.NextScene,
+                    Arthur.AudioSource.clip.length + 2.0f);
             }
         }
 
