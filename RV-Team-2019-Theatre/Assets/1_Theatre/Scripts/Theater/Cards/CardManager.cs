@@ -70,7 +70,7 @@ namespace Theater
                 case 1:
                     epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
                     (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneArme).CardTrigger = true;
-                    if (numCardSelected == 1)
+                    if (numCardSelected == 2)
                     {
                         GameManager.StarWars = true;
                     }
