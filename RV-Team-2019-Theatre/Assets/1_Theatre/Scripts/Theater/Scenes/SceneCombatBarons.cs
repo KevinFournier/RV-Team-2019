@@ -11,7 +11,8 @@ namespace Theater
         public Player Arthur;
 
         public PlayableDirector scene3director;
-        public ChooseCharacter chooseTonPerso;
+        public ChooseCharacter[] chooseTonPerso;
+        
         
         // Start is called before the first frame update
         void Start()
@@ -63,7 +64,11 @@ namespace Theater
         public override void OnStart()
         {
             IsRunning = true;
-            chooseTonPerso.ChooseBetweenCharacters(Arthur.Companion);
+            foreach (ChooseCharacter item in chooseTonPerso)
+            {
+                item.ChooseBetweenCharacters(Arthur.Companion);
+
+            }
             scene3director.Play();
 
         }
