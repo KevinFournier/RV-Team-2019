@@ -2384,6 +2384,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2448,16 +2458,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9988502
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -2761,7 +2761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &159054688
 Transform:
   m_ObjectHideFlags: 0
@@ -8546,6 +8546,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8610,11 +8615,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9988506
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -8906,6 +8906,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8971,11 +8976,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9988502
       objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
 --- !u!4 &544452497 stripped
@@ -9021,6 +9021,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9079,16 +9089,6 @@ PrefabInstance:
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10204,6 +10204,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10262,16 +10272,6 @@ PrefabInstance:
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12276,6 +12276,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12340,11 +12345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99885064
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -13023,6 +13023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: R2D2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710068981856161358, guid: 59dbbfdb36e0ea643be9e36f5c553389,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710068981855736430, guid: 59dbbfdb36e0ea643be9e36f5c553389,
         type: 3}
@@ -13783,6 +13788,8 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
+  Decors: []
+  DecorsStarwars: []
   CardsStartIndex: 0
   CardsEndIndex: 4
   IsIntroFinish: 0
@@ -14436,7 +14443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313082496, guid: d90055c89dbfd30449be8178f2e6a266, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 1313082496, guid: d90055c89dbfd30449be8178f2e6a266, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14444,7 +14451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313082496, guid: d90055c89dbfd30449be8178f2e6a266, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 1313082496, guid: d90055c89dbfd30449be8178f2e6a266, type: 3}
       propertyPath: m_LocalRotation.x
@@ -14577,6 +14584,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14641,16 +14658,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99885064
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -15006,6 +15013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15065,11 +15077,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -17200,6 +17207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 159054688}
+  - {fileID: 1401026000}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17902,6 +17910,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17966,11 +17979,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9988502
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -19142,6 +19150,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 633bd7f2a71360245b818fe39dbb2d93,
     type: 3}
   m_PrefabInstance: {fileID: 1400615061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1401026000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8296101121202279704}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1404148656
 PrefabInstance:
@@ -20927,6 +20941,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20991,16 +21015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9988506
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -22340,6 +22354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e820aea4976a747848b1529c878381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenScene: 15
   scenes:
   - {fileID: 913274829}
   - {fileID: 1967112996}
@@ -23721,6 +23736,11 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
+  Decors: []
+  DecorsStarwars: []
+  Arthur: {fileID: 0}
+  scene3director: {fileID: 0}
+  chooseTonPerso: {fileID: 0}
 --- !u!4 &1772008809
 Transform:
   m_ObjectHideFlags: 0
@@ -24901,6 +24921,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24960,11 +24985,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -26043,6 +26063,8 @@ MonoBehaviour:
   sceneNum: 0
   IsRunning: 0
   IsFinish: 0
+  Decors: []
+  DecorsStarwars: []
   CardsStartIndex: 0
   CardsEndIndex: 0
   Arthur: {fileID: 0}
@@ -27121,6 +27143,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1328633910}
     m_Modifications:
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Balcon (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664259481664693578, guid: 471b0ab715a8dac499d522b5ae728b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27185,16 +27217,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9988502
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Balcon (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550030951570894562, guid: 471b0ab715a8dac499d522b5ae728b0a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471b0ab715a8dac499d522b5ae728b0a, type: 3}
@@ -27398,7 +27420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 95355017, guid: ef180c61b1facb84d83aede7ecda4193, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 95355017, guid: ef180c61b1facb84d83aede7ecda4193, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27406,7 +27428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 95355017, guid: ef180c61b1facb84d83aede7ecda4193, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 95355017, guid: ef180c61b1facb84d83aede7ecda4193, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27973,6 +27995,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a93c38e955c244387ecca938c809d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &8296101121202279704
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1231730478}
+    m_Modifications:
+    - target: {fileID: 925341898120055011, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_Name
+      value: Act 1 - Chateau
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055011, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be47faadb59e3aa4c9b54a2ae78afadc, type: 3}
 --- !u!1001 &8706380243172461191
 PrefabInstance:
   m_ObjectHideFlags: 0
