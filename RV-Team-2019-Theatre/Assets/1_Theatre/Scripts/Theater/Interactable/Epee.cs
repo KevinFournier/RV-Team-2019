@@ -8,7 +8,8 @@ namespace Theater
     public class Epee : MonoBehaviour
     {
         public List<GameObject> lame;
-        
+        public Transform playZone;
+        public float timeSwordReset=4.0f;
 
         void OnTriggerExit(Collider coll)
         {
@@ -30,6 +31,21 @@ namespace Theater
                 gameObject.transform.parent = null;
 
             }
+            if (coll.gameObject.tag == "PlayZone")
+            {
+                Debug.Log("Epee sortie");
+                // ResetSword();
+                StartCoroutine(ResetSword(new Vector3 (coll.transform.position.x,1,coll.transform.position.z)));
+            }
         }
+
+        private IEnumerator ResetSword(Vector3 position)
+        {
+            yield return new WaitForSeconds(timeSwordReset);
+
+            transform.position = position;
+        }
+
+
     }
 }
