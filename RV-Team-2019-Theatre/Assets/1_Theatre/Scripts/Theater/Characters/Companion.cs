@@ -26,6 +26,10 @@ namespace Theater
         {
             AudioSource = GetComponent<AudioSource>();
         }
-    }
-    
+        public void Spawn()
+        {
+            gameObject.SetActive(true);
+            
+        }
+    }    
 }

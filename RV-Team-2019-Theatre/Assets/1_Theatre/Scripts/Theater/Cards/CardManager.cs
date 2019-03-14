@@ -13,6 +13,8 @@ namespace Theater
         public GameObject epee;
         public GameObject rocher;
 
+        public List<Companion> companions;
+
         public static bool needCardSelection = true;
 
         private IEnumerator spawnCardsCoroutine;
@@ -87,18 +89,23 @@ namespace Theater
                         case 4:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Guenievre);
+                            companions[0].gameObject.SetActive(true);
+
                             break;
                         case 5:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Brush);
+                            companions[1].gameObject.SetActive(true);
                             break;
                         case 6:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.R2D2);
+                            companions[2].gameObject.SetActive(true);
                             break;
                         case 7:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Jesus);
+                            companions[3].gameObject.SetActive(true);
                             break;
                         case 8:
                             //Call function in game manager that match the card selected
