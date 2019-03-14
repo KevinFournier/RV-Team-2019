@@ -83,7 +83,7 @@ namespace Theater
         public void OpenCurtains()
         {
             curtainBack.Open();
-            curtainBack.Open();
+            curtainFront.Open();
         }
 
         /// <summary>
