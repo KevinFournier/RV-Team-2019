@@ -90,22 +90,27 @@ namespace Theater
             AudioSource audioSource;
 
             areMerlinAndArthurSpeaking = true;
+            var c = Companions[(int)CompanionType.Merlin];
 
             if (replicaIndex >= merlinAndArthurDialogue.Length)
             {
                 areMerlinAndArthurSpeaking = false;
                 areMerlinAndArthurDoneSpeking = true;
+                c.Talk1(false);
                 resetTime();
             }
             else
             {
-
                 if (replicaIndex % 2 == 0)
-                    audioSource =
-                        Companions[(int)CompanionType.Merlin].AudioSource;
+                {
+                    audioSource = c.AudioSource;
+                    c.Talk1(true);
+                }
                 else
+                {
                     audioSource = Arthur.AudioSource;
-
+                    c.Talk1(false);
+                }
                 audioSource.clip = merlinAndArthurDialogue[replicaIndex];
 
                 if (replicaIndex == 4)
