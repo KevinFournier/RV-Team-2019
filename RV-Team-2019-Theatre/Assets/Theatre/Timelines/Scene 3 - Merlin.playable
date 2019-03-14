@@ -754,7 +754,7 @@ MonoBehaviour:
     m_DisplayName: Active
     m_Version: 1
   m_Version: 2
-  m_PostPlaybackState: 3
+  m_PostPlaybackState: 0
 --- !u!114 &114150689842824142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1202,7 +1202,7 @@ MonoBehaviour:
     m_DisplayName: Active
     m_Version: 1
   m_Version: 2
-  m_PostPlaybackState: 3
+  m_PostPlaybackState: 0
 --- !u!114 &114376270443756104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1557,10 +1557,10 @@ MonoBehaviour:
   m_Parent: {fileID: 114407319217854806}
   m_Children: []
   m_Clips:
-  - m_Start: 22.883333333333333
+  - m_Start: 27.533333333333335
     m_ClipIn: 0
     m_Asset: {fileID: 114703893533283030}
-    m_Duration: 17.862550038647015
+    m_Duration: 13.212550038647013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114539522739428718}
     m_EaseInDuration: 0
@@ -2216,7 +2216,7 @@ MonoBehaviour:
     m_DisplayName: Active
     m_Version: 1
   m_Version: 2
-  m_PostPlaybackState: 3
+  m_PostPlaybackState: 0
 --- !u!114 &114788007045631478
 MonoBehaviour:
   m_ObjectHideFlags: 1
