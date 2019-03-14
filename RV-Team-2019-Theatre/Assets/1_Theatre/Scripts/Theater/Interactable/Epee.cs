@@ -12,7 +12,7 @@ namespace Theater
 
         void OnTriggerExit(Collider coll)
         {
-            if (coll.gameObject.tag == "SwordBlade")
+            if (coll.gameObject.tag == "SwordRock")
             {
 
                 Debug.Log("Exit the rock");

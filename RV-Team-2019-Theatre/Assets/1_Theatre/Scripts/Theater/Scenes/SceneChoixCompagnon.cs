@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 namespace Theater
 {
@@ -67,9 +68,14 @@ namespace Theater
             if (companion == CompanionType.None)
                 return;
 
+            var merlin = Companions[(int)CompanionType.Merlin];
+            merlin.GetComponent<Interactable>().enabled = false;
+            merlin.GetComponent<Card>().enabled = false;
+
             chosenCompanion = companion;
 
             var index = (int)companion;
+            Companions[index].gameObject.SetActive(true);
             Arthur.Companion = Companions[index];
             Arthur.Companion.AudioSource.clip = compagnionSpeech[index];
         }
@@ -138,9 +144,10 @@ namespace Theater
                     CardManager.Instance.SpawnCards(
                         CardsStartIndex,
                         CardsEndIndex);
-                    /*TODO
-                     Activate merlin card script + interactable + pensez a desactiver 
-                     */
+
+                    var c = Companions[(int)CompanionType.Merlin];
+                    c.GetComponent<Interactable>().enabled = true;
+                    c.GetComponent<Card>().enabled = true;
 
                     resetTime();
                     areCardSpwaned = true;
@@ -154,7 +161,7 @@ namespace Theater
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
             // Seulement pour du test sans intéraction VR
-            // SetCompanion(chosenCompanion);
+            SetCompanion(chosenCompanion);
 
 
             WaitThen(companionSpeechDelay, companionReplica);
@@ -216,6 +223,7 @@ namespace Theater
         {
             GameManager.Instance.OpenCurtain(CurtainType.Back);
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
+
         }
 
 

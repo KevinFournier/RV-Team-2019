@@ -170,7 +170,7 @@ namespace Theater
                     Barons[0].AudioSource,
                     () =>
                     {
-                        Merlin.Talk1(true);
+                        Merlin.Talk2(true);
                         PlaySoundThen(
                             Merlin.AudioSource,
                             endDialogue,
@@ -181,7 +181,7 @@ namespace Theater
             // Local method passed as Action
             void endDialogue()
             {
-                Merlin.Talk1(false);
+                Merlin.Talk2(false);
                 resetTime();
                 AreBaronsAndMerlinFinished = true;
                 AreBaronsAndMerlinRunning = false;
@@ -194,7 +194,7 @@ namespace Theater
             AreCardsSpawning = true;
 
             // Merlin commence à parler x secondes après sont apparition.
-            Merlin.Talk2(true);
+            Merlin.Talk1(true);
             Merlin.AudioSource.clip = MerlinCardsSpeech;
             WaitThen(MerlinCardsSpeechDelay, merlinSpeech);
 
@@ -209,7 +209,7 @@ namespace Theater
             }
             void spawnCards()
             {
-                Merlin.Talk2(false);
+                Merlin.Talk1(false);
                 CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
 
                 resetTime();

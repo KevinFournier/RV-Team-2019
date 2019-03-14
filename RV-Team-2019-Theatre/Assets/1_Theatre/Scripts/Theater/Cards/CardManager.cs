@@ -52,7 +52,7 @@ namespace Theater
                         EventManager(i);
                         HideCards();
                         needCardSelection = false;
-
+                        
                     }
                 }
             }
@@ -75,10 +75,6 @@ namespace Theater
                     rocher.SetActive(true);
 
 
-                    //Reset activated cards
-                    for (int i = 0; i < cards.Length; i++)
-                        cards[i].IsSelected = false;
-
                     Invoke("setActiveColliders", rocher.GetComponent<Animation>().clip.length + 0.5f);
                     
                     break;
@@ -90,23 +86,24 @@ namespace Theater
                     {
                         case 4:
                             //Call function in game manager that match the card selected
-                            //(GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanio
+                            (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Guenievre);
                             break;
                         case 5:
                             //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected);
+                            (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Brush);
                             break;
                         case 6:
                             //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected);
+                            (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.R2D2);
                             break;
                         case 7:
                             //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected);
+                            (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Jesus);
                             break;
                         case 8:
                             //Call function in game manager that match the card selected
-                            Debug.Log("Choix " + numCardSelected);
+                            (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Merlin);
+                            
                             break;
                     }
                     break;
@@ -127,7 +124,7 @@ namespace Theater
         }
         public void HideCards()
         {
-            int cardSelected = 2;
+            int cardSelected = -1;
 
             for (int i = 0; i < cards.Length; i++)
             {
@@ -139,6 +136,9 @@ namespace Theater
 
             hideCardsCoroutine = HideCardsCoroutine(cardSelected);
             StartCoroutine(hideCardsCoroutine);
+            //Reset activated cards
+            for (int i = 0; i < cards.Length; i++)
+                cards[i].IsSelected = false;
         }
 
 
