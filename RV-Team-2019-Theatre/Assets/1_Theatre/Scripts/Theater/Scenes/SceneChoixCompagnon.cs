@@ -258,7 +258,7 @@ namespace Theater
 
         override public void OnStart()
         {
-            GameManager.Instance.OpenCurtain(CurtainType.Back);
+            GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
 
         }
@@ -266,7 +266,7 @@ namespace Theater
 
         override public void OnEnd()
         {
-            GameManager.Instance.CloseCurtain(CurtainType.Back);
+            GameManager.Instance.CloseCurtains();
             IsRunning = false;
         }
 
