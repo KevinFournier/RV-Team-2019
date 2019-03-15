@@ -33,30 +33,33 @@ namespace Theater
         }
         void Update()
         {
-            
-            if (!combatFini && combatCommence)
+            if (GameManager.Instance.GetCurrentAct().GetCurrentScene().sceneNum == 3)
             {
-                if (currentSoldat < soldats.Capacity)
+                if (!combatFini && combatCommence)
                 {
-                    target = new Vector3(Arthur.transform.position.x, soldats[currentSoldat].transform.position.y, Arthur.transform.position.z);
-                    soldats[currentSoldat].transform.position = Vector3.Lerp(soldats[currentSoldat].transform.position, target, soldierSpeed);
-
-                    if (soldats[currentSoldat].dead == true)
+                    if (currentSoldat < soldats.Capacity)
                     {
-                        currentSoldat++;
-                        currentDeath++;
+                        target = new Vector3(Arthur.transform.position.x, soldats[currentSoldat].transform.position.y, Arthur.transform.position.z);
+                        soldats[currentSoldat].transform.position = Vector3.Lerp(soldats[currentSoldat].transform.position, target, soldierSpeed);
+
+                        if (soldats[currentSoldat].dead == true)
+                        {
+                            currentSoldat++;
+                            currentDeath++;
+                        }
+                    }
+
+
+
+
+                    if (currentDeath >= 8)
+                    {
+                        combatFini = true;
+                        Debug.Log("combatFini");
                     }
                 }
-
-                
-
-
-                if (currentDeath >= 8)
-                {
-                    combatFini = true;
-                    Debug.Log("combatFini");
-                }
             }
+            
         }
 
 

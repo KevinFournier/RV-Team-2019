@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 1997218658}
   - component: {fileID: 1997218657}
   - component: {fileID: 570024690}
+  - component: {fileID: 8231345589996265732}
   m_Layer: 0
   m_Name: Chevalier
   m_TagString: Untagged
@@ -301,6 +302,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionCartons: {fileID: 3238545208338324186}
   dead: 0
+--- !u!65 &8231345589996265732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997218656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.14480884, z: 1.222064}
+  m_Center: {x: 8.65079e-17, y: 0.1499398, z: 0.11103141}
 --- !u!1001 &1867554017
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 347053171}
   - component: {fileID: 347053170}
   - component: {fileID: 507713538}
+  - component: {fileID: 4023149601129239265}
   m_Layer: 0
   m_Name: StormTrooper
   m_TagString: Untagged
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionCartons: {fileID: 5772038870937855173}
   dead: 0
+--- !u!65 &4023149601129239265
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347053169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1253663, y: 0.14861247, z: 1.2316767}
+  m_Center: {x: -0.062683165, y: 0.12346737, z: -0.11583836}
 --- !u!1 &1036350225
 GameObject:
   m_ObjectHideFlags: 0

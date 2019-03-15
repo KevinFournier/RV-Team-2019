@@ -7,6 +7,7 @@ namespace Theater
     public class SceneTutoriel : Scene
     {
         public Animator manivelle;
+        public GameObject[] lesBaronsdeLaScene3;
 
         public void OnPlay()
         {
@@ -16,7 +17,10 @@ namespace Theater
 
         public override void OnStart()
         {
-
+            foreach (GameObject item in lesBaronsdeLaScene3)
+            {
+                item.SetActive(false);
+            }
         }
 
         public override void OnEnd()

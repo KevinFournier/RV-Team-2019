@@ -14,7 +14,8 @@ namespace Theater
         public ChooseCharacter[] chooseTonPerso;
 
         public Combat[] combatCompanion;
-        
+
+        public GameObject[] bajons;
         
         // Start is called before the first frame update
         void Start()
@@ -82,7 +83,10 @@ namespace Theater
                 item2.Arthur = Arthur.Companion.transform;
             }
             scene3director.Play();
-
+            foreach (GameObject item in bajons)
+            {
+                item.SetActive(false);
+            }
         }
     }
 }
