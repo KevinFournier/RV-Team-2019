@@ -70,7 +70,6 @@ namespace Theater
             if (companion == CompanionType.None)
                 return;
 
-            // TODO ERROR: Merlin n'a plus de scripts Interacable ni Card d'attaché.
             Merlin.GetComponent<Interactable>().enabled = true;
             Merlin.GetComponent<Card>().enabled = true;
 
@@ -163,9 +162,7 @@ namespace Theater
             {
                 WaitThen(merlinMovementDelay, () =>
                 {
-                    //
                     Merlin.animationMobile.enabled = true;
-                    //
                     // TODO: Faire avancer un peu merlin.
 
                     Merlin.animationMobile.SetBool("PetitPasDevant", true);
@@ -195,7 +192,6 @@ namespace Theater
                         CardsStartIndex,
                         CardsEndIndex);
 
-                    // TODO ERROR: Merlin n'a plus de scripts Interacable ni Card d'attaché.
                     Merlin.GetComponent<Interactable>().enabled = true;
                     Merlin.GetComponent<Card>().enabled = true;
 
@@ -210,7 +206,7 @@ namespace Theater
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            //Merlin.animationMobile.SetBool("PetitPasDevant", false);    
+            // TODO: Merlin.animationMobile.SetBool("PetitPasDevant", false);    
 
             WaitThen(companionSpeechDelay, companionReplica);
 
@@ -228,6 +224,12 @@ namespace Theater
                     Arthur.AudioSource,
                     GameManager.Instance.NextScene,
                     Arthur.AudioSource.clip.length + 2.0f);
+                WaitThen(
+                    Arthur.AudioSource.clip.length + 5.0f,
+                    () => {
+                        GameManager.Instance.ApplaudissementsHigh();
+                        GameManager.Instance.CloseCurtains();
+                    });
             }
         }
 
@@ -281,8 +283,7 @@ namespace Theater
 
         override public void OnEnd()
         {
-            GameManager.Instance.ApplaudissementsHigh();
-            GameManager.Instance.CloseCurtains();
+            
             IsRunning = false;
         }
 

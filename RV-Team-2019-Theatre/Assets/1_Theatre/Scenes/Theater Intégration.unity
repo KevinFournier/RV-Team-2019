@@ -10921,6 +10921,12 @@ Transform:
   m_Father: {fileID: 664522382}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!198 &252920709 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6049892454258389582, guid: 54eb08ca00ea5e440b826c6fefda1045,
+    type: 3}
+  m_PrefabInstance: {fileID: 421888596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &255629928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44702,6 +44708,8 @@ GameObject:
   - component: {fileID: 873786491}
   - component: {fileID: 873786488}
   - component: {fileID: 873786492}
+  - component: {fileID: 873786490}
+  - component: {fileID: 873786489}
   m_Layer: 0
   m_Name: Merlin
   m_TagString: Untagged
@@ -44852,6 +44860,74 @@ MonoBehaviour:
   animationMobile: {fileID: 873786491}
   animationStatique: {fileID: 1162571746}
   type: 0
+--- !u!114 &873786489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873786484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
+--- !u!114 &873786490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873786484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8aac1bf75ed5914e984d987891a3aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftHand: {fileID: 1542483385}
+  RightHand: {fileID: 1918785015}
+  smokeEffect: {fileID: 1138523837}
+  aura: {fileID: 252920709}
+  IsSelected: 0
 --- !u!95 &873786491
 Animator:
   serializedVersion: 3
@@ -53022,6 +53098,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 961104090494720852, guid: 8c567185a70e30c4d9cdb2c9a938f243,
     type: 3}
   m_PrefabInstance: {fileID: 1137321422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1138523837 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9080476789991522356, guid: 54eb08ca00ea5e440b826c6fefda1045,
+    type: 3}
+  m_PrefabInstance: {fileID: 421888596}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144418463
 GameObject:
