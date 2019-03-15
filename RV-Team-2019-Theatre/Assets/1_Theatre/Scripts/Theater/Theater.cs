@@ -129,7 +129,7 @@ namespace Theater
         public void CloseCurtains()
         {
             curtainBack.Close();
-            curtainBack.Close();
+            curtainFront.Close();
         }
 
         #endregion
