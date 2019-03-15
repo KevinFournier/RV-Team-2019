@@ -1,16 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using Theater;
 
-public class PauseInteraction : MonoBehaviour
+public class StartBattle : MonoBehaviour
 {
-    public PlayableDirector masterDirector;
-
     private void OnEnable()
     {
-        masterDirector.Pause();
         Combat.combatCommence = true;
     }
 }

@@ -29,7 +29,14 @@ namespace Theater {
             GetComponent<Collider>().enabled = false;
             //Play particle
             yield return new WaitForSeconds(0.2f);
-            GetComponent<MeshRenderer>().enabled = false;
+            foreach (Transform child in transform)
+            {
+                if (child.GetComponent<MeshRenderer>() != null)
+                {
+                    child.GetComponent<MeshRenderer>().enabled = false;
+
+                }
+            }
             explosionCartons.Play();
             yield return new WaitForSeconds(4.0f);
             gameObject.SetActive(false);

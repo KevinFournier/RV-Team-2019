@@ -215,7 +215,7 @@ namespace Theater
             Merlin.AudioSource.clip = MerlinCardsSpeech;
             WaitThen(MerlinCardsSpeechDelay, merlinSpeech);
 
-
+           
             // Local methods passed as Action
             void merlinSpeech()
             {
