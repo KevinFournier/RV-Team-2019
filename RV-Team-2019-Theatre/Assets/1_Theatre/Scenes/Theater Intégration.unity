@@ -36272,6 +36272,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Narrator: {fileID: 668530405}
+  Public: {fileID: 369481659}
+  applaudissement:
+  - {fileID: 8300000, guid: 037b035dca940a948b4a939b3a733203, type: 3}
+  - {fileID: 8300000, guid: 567cd46a93bbd224c911a80cf868e068, type: 3}
+  - {fileID: 8300000, guid: d2b154eeec975764fbc044f43366d041, type: 3}
+  - {fileID: 8300000, guid: f5c8a97608ff10444b0a83008eab7a3f, type: 3}
   curtainFront: {fileID: 2089214757}
   curtainBack: {fileID: 2128516833}
   acts:
@@ -68945,7 +68951,7 @@ MonoBehaviour:
   - {fileID: 178520503}
   DecorsStarwars: []
   CardsStartIndex: 4
-  CardsEndIndex: 9
+  CardsEndIndex: 8
   Arthur: {fileID: 1340830990}
   Merlin: {fileID: 873786488}
   Companions:

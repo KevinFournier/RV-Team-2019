@@ -70,9 +70,10 @@ namespace Theater
             if (companion == CompanionType.None)
                 return;
 
-            var merlin = Companions[(int)CompanionType.Merlin];
-            merlin.GetComponent<Interactable>().enabled = false;
-            merlin.GetComponent<Card>().enabled = false;
+            // TODO ERROR: Merlin n'a plus de scripts Interacable ni Card d'attaché.
+            Merlin.GetComponent<Interactable>().enabled = true;
+            Merlin.GetComponent<Card>().enabled = true;
+
 
             chosenCompanion = companion;
 
@@ -194,9 +195,9 @@ namespace Theater
                         CardsStartIndex,
                         CardsEndIndex);
 
-                    var c = Companions[(int)CompanionType.Merlin];
-                    c.GetComponent<Interactable>().enabled = true;
-                    c.GetComponent<Card>().enabled = true;
+                    // TODO ERROR: Merlin n'a plus de scripts Interacable ni Card d'attaché.
+                    Merlin.GetComponent<Interactable>().enabled = true;
+                    Merlin.GetComponent<Card>().enabled = true;
 
                     ResetTime();
                     areCardSpwaned = true;
