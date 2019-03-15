@@ -12,6 +12,8 @@ namespace Theater
 
         public PlayableDirector scene3director;
         public ChooseCharacter[] chooseTonPerso;
+
+        public Combat[] combatCompanion;
         
         
         // Start is called before the first frame update
@@ -33,23 +35,28 @@ namespace Theater
             // P A
 
             // selon personage choisi :
-                // G : G A G
-                // M : M A M
-                // J : J A
-                // C : A
-                // R : R A
-            
+            // G : G A G
+            // M : M A M
+            // J : J A
+            // C : A
+            // R : R A
+
             // Combat
-                // Deux Phrases des B
-            
+            // Deux Phrases des B
+
             // Fin:
-                // Fin 1 : A B
-                // Fin 2 : A B
+            // Fin 1 : A B
+            // Fin 2 : A B
 
             // Fermeture Rideau
             // Applaudissements
             // Fin Scene
 
+            if (Combat.combatFini)
+            {
+                scene3director.Play();
+
+            }
         }
 
 
@@ -68,6 +75,11 @@ namespace Theater
             {
                 item.ChooseBetweenCharacters(Arthur.Companion);
 
+            }
+
+            foreach (Combat item2 in combatCompanion)
+            {
+                item2.Arthur = Arthur.Companion.transform;
             }
             scene3director.Play();
 
