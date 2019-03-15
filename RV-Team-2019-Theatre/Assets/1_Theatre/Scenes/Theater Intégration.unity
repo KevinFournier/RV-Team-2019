@@ -1078,6 +1078,12 @@ MonoBehaviour:
   - {fileID: 1152771314}
   - {fileID: 301224950}
   - {fileID: 1153862002}
+  stormTrooper:
+  - {fileID: 2028175287}
+  - {fileID: 1260140088}
+  - {fileID: 1504090842}
+  - {fileID: 1835789681}
+  - {fileID: 654096436}
   soldierSpeed: 0.003
 --- !u!1001 &43177537
 PrefabInstance:
@@ -1159,6 +1165,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 43177537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &44358129
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1231730478}
+    m_Modifications:
+    - target: {fileID: 8047638559976355491, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_Name
+      value: Act 1 - Tatooine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355491, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.431
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e498edce5d377346b1bd3ab1fcc0962, type: 3}
 --- !u!1001 &45401229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,8 +2030,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 65446975}
   TimelinesCharacter:
-  - {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
-  - {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
+  - {fileID: 11400000, guid: ab73cb919e7bbf64a9257011a3fffb63, type: 2}
+  - {fileID: 11400000, guid: a1b4bdf8d8dfcf44e9780c1e01b09a28, type: 2}
   - {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
   - {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
   - {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
@@ -8018,7 +8098,7 @@ Transform:
   - {fileID: 2043741594}
   - {fileID: 193403063}
   m_Father: {fileID: 1231730478}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &165724817
 PrefabInstance:
@@ -12153,7 +12233,7 @@ PrefabInstance:
     - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 925341898120055036, guid: be47faadb59e3aa4c9b54a2ae78afadc,
         type: 3}
@@ -35771,6 +35851,10 @@ MonoBehaviour:
   - {fileID: 1229249403}
   - {fileID: 1526331547}
   - {fileID: 1587673090}
+  stormTrooper:
+  - {fileID: 1528222359}
+  - {fileID: 1226844925}
+  - {fileID: 1759514526}
   soldierSpeed: 0.003
 --- !u!1001 &588101947
 PrefabInstance:
@@ -53114,7 +53198,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1144418464}
-  - component: {fileID: 1144418465}
   m_Layer: 0
   m_Name: Soldats Jedi Companion
   m_TagString: Untagged
@@ -53139,24 +53222,6 @@ Transform:
   m_Father: {fileID: 924231952}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1144418465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144418463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a606e943e7611174587d24e3263b6a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arthur: {fileID: 0}
-  soldats:
-  - {fileID: 1528222359}
-  - {fileID: 1226844925}
-  - {fileID: 1759514526}
-  soldierSpeed: 0.003
 --- !u!1 &1145087467
 GameObject:
   m_ObjectHideFlags: 0
@@ -54515,6 +54580,7 @@ Transform:
   m_LocalPosition: {x: 2.6821, y: 0, z: 2.8303945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1354845166}
   - {fileID: 159054688}
   - {fileID: 178520504}
   m_Father: {fileID: 0}
@@ -55800,7 +55866,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -55995,6 +56061,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 961104090494720852, guid: 8c567185a70e30c4d9cdb2c9a938f243,
     type: 3}
   m_PrefabInstance: {fileID: 1353198161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1354845165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8047638559976355491, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+    type: 3}
+  m_PrefabInstance: {fileID: 44358129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1354845166 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8047638559976355516, guid: 8e498edce5d377346b1bd3ab1fcc0962,
+    type: 3}
+  m_PrefabInstance: {fileID: 44358129}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1357733555
 PrefabInstance:
@@ -59853,7 +59931,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619466164}
-  - component: {fileID: 1619466165}
   m_Layer: 0
   m_Name: Soldats Jedi Joueurs
   m_TagString: Untagged
@@ -59880,26 +59957,6 @@ Transform:
   m_Father: {fileID: 924231952}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1619466165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619466163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a606e943e7611174587d24e3263b6a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arthur: {fileID: 1340830982}
-  soldats:
-  - {fileID: 2028175287}
-  - {fileID: 1260140088}
-  - {fileID: 1504090842}
-  - {fileID: 1835789681}
-  - {fileID: 654096436}
-  soldierSpeed: 0.003
 --- !u!1001 &1625265539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68969,8 +69026,10 @@ MonoBehaviour:
   sceneNum: 3
   IsRunning: 0
   IsFinish: 0
-  Decors: []
-  DecorsStarwars: []
+  Decors:
+  - {fileID: 178520503}
+  DecorsStarwars:
+  - {fileID: 1354845165}
   Arthur: {fileID: 1340830990}
   scene3director: {fileID: 1971693532}
   chooseTonPerso:
@@ -68978,7 +69037,6 @@ MonoBehaviour:
   - {fileID: 1605298688}
   combatCompanion:
   - {fileID: 583588920}
-  - {fileID: 1144418465}
   bajons:
   - {fileID: 1687272847}
   - {fileID: 1602733057}
@@ -69031,7 +69089,8 @@ MonoBehaviour:
   IsFinish: 0
   Decors:
   - {fileID: 178520503}
-  DecorsStarwars: []
+  DecorsStarwars:
+  - {fileID: 1354845165}
   CardsStartIndex: 4
   CardsEndIndex: 8
   Arthur: {fileID: 1340830990}

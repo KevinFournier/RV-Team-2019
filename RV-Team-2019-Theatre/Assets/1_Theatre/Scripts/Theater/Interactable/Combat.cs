@@ -8,6 +8,7 @@ namespace Theater
     {
         public Transform Arthur;
         public List<Soldats> soldats;
+        public List<Soldats> stormTrooper;
         public static Combat Instance;
         private int currentSoldat = 0;
 
@@ -37,12 +38,15 @@ namespace Theater
             {
                 if (!combatFini && combatCommence)
                 {
-                    if (currentSoldat < soldats.Capacity)
+                    var foes = this.soldats;
+                    if (GameManager.StarWars)
+                        foes = stormTrooper;
+                    if (currentSoldat < foes.Capacity)
                     {
-                        target = new Vector3(Arthur.transform.position.x, soldats[currentSoldat].transform.position.y, Arthur.transform.position.z);
-                        soldats[currentSoldat].transform.position = Vector3.Lerp(soldats[currentSoldat].transform.position, target, soldierSpeed);
+                        target = new Vector3(Arthur.transform.position.x, foes[currentSoldat].transform.position.y, Arthur.transform.position.z);
+                        foes[currentSoldat].transform.position = Vector3.Lerp(foes[currentSoldat].transform.position, target, soldierSpeed);
 
-                        if (soldats[currentSoldat].dead == true)
+                        if (foes[currentSoldat].dead == true)
                         {
                             currentSoldat++;
                             currentDeath++;

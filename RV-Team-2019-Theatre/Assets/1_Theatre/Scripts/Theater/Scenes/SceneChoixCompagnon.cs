@@ -225,9 +225,13 @@ namespace Theater
                     GameManager.Instance.NextScene,
                     Arthur.AudioSource.clip.length + 2.0f);
                 WaitThen(
-                    Arthur.AudioSource.clip.length + 5.0f,
+                    Arthur.AudioSource.clip.length + 1.0f,
                     () => {
                         GameManager.Instance.ApplaudissementsHigh();
+                    });
+                WaitThen(
+                    Arthur.AudioSource.clip.length + 5.0f,
+                    () => {
                         GameManager.Instance.CloseCurtains();
                     });
             }
@@ -273,7 +277,6 @@ namespace Theater
 
         override public void OnStart()
         {
-            Decors[0].gameObject.SetActive(true);
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
             Spot.target = Merlin.transform;

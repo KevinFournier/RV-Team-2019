@@ -75,7 +75,6 @@ namespace Theater
             foreach (ChooseCharacter item in chooseTonPerso)
             {
                 item.ChooseBetweenCharacters(Arthur.Companion);
-
             }
 
             foreach (Combat item2 in combatCompanion)

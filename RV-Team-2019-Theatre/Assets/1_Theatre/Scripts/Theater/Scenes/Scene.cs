@@ -19,7 +19,7 @@ namespace Theater
             if (GameManager.StarWars)
                 foreach (var decor in DecorsStarwars)
                     decor.SetActive(true);
-            else
+            else if (!GameManager.StarWars || DecorsStarwars.Count <= 0)
                 foreach (var decor in Decors)
                     decor.SetActive(true);
         }
