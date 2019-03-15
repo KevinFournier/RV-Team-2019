@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 32973084}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.11, y: 0, z: 3.1}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1381208393}
   m_RootOrder: 2
@@ -74682,11 +74682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1997218658, guid: c89ccaa1438bdfc42bd48abbaa4a0fdf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.585
+      value: 0.745
       objectReference: {fileID: 0}
     - target: {fileID: 1997218658, guid: c89ccaa1438bdfc42bd48abbaa4a0fdf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.545
+      value: 17.548
       objectReference: {fileID: 0}
     - target: {fileID: 1997218658, guid: c89ccaa1438bdfc42bd48abbaa4a0fdf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -77346,7 +77346,7 @@ Transform:
   m_GameObject: {fileID: 1602733057}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.0100002, y: 0.008, z: 6.2}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 1381208393}
   m_RootOrder: 1
@@ -83505,7 +83505,7 @@ Transform:
   m_GameObject: {fileID: 1687272847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.97, y: 0, z: 5}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_Children: []
   m_Father: {fileID: 1381208393}
   m_RootOrder: 0
@@ -87476,6 +87476,7 @@ MonoBehaviour:
   CardsStartIndex: 4
   CardsEndIndex: 9
   Arthur: {fileID: 0}
+  Merlin: {fileID: 0}
   Companions:
   - {fileID: 873786488}
   - {fileID: 102695100}
