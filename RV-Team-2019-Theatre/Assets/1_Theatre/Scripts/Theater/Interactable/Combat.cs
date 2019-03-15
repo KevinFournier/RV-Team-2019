@@ -38,6 +38,11 @@ namespace Theater
             {
                 if (!combatFini && combatCommence)
                 {
+                    if (GetComponent<AudioSource>() != null)
+                    {
+                        GetComponent<AudioSource>().Play();
+                    }
+
                     var foes = this.soldats;
                     if (GameManager.StarWars)
                         foes = stormTrooper;
@@ -53,7 +58,13 @@ namespace Theater
                         }
                     }
 
-
+                    if (combatFini)
+                    {
+                        if (GetComponent<AudioSource>() != null)
+                        {
+                            GetComponent<AudioSource>().Stop();
+                        }
+                    }
 
 
                     if (currentDeath >= 8)

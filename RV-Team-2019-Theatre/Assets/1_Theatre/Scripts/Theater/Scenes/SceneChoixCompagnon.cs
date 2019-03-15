@@ -121,6 +121,10 @@ namespace Theater
         /// <param name="replicaIndex"></param>
         private void merlinAndArthur(int replicaIndex)
         {
+           
+                GetComponent<AudioSource>().Stop();
+            
+
             AudioSource audioSource;
 
             areMerlinAndArthurSpeaking = true;
@@ -277,6 +281,10 @@ namespace Theater
 
         override public void OnStart()
         {
+            if (GameManager.StarWars)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
             Spot.target = Merlin.transform;

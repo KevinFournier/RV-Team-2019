@@ -33,7 +33,7 @@ namespace Theater
         public Agent Merlin;
         public List<Agent> Barons;
 
-
+        
         [Space(30f)]
         // Intro
         public AudioClip NarratorFirstSpeech;
@@ -164,6 +164,7 @@ namespace Theater
             // Reset time and booleans.
             void beginDialogue()
             {
+                GetComponent<AudioSource>().Stop();
                 Merlin.Walk(false);
 
                 Spot.target = Barons[0].transform;
@@ -278,6 +279,7 @@ namespace Theater
 
         public override void OnStart()
         {
+            GetComponent<AudioSource>().Play();
             GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             Barons[0].AudioSource.clip = BaronSpeech;
             Merlin.AudioSource.clip = MerlinToBaronsSpeech;
