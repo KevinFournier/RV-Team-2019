@@ -270,7 +270,7 @@ namespace Theater
         public override void OnEnd()
         {
             Merlin.Applause(false);
-            //Merlin.Spawn(false);
+            GameManager.Instance.ApplaudissementsMedium();
             GameManager.Instance.CloseCurtains();
             IsFinish = true;
             IsRunning = false;

@@ -7,6 +7,9 @@ namespace Theater
     public class Theater : MonoBehaviour
     {
         public AudioSource Narrator;
+        public AudioSource Public;
+
+        [SerializeField] private List<AudioClip> applaudissement;
 
         [SerializeField] private Curtain curtainFront;
         [SerializeField] private Curtain curtainBack;
@@ -65,6 +68,29 @@ namespace Theater
             }
         }
 
+        public void ApplaudissementsLight()
+        {
+            Public.clip = applaudissement[0];
+            Public.Play();
+        }
+
+        public void ApplaudissementsMedium()
+        {
+            Public.clip = applaudissement[1];
+            Public.Play();
+        }
+
+        public void ApplaudissementsHigh()
+        {
+            Public.clip = applaudissement[2];
+            Public.Play();
+        }
+
+        public void ApplaudissementsWoohoo()
+        {
+            Public.clip = applaudissement[2];
+            Public.Play();
+        }
 
         /// <summary>
         /// Open a Curtain

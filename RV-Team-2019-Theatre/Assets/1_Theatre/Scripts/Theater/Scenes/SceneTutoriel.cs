@@ -21,7 +21,13 @@ namespace Theater
 
         public override void OnEnd()
         {
-            WaitThen(1.0f, () => manivelle.SetBool("Spawn", false));
+            WaitThen(
+                1.0f,
+                () =>
+                {
+                    manivelle.SetBool("Spawn", false);
+                    GameManager.Instance.ApplaudissementsLight();
+                });
         }
     }
 }

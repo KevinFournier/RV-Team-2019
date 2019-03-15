@@ -277,6 +277,7 @@ namespace Theater
 
         override public void OnEnd()
         {
+            GameManager.Instance.ApplaudissementsHigh();
             GameManager.Instance.CloseCurtains();
             IsRunning = false;
         }
