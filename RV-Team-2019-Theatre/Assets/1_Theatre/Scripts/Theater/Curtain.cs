@@ -39,9 +39,9 @@ namespace Theater
                 if (manivelleAngle != manivelle.GetComponent<CircularDrive>().outAngle)
                 {
                     if (manivelleAngle < manivelle.GetComponent<CircularDrive>().outAngle && hauteurOuverture >= transform.position.y)
-                        transform.position += new Vector3(0, 0.005f, 0);
-                    else if (manivelleAngle > manivelle.GetComponent<CircularDrive>().outAngle && hauteurFermeture <= transform.position.y)
                         transform.position += new Vector3(0, -0.005f, 0);
+                    else if (manivelleAngle > manivelle.GetComponent<CircularDrive>().outAngle && hauteurFermeture <= transform.position.y)
+                        transform.position += new Vector3(0, 0.005f, 0);
                 }
                 manivelleAngle = manivelle.GetComponent<CircularDrive>().outAngle;
                 if (transform.position.y >= hauteurOuverture)

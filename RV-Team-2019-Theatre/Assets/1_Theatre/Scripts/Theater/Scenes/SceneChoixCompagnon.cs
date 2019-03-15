@@ -206,7 +206,7 @@ namespace Theater
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            // TODO: Merlin.animationMobile.SetBool("PetitPasDevant", false);    
+            Merlin.animationMobile.SetBool("PetitPasDevant", false);    
 
             WaitThen(companionSpeechDelay, companionReplica);
 
