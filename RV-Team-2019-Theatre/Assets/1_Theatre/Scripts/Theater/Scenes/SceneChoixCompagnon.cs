@@ -139,11 +139,13 @@ namespace Theater
                 {
                     audioSource = c.AudioSource;
                     c.Talk1(true);
+                    Spot.target = Merlin.transform;
                 }
                 else
                 {
                     audioSource = Arthur.AudioSource;
                     c.Talk1(false);
+                    Spot.target = Arthur.transform;
                 }
                 audioSource.clip = merlinAndArthurDialogue[replicaIndex];
 
@@ -268,6 +270,7 @@ namespace Theater
             Decors[0].gameObject.SetActive(true);
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
+            Spot.target = Merlin.transform;
             
         }
 

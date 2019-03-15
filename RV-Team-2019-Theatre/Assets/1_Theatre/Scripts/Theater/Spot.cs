@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spot : MonoBehaviour
+namespace Theater
 {
-    public static Transform target;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Spot : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.LookAt(target);
+        public static Transform target;
+
+        // Update is called once per frame
+        void Update()
+        {
+            transform.LookAt(target);
+        }
     }
 }

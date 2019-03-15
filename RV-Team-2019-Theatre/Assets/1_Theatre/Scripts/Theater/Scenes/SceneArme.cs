@@ -165,12 +165,15 @@ namespace Theater
             void beginDialogue()
             {
                 Merlin.Walk(false);
+
+                Spot.target = Barons[0].transform;
                 
                 PlaySoundThen(
                     Barons[0].AudioSource,
                     () =>
                     {
                         Merlin.Talk2(true);
+                        Spot.target = Merlin.transform;
                         PlaySoundThen(
                             Merlin.AudioSource,
                             endDialogue,
@@ -192,7 +195,7 @@ namespace Theater
         private void merlinAndCards()
         {
             AreCardsSpawning = true;
-
+            
             // Merlin commence à parler x secondes après sont apparition.
             Merlin.Talk1(true);
 
@@ -216,6 +219,7 @@ namespace Theater
             // Local methods passed as Action
             void merlinSpeech()
             {
+                Spot.target = Merlin.transform;
                 PlaySoundThen(
                         Merlin.AudioSource,
                         spawnCards,
@@ -225,7 +229,7 @@ namespace Theater
             {
                 Merlin.Talk1(false);
                 CardManager.Instance.SpawnCards(CardsStartIndex, CardsEndIndex);
-
+                Spot.target = Arthur.transform;
                 ResetTime();
                 AreCardsSpwaned = true;
                 AreCardsSpawning = false;
@@ -234,9 +238,6 @@ namespace Theater
 
         private void whenCardSelected()
         {
-            foreach (Agent agents in Barons)
-                agents.Spawn(false);
-
             CardTrigger = false;
             IsCardSelected = true;
             WaitThen(
@@ -246,6 +247,9 @@ namespace Theater
 
         private void whenSwordTaken()
         {
+            foreach (Agent agents in Barons)
+                agents.Spawn(false);
+
             Merlin.Applause(true);
             IsSwordTaken = true;
             SwordTrigger = false;
