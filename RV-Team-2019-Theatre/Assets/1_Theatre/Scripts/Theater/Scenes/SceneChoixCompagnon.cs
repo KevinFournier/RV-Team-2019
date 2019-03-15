@@ -162,6 +162,9 @@ namespace Theater
             {
                 WaitThen(merlinMovementDelay, () =>
                 {
+                    //
+                    Merlin.animationMobile.enabled = true;
+                    //
                     // TODO: Faire avancer un peu merlin.
 
                     Merlin.animationMobile.SetBool("PetitPasDevant", true);
@@ -181,7 +184,7 @@ namespace Theater
         {
             areCardSpwaning = true;
 
-            //Merlin.animationStatique.SetBool("isWalking", false);
+            Merlin.animationStatique.SetBool("isWalking", false);
 
             WaitThen(
                 cardsSpawnDelay,
