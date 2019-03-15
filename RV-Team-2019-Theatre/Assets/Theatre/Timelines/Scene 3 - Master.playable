@@ -42,7 +42,7 @@ MonoBehaviour:
   - m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 114990969544601546}
-    m_Duration: 35.633333333333
+    m_Duration: 42.449999999999996
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114246642469577748}
     m_EaseInDuration: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CharacterCombat
     m_Version: 1
-  - m_Start: 35.633333333333
+  - m_Start: 42.449999999999996
     m_ClipIn: 0
     m_Asset: {fileID: 114352413329918650}
     m_Duration: 8.127551020408
