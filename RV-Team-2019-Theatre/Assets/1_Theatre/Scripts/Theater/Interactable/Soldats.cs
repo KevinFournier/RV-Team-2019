@@ -11,11 +11,20 @@ namespace Theater {
      
         // Start is called before the first frame update
 
+        void Update()
+        {
+            if(dead)
+            {
+                StartCoroutine(AnimDestruction());
+                dead = false;
+            }
+                 
+        }
 
         // Update is called once per frame
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "SwordBlade" || dead==true)
+            if (other.tag == "SwordBlade")
             {
 
                 StartCoroutine(AnimDestruction());
