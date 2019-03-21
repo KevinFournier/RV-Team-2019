@@ -52892,7 +52892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 435806097}
   TimelinesCharacter:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
   - {fileID: 11400000, guid: a1b4bdf8d8dfcf44e9780c1e01b09a28, type: 2}
   - {fileID: 11400000, guid: cfe38e5f7375b2c4e9a175ab69f21144, type: 2}
   - {fileID: 11400000, guid: 408b399f89abaf64e994b9de7ba67f8e, type: 2}
@@ -52906,7 +52906,7 @@ PlayableDirector:
   m_GameObject: {fileID: 435806095}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: cfe38e5f7375b2c4e9a175ab69f21144, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -53370,6 +53370,70 @@ PlayableDirector:
     value: {fileID: 1522195504}
   - key: {fileID: 114561096570866688, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
     value: {fileID: 1522195504}
+  - key: {fileID: 114269352914926850, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1819822466}
+  - key: {fileID: 114115847840877892, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 2098429111}
+  - key: {fileID: 114755393195013740, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1687272847}
+  - key: {fileID: 114314715841879962, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1602733057}
+  - key: {fileID: 114128402644381660, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 32973084}
+  - key: {fileID: 114640294306413076, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1687272855}
+  - key: {fileID: 114168318126360568, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1602733065}
+  - key: {fileID: 114509709414815542, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 32973092}
+  - key: {fileID: 114160775777615124, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1302301780}
+  - key: {fileID: 114658614214798552, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 488066459}
+  - key: {fileID: 114914513681094166, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 2064733623}
+  - key: {fileID: 114059897309533574, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1304913068}
+  - key: {fileID: 114128548181599966, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 2067665807}
+  - key: {fileID: 114553411482588960, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 544899840}
+  - key: {fileID: 114195431313215482, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1990803831}
+  - key: {fileID: 114206334697145750, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1225081038}
+  - key: {fileID: 114635589934859022, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 668530405}
+  - key: {fileID: 114531932915272356, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1559719366}
+  - key: {fileID: 114364368663132806, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1176190730}
+  - key: {fileID: 114215941030145198, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 32973086}
+  - key: {fileID: 114718474166434584, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1907515686}
+  - key: {fileID: 114561096570866688, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1522195504}
+  - key: {fileID: 114539522739428718, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 873786484}
+  - key: {fileID: 114754489016899148, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 901134082}
+  - key: {fileID: 114746565129925844, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 901134082}
+  - key: {fileID: 114505886995351474, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 102695096}
+  - key: {fileID: 114376270443756104, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1827881961}
+  - key: {fileID: 114559444994040648, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 1094578471}
+  - key: {fileID: 114630655261873394, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 458638629}
+  - key: {fileID: 114489802199842696, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 164982447}
+  - key: {fileID: 114416043308960808, guid: cc058d1f261d3cf44a85c15fa9f02cf7, type: 2}
+    value: {fileID: 873786486}
+  - key: {fileID: 114419399030982166, guid: cfe38e5f7375b2c4e9a175ab69f21144, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &435806098
@@ -58062,7 +58126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
-  Companion: {fileID: 458638630}
+  Companion: {fileID: 1094578475}
 --- !u!1001 &761140841
 PrefabInstance:
   m_ObjectHideFlags: 0
