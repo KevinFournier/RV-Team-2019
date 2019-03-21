@@ -15,7 +15,7 @@ namespace Theater {
         // Update is called once per frame
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "SwordBlade")
+            if (other.tag == "SwordBlade" || dead==false)
             {
 
                 StartCoroutine(AnimDestruction());
