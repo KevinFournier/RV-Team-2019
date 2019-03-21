@@ -70,9 +70,9 @@ namespace Theater
             if (companion == CompanionType.None)
                 return;
 
-            var merlin = Companions[(int)CompanionType.Merlin];
-            merlin.GetComponent<Interactable>().enabled = false;
-            merlin.GetComponent<Card>().enabled = false;
+            Merlin.GetComponent<Interactable>().enabled = true;
+            Merlin.GetComponent<Card>().enabled = true;
+
 
             chosenCompanion = companion;
 
@@ -121,6 +121,10 @@ namespace Theater
         /// <param name="replicaIndex"></param>
         private void merlinAndArthur(int replicaIndex)
         {
+           
+                GetComponent<AudioSource>().Stop();
+            
+
             AudioSource audioSource;
 
             areMerlinAndArthurSpeaking = true;
@@ -139,11 +143,13 @@ namespace Theater
                 {
                     audioSource = c.AudioSource;
                     c.Talk1(true);
+                    Spot.target = Merlin.transform;
                 }
                 else
                 {
                     audioSource = Arthur.AudioSource;
                     c.Talk1(false);
+                    Spot.target = Arthur.transform;
                 }
                 audioSource.clip = merlinAndArthurDialogue[replicaIndex];
 
@@ -160,6 +166,7 @@ namespace Theater
             {
                 WaitThen(merlinMovementDelay, () =>
                 {
+                    Merlin.animationMobile.enabled = true;
                     // TODO: Faire avancer un peu merlin.
 
                     Merlin.animationMobile.SetBool("PetitPasDevant", true);
@@ -179,7 +186,7 @@ namespace Theater
         {
             areCardSpwaning = true;
 
-            //Merlin.animationStatique.SetBool("isWalking", false);
+            Merlin.animationStatique.SetBool("isWalking", false);
 
             WaitThen(
                 cardsSpawnDelay,
@@ -189,9 +196,8 @@ namespace Theater
                         CardsStartIndex,
                         CardsEndIndex);
 
-                    var c = Companions[(int)CompanionType.Merlin];
-                    c.GetComponent<Interactable>().enabled = true;
-                    c.GetComponent<Card>().enabled = true;
+                    Merlin.GetComponent<Interactable>().enabled = true;
+                    Merlin.GetComponent<Card>().enabled = true;
 
                     ResetTime();
                     areCardSpwaned = true;
@@ -204,7 +210,7 @@ namespace Theater
 
             Arthur.AudioSource.clip = ArthurEndSpeech;
 
-            //Merlin.animationMobile.SetBool("PetitPasDevant", false);    
+            Merlin.animationMobile.SetBool("PetitPasDevant", false);    
 
             WaitThen(companionSpeechDelay, companionReplica);
 
@@ -222,6 +228,16 @@ namespace Theater
                     Arthur.AudioSource,
                     GameManager.Instance.NextScene,
                     Arthur.AudioSource.clip.length + 2.0f);
+                WaitThen(
+                    Arthur.AudioSource.clip.length + 1.0f,
+                    () => {
+                        GameManager.Instance.ApplaudissementsHigh();
+                    });
+                WaitThen(
+                    Arthur.AudioSource.clip.length + 5.0f,
+                    () => {
+                        GameManager.Instance.CloseCurtains();
+                    });
             }
         }
 
@@ -265,16 +281,20 @@ namespace Theater
 
         override public void OnStart()
         {
-            Decors[0].gameObject.SetActive(true);
+            if (GameManager.StarWars)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
+            Spot.target = Merlin.transform;
             
         }
 
 
         override public void OnEnd()
         {
-            GameManager.Instance.CloseCurtains();
+            
             IsRunning = false;
         }
 

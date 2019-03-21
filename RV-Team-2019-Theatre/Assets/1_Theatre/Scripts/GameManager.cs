@@ -13,12 +13,16 @@ public class GameManager : MonoBehaviour
     // Theater related methods
     public void SetTheater(Theater.Theater theater) => Theater = theater;
     public void NextAct() => Theater.NextAct();
+    public Act GetCurrentAct() => currentAct;
     public void OpenCurtain(CurtainType cn) => Theater.OpenCurtain(cn);
     public void OpenCurtains() => Theater.OpenCurtains();
     public void CloseCurtain(CurtainType cn) => Theater.CloseCurtain(cn);
     public void CloseCurtains() => Theater.CloseCurtains();
-    public Act GetCurrentAct() => currentAct;
-    
+    public void ApplaudissementsLight() => Theater.ApplaudissementsLight();
+    public void ApplaudissementsMedium() => Theater.ApplaudissementsMedium();
+    public void ApplaudissementsHigh() => Theater.ApplaudissementsHigh();
+    public void ApplaudissementsWoohoo() => Theater.ApplaudissementsWoohoo();
+
     /// <summary>
     /// Get the Theater's narrator AudioSource.
     /// </summary>

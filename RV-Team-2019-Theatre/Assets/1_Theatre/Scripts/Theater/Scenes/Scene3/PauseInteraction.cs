@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using Theater;
 
 public class PauseInteraction : MonoBehaviour
 {
@@ -10,5 +11,6 @@ public class PauseInteraction : MonoBehaviour
     private void OnEnable()
     {
         masterDirector.Pause();
+        Combat.combatCommence = true;
     }
 }
