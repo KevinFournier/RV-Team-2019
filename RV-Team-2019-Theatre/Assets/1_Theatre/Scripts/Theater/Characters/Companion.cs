@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Theater
 {
+    
 
     public enum CompanionType
     {
@@ -21,7 +22,8 @@ namespace Theater
 
         public CompanionType Type => type;
         public int Index() => (int)type;
-        
+        public bool mort=false;
+
         void Awake()
         {
             AudioSource = GetComponent<AudioSource>();

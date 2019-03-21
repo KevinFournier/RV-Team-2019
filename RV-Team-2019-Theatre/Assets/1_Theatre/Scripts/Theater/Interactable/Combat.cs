@@ -6,6 +6,11 @@ namespace Theater
 {
     public class Combat : MonoBehaviour
     {
+        public AudioClip musicCombatSW;
+        public AudioClip musicCombat;
+
+        public Player player;
+
         public Transform Arthur;
         public List<Soldats> soldats;
         public List<Soldats> stormTrooper;
@@ -40,7 +45,14 @@ namespace Theater
                 {
                     if (GetComponent<AudioSource>() != null)
                     {
-                        GetComponent<AudioSource>().Play();
+                        if (GameManager.StarWars == true)
+                        {
+                            GetComponent<AudioSource>().PlayOneShot(musicCombatSW);
+                        }
+                        else
+                        {
+                            GetComponent<AudioSource>().PlayOneShot(musicCombat);
+                        }
                     }
 
                     var foes = this.soldats;
@@ -49,6 +61,18 @@ namespace Theater
                     if (currentSoldat < foes.Capacity)
                     {
                         target = new Vector3(Arthur.transform.position.x, foes[currentSoldat].transform.position.y, Arthur.transform.position.z);
+                        if (player.Companion.Type==CompanionType.Jesus || player.Companion.Type == CompanionType.R2D2)
+                        {
+                            target = player.transform.position;
+                            if (player.Companion.Type == CompanionType.Jesus)
+                                player.Companion.gameObject.GetComponent<Animator>().SetBool("isDead", true);
+                            /*else
+                            {
+                                player.Companion.gameObject.transform.Find("Explosion").GetComponent<ParticleSystem>().Play();
+                                player.Companion.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                            }*/
+                                
+                        }
                         foes[currentSoldat].transform.position = Vector3.Lerp(foes[currentSoldat].transform.position, target, soldierSpeed);
 
                         if (foes[currentSoldat].dead == true)
@@ -76,9 +100,6 @@ namespace Theater
             }
             
         }
-
-
-
     }
 }
 
