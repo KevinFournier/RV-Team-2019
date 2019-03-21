@@ -24,6 +24,8 @@ namespace Theater
 
         public static bool combatFini = false;
 
+        public bool once=false;
+
 
 
         private Vector3 target;
@@ -45,13 +47,17 @@ namespace Theater
                 {
                     if (GetComponent<AudioSource>() != null)
                     {
-                        if (GameManager.StarWars == true)
+                        if (once == false)
                         {
-                            GetComponent<AudioSource>().PlayOneShot(musicCombatSW);
-                        }
-                        else
-                        {
-                            GetComponent<AudioSource>().PlayOneShot(musicCombat);
+                            if (GameManager.StarWars == true)
+                            {
+                                GetComponent<AudioSource>().PlayOneShot(musicCombatSW);
+                            }
+                            else
+                            {
+                                GetComponent<AudioSource>().PlayOneShot(musicCombat);
+                            }
+                            once = true;
                         }
                     }
 
