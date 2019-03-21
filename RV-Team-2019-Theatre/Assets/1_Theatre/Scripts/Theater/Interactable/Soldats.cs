@@ -38,7 +38,8 @@ namespace Theater {
             GetComponent<Collider>().enabled = false;
             //Play particle
             yield return new WaitForSeconds(0.2f);
-            foreach (Transform child in transform)
+            Transform[] allChildren = GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
             {
                 if (child.GetComponent<MeshRenderer>() != null)
                 {

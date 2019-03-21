@@ -10,7 +10,6 @@ namespace Theater
         public int CardsStartIndex = 0;
         public int CardsEndIndex = 4;
 
-
         [SerializeField] private bool IsIntroFinish = false;
         [SerializeField] private bool IsIntroRunning = false;
 
@@ -250,7 +249,7 @@ namespace Theater
         {
             foreach (Agent agents in Barons)
                 agents.Spawn(false);
-
+            GameManager.Instance.ApplaudissementsMedium();
             Merlin.Applause(true);
             IsSwordTaken = true;
             SwordTrigger = false;
