@@ -9,6 +9,8 @@ namespace Theater
         public AudioSource Narrator;
         public AudioSource Public;
 
+        public List<GameObject> spectators;
+
         [SerializeField] private List<AudioClip> applaudissement;
 
         [SerializeField] private Curtain curtainFront;
@@ -49,6 +51,19 @@ namespace Theater
             // TODO: Implement
         }
 
+        private IEnumerator onSoundEnd(
+            AudioSource audioSource,
+            System.Action func,
+            float additionalTime = 0.0f
+        )
+        {
+            yield return new WaitUntil(() => !audioSource.isPlaying);
+            yield return new WaitForSeconds(additionalTime);
+
+            if (func != null)
+                func.Invoke();
+        }
+
         #endregion
 
         #region Public Methods
@@ -56,7 +71,7 @@ namespace Theater
         public void NextAct()
         {
             currentAct.OnEnd();
-            
+
             if (_acts.Count > 0)
             {
                 currentAct = _acts.Dequeue();
@@ -70,26 +85,47 @@ namespace Theater
 
         public void ApplaudissementsLight()
         {
+            PlayAnimApplause(true);
             Public.clip = applaudissement[0];
             Public.Play();
+            StopApplause();
         }
 
         public void ApplaudissementsMedium()
         {
+            PlayAnimApplause(true);
             Public.clip = applaudissement[1];
             Public.Play();
+            StopApplause();
         }
 
         public void ApplaudissementsHigh()
         {
+            PlayAnimApplause(true);
             Public.clip = applaudissement[2];
             Public.Play();
+            StopApplause();
+
         }
 
         public void ApplaudissementsWoohoo()
         {
+            PlayAnimApplause(true);
             Public.clip = applaudissement[2];
             Public.Play();
+            StopApplause();
+        }
+
+        public void PlayAnimApplause(bool b)
+        {
+            foreach (GameObject spectator in spectators)
+            {
+                spectator.GetComponent<Animator>().SetBool("isApplause", b);
+            }
+        }
+        private void StopApplause()
+        {
+            StartCoroutine(onSoundEnd(Public, () => PlayAnimApplause(false)));
         }
 
         /// <summary>
