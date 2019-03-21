@@ -52906,7 +52906,7 @@ PlayableDirector:
   m_GameObject: {fileID: 435806095}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: cfe38e5f7375b2c4e9a175ab69f21144, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -53364,6 +53364,12 @@ PlayableDirector:
     value: {fileID: 1094578473}
   - key: {fileID: 114301446009146136, guid: cfe38e5f7375b2c4e9a175ab69f21144, type: 2}
     value: {fileID: 901134085}
+  - key: {fileID: 114273221591727236, guid: 408b399f89abaf64e994b9de7ba67f8e, type: 2}
+    value: {fileID: 1522195504}
+  - key: {fileID: 114810732033520840, guid: a1b4bdf8d8dfcf44e9780c1e01b09a28, type: 2}
+    value: {fileID: 1522195504}
+  - key: {fileID: 114561096570866688, guid: 7eaabe1fdb881054d82b43a7a840f589, type: 2}
+    value: {fileID: 1522195504}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &435806098
@@ -55975,6 +55981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Narrator: {fileID: 668530405}
   Public: {fileID: 0}
+  spectators: []
   applaudissement: []
   curtainFront: {fileID: 2089214757}
   curtainBack: {fileID: 2128516833}
@@ -58055,7 +58062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
-  Companion: {fileID: 1094578475}
+  Companion: {fileID: 458638630}
 --- !u!1001 &761140841
 PrefabInstance:
   m_ObjectHideFlags: 0
