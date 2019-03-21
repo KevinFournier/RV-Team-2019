@@ -5,4 +5,9 @@ using UnityEngine;
 public class Rocher : MonoBehaviour
 {
     public ParticleSystem rockExplosion;
+
+    public void PlayLeSFX()
+    {
+        GetComponent<AudioSource>().Play();
+    }
 }

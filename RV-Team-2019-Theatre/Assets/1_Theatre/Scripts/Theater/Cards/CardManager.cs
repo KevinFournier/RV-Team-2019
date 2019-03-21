@@ -20,6 +20,7 @@ namespace Theater
         private IEnumerator spawnCardsCoroutine;
         private IEnumerator hideCardsCoroutine;
 
+        public AudioClip singleCduHaut;
         int numSelected = -1;
 
         public bool cardsSelectTime = false;
@@ -74,6 +75,9 @@ namespace Theater
                     {
                         GameManager.StarWars = true;
                     }
+                    GetComponent<AudioSource>().clip = singleCduHaut;
+                    GetComponent<AudioSource>().Play();
+
                     rocher.SetActive(true);
 
 
@@ -84,6 +88,8 @@ namespace Theater
                 //SCENE 2 -- CHOIX DU COMPAGNON
                 #region SCENE2
                 case 2:
+                    GetComponent<AudioSource>().clip = singleCduHaut;
+                    GetComponent<AudioSource>().Play();
                     switch (numCardSelected)
                     {
                         case 4:
@@ -157,6 +163,7 @@ namespace Theater
                 for (int i = indexStart; i < indexEnd; i++)
                 {
                     cards[i].Spawn();
+                    GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
                     cards[i].smokeEffect.Play();
                     yield return new WaitForSeconds(0.3f);
                     cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -170,6 +177,8 @@ namespace Theater
                     if (GameManager.StarWars && i!=7)
                     {
                         cards[i].Spawn();
+                        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+
                         cards[i].smokeEffect.Play();
                         yield return new WaitForSeconds(0.3f);
                         cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -178,6 +187,8 @@ namespace Theater
                     if (!GameManager.StarWars && i != 6)
                     {
                         cards[i].Spawn();
+                        GetComponent<AudioSource>().Play();
+
                         cards[i].smokeEffect.Play();
                         yield return new WaitForSeconds(0.3f);
                         cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -199,6 +210,7 @@ namespace Theater
         public IEnumerator HideCardsCoroutine(int nbCardSelected)
         {
             needCardSelection = false;
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
 
             for (int i = 0; i < cards.Length - 1; i++)
             {
@@ -218,6 +230,7 @@ namespace Theater
                 }
             }
 
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
             cards[nbCardSelected].GetComponent<MeshRenderer>().enabled = false;
             cards[nbCardSelected].smokeEffect.Play();
             cards[nbCardSelected].aura.Stop();

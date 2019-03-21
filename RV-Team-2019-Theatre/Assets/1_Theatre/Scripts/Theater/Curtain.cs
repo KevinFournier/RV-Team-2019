@@ -106,12 +106,14 @@ namespace Theater
 
         public void Open()
         {
+            GetComponent<AudioSource>().Play();
             opening = true;
             closing = false;
         }
 
         public void Close()
         {
+            GetComponent<AudioSource>().Play();
             closing = true;
             opening = false;
         }

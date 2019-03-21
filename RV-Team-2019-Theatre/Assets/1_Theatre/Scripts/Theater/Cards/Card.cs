@@ -15,6 +15,7 @@ namespace Theater
         public ParticleSystem aura;
         public bool IsSelected = false;
 
+
         private void OnTriggerStay(Collider coll)
         {
             if (coll.gameObject.tag == "Player")
@@ -22,7 +23,8 @@ namespace Theater
                 Debug.Log(gameObject.name + " is on collision with " + coll.gameObject.name);
                 if (Input.GetKeyDown(KeyCode.E) || LeftHand.grabPinchAction.stateDown || RightHand.grabPinchAction.stateDown)
                 {
-                    Debug.Log(" On Clique");
+                    Debug.Log("On Clique");
+
                     Select();
                 }
             }
@@ -36,7 +38,9 @@ namespace Theater
         public void Spawn()
         {
             Debug.Log("Cards are spawned");
+
             SetActiveCard();
+            GetComponent<AudioSource>().Play();
 
         }
         public void Hide()
