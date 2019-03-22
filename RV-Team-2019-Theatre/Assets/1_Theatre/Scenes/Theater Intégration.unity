@@ -1162,7 +1162,7 @@ MonoBehaviour:
   - {fileID: 1504090842}
   - {fileID: 1835789681}
   - {fileID: 654096436}
-  soldierSpeed: 0.006
+  soldierSpeed: 0.01
   once: 0
 --- !u!82 &40108563
 AudioSource:
@@ -59988,7 +59988,7 @@ MonoBehaviour:
   - {fileID: 1528222359}
   - {fileID: 1226844925}
   - {fileID: 1759514526}
-  soldierSpeed: 0.006
+  soldierSpeed: 0.01
   once: 0
 --- !u!1001 &588101947
 PrefabInstance:
@@ -68072,15 +68072,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 1675598530, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9159490707579880790, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
-    - {fileID: 7905332336136650378, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
-    - {fileID: 2352475633962006914, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
-    - {fileID: 354173202542681482, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
 --- !u!1001 &788023322
 PrefabInstance:
@@ -78413,7 +78409,7 @@ MonoBehaviour:
   - {fileID: 1528222359}
   - {fileID: 1226844925}
   - {fileID: 1759514526}
-  soldierSpeed: 0.006
+  soldierSpeed: 0.01
   once: 0
 --- !u!1 &1145087467
 GameObject:
@@ -86089,7 +86085,7 @@ MonoBehaviour:
   - {fileID: 1504090842}
   - {fileID: 1835789681}
   - {fileID: 654096436}
-  soldierSpeed: 0.006
+  soldierSpeed: 0.01
   once: 0
 --- !u!82 &1619466166
 AudioSource:
@@ -91532,7 +91528,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7f0df67503638f4ebe198a42a80999d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
