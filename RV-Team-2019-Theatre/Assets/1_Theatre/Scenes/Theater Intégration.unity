@@ -67317,6 +67317,14 @@ PrefabInstance:
       propertyPath: highlightOnHover
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 807730982, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675598530, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9159490707579880790, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
     - {fileID: 7905332336136650378, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
@@ -69293,6 +69301,7 @@ MonoBehaviour:
   CardsSpawnDelay: 0.5
   ArthurCardSpeechDelay: 2
   MerlinEndSpeechDelay: 2
+  clairiere: {fileID: 0}
 --- !u!82 &913274830
 AudioSource:
   m_ObjectHideFlags: 0
