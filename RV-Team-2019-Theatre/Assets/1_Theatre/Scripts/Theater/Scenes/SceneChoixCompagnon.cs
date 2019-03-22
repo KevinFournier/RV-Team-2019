@@ -12,6 +12,7 @@ namespace Theater
         public int CardsStartIndex = 0;
         public int CardsEndIndex = 0;
 
+        public AudioClip starwarsMusic;
 
         [Header("Player and possible companion")]
         public Player Arthur;
@@ -284,7 +285,7 @@ namespace Theater
         {
             if (GameManager.StarWars)
             {
-                GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().PlayOneShot(starwarsMusic);
             }
             GameManager.Instance.OpenCurtains();
             WaitThen(curtainsOpeningDelay, () => IsRunning = true);
