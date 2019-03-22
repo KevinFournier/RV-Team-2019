@@ -41,6 +41,7 @@ namespace Theater
         }
         void Update()
         {
+            Debug.Log("Combat commence value : " + combatCommence);
             if (GameManager.Instance.GetCurrentAct().GetCurrentScene().sceneNum == 3)
             {
                 if (!combatFini && combatCommence)

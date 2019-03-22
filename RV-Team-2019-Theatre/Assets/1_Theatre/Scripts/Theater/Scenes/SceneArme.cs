@@ -130,6 +130,8 @@ namespace Theater
             void endIntro()
             {
                 GameManager.Instance.OpenCurtains();
+                GameManager.Instance.ApplaudissementsMedium();
+
                 ResetTime();
                 IsIntroFinish = true;
                 IsIntroRunning = false;
@@ -249,7 +251,7 @@ namespace Theater
         {
             foreach (Agent agents in Barons)
                 agents.Spawn(false);
-            GameManager.Instance.ApplaudissementsMedium();
+            GameManager.Instance.ApplaudissementsWoohoo();
             Merlin.Applause(true);
             IsSwordTaken = true;
             SwordTrigger = false;
