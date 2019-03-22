@@ -38,16 +38,20 @@ namespace Theater
             if (panneauTutoriel != null)
             {
                 panneauTutoriel.SetActive(false);
-
             }
-
+            
             WaitThen(
                 1.0f,
                 () =>
                 {
                     manivelle.SetBool("Spawn", false);
                     GameManager.Instance.ApplaudissementsMedium();
+                    WaitThen(
+                        3.0f,
+                        () => panneauTutoriel.SetActive(false));
                 });
+
+            
         }
     }
 }
