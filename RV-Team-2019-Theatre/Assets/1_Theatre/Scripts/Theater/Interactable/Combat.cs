@@ -63,7 +63,7 @@ namespace Theater
                     }
 
                     var foes = this.soldats;
-                    if (GameManager.StarWars)
+                    if (GameManager.StarWars && player.Companion.Type == CompanionType.R2D2)
                         foes = stormTrooper;
                     if (currentSoldat < foes.Capacity)
                     {
