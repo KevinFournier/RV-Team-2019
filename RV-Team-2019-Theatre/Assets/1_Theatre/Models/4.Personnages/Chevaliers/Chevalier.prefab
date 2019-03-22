@@ -300,6 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b63051cf7a30f547905f1649c700895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit:
+  - {fileID: 8300000, guid: 4c424971815d7c84b8dba6cb9f92eef1, type: 3}
+  - {fileID: 8300000, guid: 7a933f8fb917f784387a3491a568e168, type: 3}
+  - {fileID: 8300000, guid: 0b75523da48565548813c94426e99024, type: 3}
+  - {fileID: 8300000, guid: 21fc17cddc681dd4b899e8571bd2b6fe, type: 3}
   explosionCartons: {fileID: 3238545208338324186}
   dead: 0
 --- !u!65 &8231345589996265732
