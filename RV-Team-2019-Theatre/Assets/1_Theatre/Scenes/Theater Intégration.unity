@@ -44287,6 +44287,11 @@ PrefabInstance:
       propertyPath: singleCduHaut
       value: 
       objectReference: {fileID: 8300000, guid: 79084e7af77f9744b85986738611a371, type: 3}
+    - target: {fileID: 3224050888198600596, guid: 54eb08ca00ea5e440b826c6fefda1045,
+        type: 3}
+      propertyPath: poof
+      value: 
+      objectReference: {fileID: 8300000, guid: 208eb6a244703f24db42e3269b78d069, type: 3}
     - target: {fileID: 3224050887864003857, guid: 54eb08ca00ea5e440b826c6fefda1045,
         type: 3}
       propertyPath: LeftHand
