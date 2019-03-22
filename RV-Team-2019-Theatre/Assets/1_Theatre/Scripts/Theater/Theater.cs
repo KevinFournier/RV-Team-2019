@@ -12,6 +12,7 @@ namespace Theater
         public List<GameObject> spectators;
 
         [SerializeField] private List<AudioClip> applaudissement;
+        [SerializeField] private AudioClip laughtersClip;
 
         [SerializeField] private Curtain curtainFront;
         [SerializeField] private Curtain curtainBack;
@@ -114,6 +115,11 @@ namespace Theater
             Public.clip = applaudissement[2];
             Public.Play();
             StopApplause();
+        }
+
+        public void Laughters()
+        {
+            Public.PlayOneShot(laughtersClip);
         }
 
         public void PlayAnimApplause(bool b)

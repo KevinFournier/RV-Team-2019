@@ -39,7 +39,7 @@ namespace Theater
             if (coll.gameObject.tag == "SwordRock")
             {
 
-                //sfxEpeeMove.Stop();
+                sfxEpeeMove.Stop();
                 Debug.Log("Exit the rock");
                 transform.parent.gameObject.GetComponent<Rocher>().rockExplosion.Play();
                 transform.parent.gameObject.GetComponent<MeshRenderer>().enabled = false;

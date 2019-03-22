@@ -60652,6 +60652,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 567cd46a93bbd224c911a80cf868e068, type: 3}
   - {fileID: 8300000, guid: d2b154eeec975764fbc044f43366d041, type: 3}
   - {fileID: 8300000, guid: f5c8a97608ff10444b0a83008eab7a3f, type: 3}
+  laughtersClip: {fileID: 8300000, guid: 2d89ed49b997d874c9e76619daabec70, type: 3}
   curtainFront: {fileID: 2089214757}
   curtainBack: {fileID: 2128516833}
   acts:
@@ -67981,6 +67982,11 @@ PrefabInstance:
       propertyPath: playZone
       value: 
       objectReference: {fileID: 357327773}
+    - target: {fileID: 1053907911692072458, guid: 8c96c5c2b57243a4d8cde1d6f2439e18,
+        type: 3}
+      propertyPath: sfxEpeeMoveClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ffeebc63db485194b81fb472a167322d, type: 3}
     - target: {fileID: 7753438814917079001, guid: 8c96c5c2b57243a4d8cde1d6f2439e18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68037,7 +68043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 807730982, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9159490707579880790, guid: 8c96c5c2b57243a4d8cde1d6f2439e18, type: 3}
