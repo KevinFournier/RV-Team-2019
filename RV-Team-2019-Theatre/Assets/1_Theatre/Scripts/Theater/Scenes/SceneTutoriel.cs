@@ -8,6 +8,7 @@ namespace Theater
     {
         public Animator manivelle;
         public GameObject[] lesBaronsdeLaScene3;
+        public GameObject panneauTutoriel;
 
         public void OnPlay()
         {
@@ -25,6 +26,7 @@ namespace Theater
 
         public override void OnEnd()
         {
+            panneauTutoriel.SetActive(false);
             WaitThen(
                 1.0f,
                 () =>
