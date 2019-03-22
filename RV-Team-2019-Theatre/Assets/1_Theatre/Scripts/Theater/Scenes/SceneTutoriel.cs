@@ -10,6 +10,10 @@ namespace Theater
         public GameObject[] lesBaronsdeLaScene3;
         public GameObject panneauTutoriel;
 
+        public AudioClip chuchotements;
+
+        public AudioSource spectators;
+
         public void OnPlay()
         {
             //ManivelleOpen
@@ -18,6 +22,9 @@ namespace Theater
 
         public override void OnStart()
         {
+            spectators.clip = chuchotements;
+            spectators.loop = true;
+            spectators.Play();
             foreach (GameObject item in lesBaronsdeLaScene3)
             {
                 item.SetActive(false);
@@ -26,13 +33,20 @@ namespace Theater
 
         public override void OnEnd()
         {
-            panneauTutoriel.SetActive(false);
+            spectators.loop = false;
+
+            if (panneauTutoriel != null)
+            {
+                panneauTutoriel.SetActive(false);
+
+            }
+
             WaitThen(
                 1.0f,
                 () =>
                 {
                     manivelle.SetBool("Spawn", false);
-                    GameManager.Instance.ApplaudissementsLight();
+                    GameManager.Instance.ApplaudissementsMedium();
                 });
         }
     }
