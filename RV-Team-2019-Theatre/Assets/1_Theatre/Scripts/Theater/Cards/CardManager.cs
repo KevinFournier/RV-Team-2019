@@ -107,11 +107,11 @@ namespace Theater
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Jesus);
                             companions[3].gameObject.SetActive(true);
                             break;
-                        /*case 8:
+                        case 8:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Merlin);
 
-                            break;*/
+                            break;
                     }
                     break;
                     #endregion
@@ -200,7 +200,7 @@ namespace Theater
         {
             needCardSelection = false;
 
-            for (int i = 0; i < cards.Length - 1; i++)
+            for (int i = 0; i < cards.Length; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -210,7 +210,7 @@ namespace Theater
                 }
             }
             yield return new WaitForSeconds(1.5f);
-            for (int i = 0; i < cards.Length - 1; i++)
+            for (int i = 0; i < cards.Length; i++)
             {
                 if (i != nbCardSelected)
                 {
