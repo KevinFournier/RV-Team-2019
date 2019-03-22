@@ -87,6 +87,7 @@ namespace Theater
                     break;
                 case CompanionType.Merlin:
                     // TODO: Faire reculer merlin pour le ridau
+                    cardSelectionValidation();
                     break;
                 case CompanionType.Guenievre:
                     WaitThen(6.0f, cardSelectionValidation);

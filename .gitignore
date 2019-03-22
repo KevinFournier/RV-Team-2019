@@ -39,3 +39,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# VS code
+RV-Team-2019-Theatre/*.vscode
+RV-Team-2019-Theatre/.vscode/*
+RV-Team-2019-Theatre/.vscode/settings.json
