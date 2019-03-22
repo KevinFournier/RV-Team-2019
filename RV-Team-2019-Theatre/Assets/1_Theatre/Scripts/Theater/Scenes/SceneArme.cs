@@ -256,6 +256,7 @@ namespace Theater
         {
             foreach (Agent agents in Barons)
                 agents.Spawn(false);
+            GameManager.Instance.Laughters();
             GameManager.Instance.ApplaudissementsWoohoo();
             Merlin.Applause(true);
             IsSwordTaken = true;

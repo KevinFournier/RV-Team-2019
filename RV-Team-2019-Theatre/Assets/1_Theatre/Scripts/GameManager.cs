@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public void ApplaudissementsMedium() => Theater.ApplaudissementsMedium();
     public void ApplaudissementsHigh() => Theater.ApplaudissementsHigh();
     public void ApplaudissementsWoohoo() => Theater.ApplaudissementsWoohoo();
+    public void Laughters() => Theater.Laughters();
 
     /// <summary>
     /// Get the Theater's narrator AudioSource.
