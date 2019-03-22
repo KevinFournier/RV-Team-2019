@@ -20,6 +20,7 @@ namespace Theater
         private IEnumerator spawnCardsCoroutine;
         private IEnumerator hideCardsCoroutine;
 
+        public AudioClip poof;
         public AudioClip singleCduHaut;
         int numSelected = -1;
 
@@ -162,7 +163,7 @@ namespace Theater
                 for (int i = indexStart; i < indexEnd; i++)
                 {
                     cards[i].Spawn();
-                    GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+                    GetComponent<AudioSource>().PlayOneShot(poof);
                     cards[i].smokeEffect.Play();
                     yield return new WaitForSeconds(0.3f);
                     cards[i].gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -176,7 +177,7 @@ namespace Theater
                     if (GameManager.StarWars && i!=7)
                     {
                         cards[i].Spawn();
-                        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+                        GetComponent<AudioSource>().PlayOneShot(poof);
 
                         cards[i].smokeEffect.Play();
                         yield return new WaitForSeconds(0.3f);
@@ -209,7 +210,7 @@ namespace Theater
         public IEnumerator HideCardsCoroutine(int nbCardSelected)
         {
             needCardSelection = false;
-            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+            GetComponent<AudioSource>().PlayOneShot(poof);
 
             for (int i = 0; i < cards.Length - 1; i++)
             {
@@ -229,7 +230,7 @@ namespace Theater
                 }
             }
 
-            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+            GetComponent<AudioSource>().PlayOneShot(poof);
 	    if (nbCardSelected < cards.Length - 1)
 	    {
 	        cards[nbCardSelected].GetComponent<MeshRenderer>().enabled = false;
