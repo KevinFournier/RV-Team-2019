@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Theater {
     public class Soldats : MonoBehaviour
     {
+        public AudioClip[] hit;
         public ParticleSystem explosionCartons;
         public bool dead = false;
         
@@ -34,7 +35,7 @@ namespace Theater {
 
         IEnumerator AnimDestruction()
         {
-
+            GetComponent<AudioSource>().PlayOneShot(hit[CardManager.EpeeChosen]);
             GetComponent<Collider>().enabled = false;
             //Play particle
             yield return new WaitForSeconds(0.2f);

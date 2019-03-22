@@ -84,6 +84,8 @@ namespace Theater
 
                         if (foes[currentSoldat].dead == true)
                         {
+                            foes[currentSoldat].gameObject.GetComponent<AudioSource>().Play();
+
                             currentSoldat++;
                             currentDeath++;
                         }

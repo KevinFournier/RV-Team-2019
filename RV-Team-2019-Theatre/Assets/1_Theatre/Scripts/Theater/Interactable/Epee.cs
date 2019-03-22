@@ -24,7 +24,11 @@ namespace Theater
                 sfxEpeeMove.clip = sfxEpeeMoveClips[CardManager.EpeeChosen];
                 if (sfxEpeeMove.clip != null)
                 {
-                    sfxEpeeMove.Play();
+                    if (!sfxEpeeMove.isPlaying)
+                    {
+                        sfxEpeeMove.Play();
+
+                    }
                 }
             }
 
