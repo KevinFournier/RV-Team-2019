@@ -30,6 +30,8 @@ namespace Theater
                 Destroy(GetComponent<LinearMapping>());
                 gameObject.transform.parent = null;
 
+                GetComponent<AudioSource>().Play();
+
             }
             if (coll.gameObject.tag == "PlayZone")
             {

@@ -42,7 +42,7 @@ namespace Theater
                 {
                     if (manivelleAngle > manivelle.GetComponent<CircularDrive>().outAngle && hauteurOuverture >= transform.position.y)
                     {
-                        transform.position += new Vector3(0, 0.010f, 0);
+                        transform.position += new Vector3(0, 0.020f, 0);
                         if (!manivelleSound.isPlaying)
                         {
                             manivelleSound.Play();
@@ -51,7 +51,7 @@ namespace Theater
 
                     else if (manivelleAngle < manivelle.GetComponent<CircularDrive>().outAngle && hauteurFermeture <= transform.position.y)
                     {
-                        transform.position += new Vector3(0, -0.010f, 0);
+                        transform.position += new Vector3(0, -0.020f, 0);
                         if (!manivelleSound.isPlaying)
                         {
                             manivelleSound.Play();
@@ -106,12 +106,14 @@ namespace Theater
 
         public void Open()
         {
+            GetComponent<AudioSource>().Play();
             opening = true;
             closing = false;
         }
 
         public void Close()
         {
+            GetComponent<AudioSource>().Play();
             closing = true;
             opening = false;
         }
