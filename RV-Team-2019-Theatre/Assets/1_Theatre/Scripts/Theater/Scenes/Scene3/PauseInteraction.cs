@@ -32,6 +32,8 @@ public class PauseInteraction : MonoBehaviour
         {
             player.Companion.Fight(true);
             player.Companion.Attack(true);
+            player.Companion.Fire(true);
+
         }
     }
 }

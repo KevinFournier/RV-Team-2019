@@ -11,6 +11,8 @@ namespace Theater
         public Animator animationMobile;
         public Animator animationStatique;
 
+        public ParticleSystem fire;
+
         private void Awake()
         {
             AudioSource = GetComponent<AudioSource>();
@@ -49,7 +51,17 @@ namespace Theater
         {
             animationStatique.SetBool("isDead", b);
         }
-        
+        public void Fire(bool b)
+        {
+            if (b)
+            {
+                fire.Play();
+            }
+            else
+            {
+                fire.Stop();
+            }
 
+        }
     }
 }

@@ -751,6 +751,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 32973092}
   animationStatique: {fileID: 32973092}
+  fire: {fileID: 0}
 --- !u!111 &32973091
 Animation:
   m_ObjectHideFlags: 0
@@ -2224,7 +2225,7 @@ PlayableDirector:
   m_GameObject: {fileID: 65446972}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a1b4bdf8d8dfcf44e9780c1e01b09a28, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 6ed2b95c3fef5074cb714ea8451c0089, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -2768,6 +2769,26 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 114687015422366088, guid: a1b4bdf8d8dfcf44e9780c1e01b09a28, type: 2}
     value: {fileID: 557498213}
+  - key: {fileID: 114664358536983202, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114810235433833526, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114361959705419512, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114247752567088740, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114246993061841424, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114464403073222750, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114457450392238382, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114859278523362084, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114457303148924410, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114174259399082972, guid: 0e3f76846fcf06d42ac4465cb87283f8, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &66429691
@@ -3119,6 +3140,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 102695098}
   animationStatique: {fileID: 557498213}
+  fire: {fileID: 0}
   type: 1
   mort: 0
 --- !u!65 &102695101
@@ -12339,6 +12361,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 296093635}
   animationStatique: {fileID: 296093635}
+  fire: {fileID: 0}
 --- !u!82 &296093637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57152,6 +57175,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 0}
   animationStatique: {fileID: 0}
+  fire: {fileID: 0}
   type: 4
   mort: 0
 --- !u!82 &458638631
@@ -58148,6 +58172,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 527952580}
   animationStatique: {fileID: 527952580}
+  fire: {fileID: 0}
 --- !u!82 &527952582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68452,7 +68477,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873786485}
-  - component: {fileID: 873786487}
   - component: {fileID: 873786493}
   - component: {fileID: 873786486}
   - component: {fileID: 873786491}
@@ -68460,9 +68484,10 @@ GameObject:
   - component: {fileID: 873786492}
   - component: {fileID: 873786490}
   - component: {fileID: 873786489}
+  - component: {fileID: 873786487}
   m_Layer: 0
   m_Name: Merlin
-  m_TagString: Untagged
+  m_TagString: SwordBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68581,8 +68606,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &873786487
-CapsuleCollider:
+--- !u!65 &873786487
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -68591,10 +68616,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6945848, z: 2.6624732}
+  m_Center: {x: 0, y: -0.004076481, z: 1.1542673}
 --- !u!114 &873786488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68610,6 +68634,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 873786491}
   animationStatique: {fileID: 1162571746}
+  fire: {fileID: 0}
   type: 0
   mort: 0
 --- !u!114 &873786489
@@ -76836,6 +76861,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 1094578474}
   animationStatique: {fileID: 1094578474}
+  fire: {fileID: 0}
   type: 2
   mort: 0
 --- !u!54 &1094578476
@@ -83101,6 +83127,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 1559905792}
   animationStatique: {fileID: 1559905792}
+  fire: {fileID: 0}
 --- !u!82 &1559905794
 AudioSource:
   m_ObjectHideFlags: 0
@@ -83983,6 +84010,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 1602733065}
   animationStatique: {fileID: 1602733065}
+  fire: {fileID: 0}
 --- !u!111 &1602733064
 Animation:
   m_ObjectHideFlags: 0
@@ -90173,6 +90201,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 1687272855}
   animationStatique: {fileID: 1687272855}
+  fire: {fileID: 0}
 --- !u!82 &1687272849
 AudioSource:
   m_ObjectHideFlags: 0
@@ -92332,6 +92361,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   animationMobile: {fileID: 1092781382}
   animationStatique: {fileID: 1092781382}
+  fire: {fileID: 0}
   type: 3
   mort: 0
 --- !u!82 &1827881964
