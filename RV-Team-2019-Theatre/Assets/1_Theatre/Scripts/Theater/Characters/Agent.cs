@@ -45,6 +45,11 @@ namespace Theater
         {
             animationStatique.SetBool("isApplause", b);
         }
+        public void Dead(bool b)
+        {
+            animationStatique.SetBool("isDead", b);
+        }
+        
 
     }
 }

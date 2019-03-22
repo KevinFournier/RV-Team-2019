@@ -17,8 +17,21 @@ public class PauseInteraction : MonoBehaviour
         Combat.combatCommence = true;
         if (player.Companion.Type == CompanionType.Guenievre)
         {
-            player.Companion.GetComponentInChildren<Animator>().SetBool("FightMode", true);
-            player.Companion.GetComponentInChildren<Animator>().SetBool("isEnnemyAttacking", true);
+            player.Companion.Fight(true);
+            player.Companion.Attack(true);
+        }
+        if (player.Companion.Type == CompanionType.Jesus)
+        {
+            player.Companion.Dead(true);
+        }
+        if (player.Companion.Type == CompanionType.R2D2)
+        {
+            //Jouer explosion
+        }
+        if (player.Companion.Type == CompanionType.Merlin)
+        {
+            player.Companion.Fight(true);
+            player.Companion.Attack(true);
         }
     }
 }
