@@ -116,7 +116,6 @@ namespace Theater
                         case 8:
                             //Call function in game manager that match the card selected
                             (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneChoixCompagnon).SetCompanion(CompanionType.Merlin);
-
                             break;
                     }
                     break;
@@ -212,7 +211,7 @@ namespace Theater
             needCardSelection = false;
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
 
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = 0; i < cards.Length - 1; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -222,7 +221,7 @@ namespace Theater
                 }
             }
             yield return new WaitForSeconds(1.5f);
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = 0; i < cards.Length - 1; i++)
             {
                 if (i != nbCardSelected)
                 {
@@ -231,11 +230,14 @@ namespace Theater
             }
 
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
-            cards[nbCardSelected].GetComponent<MeshRenderer>().enabled = false;
-            cards[nbCardSelected].smokeEffect.Play();
+	    if (nbCardSelected < cards.Length - 1)
+	    {
+	        cards[nbCardSelected].GetComponent<MeshRenderer>().enabled = false;
+	        cards[nbCardSelected].smokeEffect.Play();
             cards[nbCardSelected].aura.Stop();
-            yield return new WaitForSeconds(1.5f);
-            cards[nbCardSelected].Hide();
+		    yield return new WaitForSeconds(1.5f);
+		    cards[nbCardSelected].Hide();
+	    }
 
         }
     }
