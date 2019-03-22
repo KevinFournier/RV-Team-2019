@@ -10,6 +10,8 @@ namespace Theater
 
         [SerializeField] private Card[] cards;
 
+        public static int EpeeChosen;
+
         public GameObject epee;
         public GameObject rocher;
 
@@ -71,6 +73,7 @@ namespace Theater
                 #region SCENE1
                 case 1:
                     epee.GetComponent<Epee>().lame[numCardSelected].SetActive(true);
+                    EpeeChosen = numCardSelected;
                     (GameManager.Instance.GetCurrentAct().GetCurrentScene() as SceneArme).CardTrigger = true;
                     if (numCardSelected == 2)
                     {

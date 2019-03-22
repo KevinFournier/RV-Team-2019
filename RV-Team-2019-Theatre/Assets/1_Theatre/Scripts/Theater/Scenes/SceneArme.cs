@@ -60,6 +60,8 @@ namespace Theater
         // Retirage de l'épée.
         public float MerlinEndSpeechDelay = 2.0f;
 
+        public AudioClip clairiere;
+
         #region Unity Methods
 
         private void Update()
@@ -166,6 +168,9 @@ namespace Theater
             void beginDialogue()
             {
                 GetComponent<AudioSource>().Stop();
+                GetComponent<AudioSource>().loop = true;
+                GetComponent<AudioSource>().clip = clairiere;
+                GetComponent<AudioSource>().Play();
                 Merlin.Walk(false);
 
                 Spot.target = Barons[0].transform;
@@ -271,6 +276,10 @@ namespace Theater
 
         public override void OnEnd()
         {
+            GetComponent<AudioSource>().loop = false;
+
+            GetComponent<AudioSource>().Stop();
+
             Merlin.Applause(false);
             GameManager.Instance.ApplaudissementsMedium();
             GameManager.Instance.CloseCurtains();
@@ -280,6 +289,8 @@ namespace Theater
 
         public override void OnStart()
         {
+            GetComponent<AudioSource>().loop = false;
+
             GetComponent<AudioSource>().Play();
             GameManager.Instance.NarratorClip(NarratorFirstSpeech);
             Barons[0].AudioSource.clip = BaronSpeech;
