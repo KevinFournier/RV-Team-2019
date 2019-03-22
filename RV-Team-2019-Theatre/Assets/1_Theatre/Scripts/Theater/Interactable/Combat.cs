@@ -70,7 +70,7 @@ namespace Theater
                         target = new Vector3(Arthur.transform.position.x, foes[currentSoldat].transform.position.y, Arthur.transform.position.z);
                         if (player.Companion.Type==CompanionType.Jesus || player.Companion.Type == CompanionType.R2D2)
                         {
-                            target = player.transform.position;
+                            target = new Vector3(player.transform.position.x, foes[currentSoldat].transform.position.y, player.transform.position.z);
                             if (player.Companion.Type == CompanionType.Jesus)
                                 player.Companion.gameObject.GetComponent<Animator>().SetBool("isDead", true);
                             /*else
