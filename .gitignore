@@ -5,6 +5,11 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Vim temp files
+*~
+*.swp
+*.swo
+
 # Visual Studio cache directory
 .vs/
 
